@@ -91,6 +91,7 @@
       $activeControlsBg.classList.add("m--active-nav-bg");
       setTimeout(afterSlidingHandler, slidingAT + slidingDelay);
     }
+    
 
     function controlClickHandler() {
       if (sliding) return;
