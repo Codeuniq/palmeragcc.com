@@ -1,58 +1,1367 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #305c2c;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+  <title>Palmera</title>
+  <meta charset="utf-8">
+  <link href="images/logogre.png" rel="icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="TemplatesJungle">
+  <!-- <meta name="keywords" content="ecommerce,fashion,store">
+  <meta name="description" content="Bootstrap 5 Fashion Store HTML CSS Template"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-    .logo {
-      max-width: 300px;
-      margin-bottom: 30px;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/font.css">
 
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .floating {  
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 5px;
-}
-
-@keyframes floating {
-    from { transform: translate(0,  0px); }
-    65%  { transform: translate(0, 15px); }
-    to   { transform: translate(0, -0px); }    
-}
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://md-aqil.github.io/images/swiper.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
-<body>
-  <img src="logopal.png" alt="Logo" class="logo" />
-  <br><br><br>
-  <h1 class="floating">Coming Soon</h1>
+
+<body class="homepage">
+  <!-- ? Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="images/logopal.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Preloader Start-->
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logopal.png" class="filter" alt="AL YARMOOK" title="AL YARMOOK"
+          style="height:62px;width: auto;margin-left: 21px;" />
+      </a>
+      <button class="navbar-toggler collapsible" type="button">
+        <!-- <span class="oi oi-menu"></span> Menu -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="Black" class="bi bi-list"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse ftco-nav content" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
+          <!-- <li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
+				  <div class="dropdown-menu" aria-labelledby="dropdown04">
+					  <a class="dropdown-item" href="shop.html">Shop</a>
+					<a class="dropdown-item" href="product-single.html">Single Product</a>
+					<a class="dropdown-item" href="cart.html">Cart</a>
+					<a class="dropdown-item" href="checkout.html">Checkout</a>
+				  </div>
+				</li> -->
+          <li class="nav-item"><a  class="nav-link">About Us</a></li>
+          <li class="nav-item active"><a href="shop.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a  class="nav-link"> <div id='google_translate_element'></div></a></li>
+          <!-- <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li> -->
+        </ul>
+      </div>
+     
+      <script>
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: 'true',
+            includedLanguages: 'en,ar', // <- remove this line to show all language
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+          }, 'google_translate_element');
+        }
+      </script>
+    </div>
+  </nav>
+  <!-- NAV END -->
+  <section>
+    <div class="demo-cont">
+      <!-- slider start -->
+      <div class="fnc-slider example-slider">
+        <div class="fnc-slider__slides">
+          <!-- slide start -->
+          <div class="fnc-slide m--blend-green m--active-slide">
+            <div class="fnc-slide__inner">
+              <div class="fnc-slide__mask">
+                <div class="fnc-slide__mask-inner"></div>
+              </div>
+              <div class="fnc-slide__content ">
+                <h4 class="fnc-slide__heading">
+                  <div class="fnc-slide__heading-line">
+                    <span class="mainfont">Wear Your</span>
+                  </div>
+                  <div class="fnc-slide__heading-line">
+                    <span class="subfont"> Culture Proudly</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- slide end -->
+          <!-- slide start -->
+          <div class="fnc-slide m--blend-dark">
+            <div class="fnc-slide__inner">
+              <div class="fnc-slide__mask">
+                <div class="fnc-slide__mask-inner"></div>
+              </div>
+              <div class="fnc-slide__content">
+                <h4 class="fnc-slide__heading">
+                  <div class="fnc-slide__heading-line">
+                    <span class="mainfont">Classic Wear</span>
+                  </div>
+                  <div class="fnc-slide__heading-line">
+                    <span class="subfont">Contemporary Fit</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- slide end -->
+          <!-- slide start -->
+          <div class="fnc-slide m--blend-red">
+            <div class="fnc-slide__inner">
+              <div class="fnc-slide__mask">
+                <div class="fnc-slide__mask-inner"></div>
+              </div>
+              <div class="fnc-slide__content">
+                <h4 class="fnc-slide__heading">
+                  <div class="fnc-slide__heading-line">
+                    <span class="mainfont">Modern Style</span>
+                  </div>
+                  <div class="fnc-slide__heading-line">
+                    <span class="subfont">Timeless Comfort</span>
+                  </div>
+                </h4>
+
+              </div>
+            </div>
+          </div>
+          <!-- slide end -->
+          <!-- slide start -->
+          <div class="fnc-slide m--blend-blue">
+            <div class="fnc-slide__inner">
+              <div class="fnc-slide__mask">
+                <div class="fnc-slide__mask-inner"></div>
+              </div>
+              <div class="fnc-slide__content">
+                <h4 class="fnc-slide__heading">
+                  <div class="fnc-slide__heading-line">
+                    <span class="mainfont">Inner Comfort</span>
+                  </div>
+                  <div class="fnc-slide__heading-line">
+                    <span class="subfont">Wear Confidence</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- slide end -->
+        </div>
+        <nav class="fnc-nav">
+          <div class="fnc-nav__bgs">
+            <div class="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
+            <div class="fnc-nav__bg m--navbg-dark"></div>
+            <div class="fnc-nav__bg m--navbg-red"></div>
+            <div class="fnc-nav__bg m--navbg-blue"></div>
+          </div>
+          <div class="fnc-nav__controls d-none">
+            <button class="fnc-nav__control">
+              Black Widow
+              <span class="fnc-nav__control-progress"></span>
+            </button>
+            <button class="fnc-nav__control">
+              Captain America
+              <span class="fnc-nav__control-progress"></span>
+            </button>
+            <button class="fnc-nav__control">
+              Iron Man
+              <span class="fnc-nav__control-progress"></span>
+            </button>
+            <button class="fnc-nav__control">
+              Thor
+              <span class="fnc-nav__control-progress"></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- slider end -->
+      <div class="demo-cont__credits">
+        <div class="demo-cont__credits-close"></div>
+        <h2 class="demo-cont__credits-heading">Made by</h2>
+        <img src="images/home.png" alt="" class="demo-cont__credits-img" />
+        <h3 class="demo-cont__credits-name">Nikolay Talanov</h3>
+        <a href="https://codepen.io/suez/" target="_blank" class="demo-cont__credits-link">My codepen</a>
+        <a href="https://twitter.com/NikolayTalanov" target="_blank" class="demo-cont__credits-link">My twitter</a>
+        <h2 class="demo-cont__credits-heading">Based on</h2>
+        <a href="https://dribbble.com/shots/2375246-Fashion-Butique-slider-animation" target="_blank"
+          class="demo-cont__credits-link">Concept by Kreativa Studio</a>
+        <h4 class="demo-cont__credits-blend">Global Blend Mode</h4>
+        <div class="colorful-switch">
+          <input type="checkbox" class="colorful-switch__checkbox js-activate-global-blending"
+            id="colorful-switch-cb" />
+          <label class="colorful-switch__label" for="colorful-switch-cb">
+            <span class="colorful-switch__bg"></span>
+            <span class="colorful-switch__dot"></span>
+            <span class="colorful-switch__on">
+              <span class="colorful-switch__on__inner"></span>
+            </span>
+            <span class="colorful-switch__off"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ftco-section categories overflow-hidden prt">
+    <div class="container">
+      <div class="open-up" data-aos="zoom-out">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-4">
+            <div class="cat-item ">
+              <div class="second-card">
+                <div class="box py-3">
+                  <img src="images/five.jpeg" alt="">
+                </div>
+                <div class="cta">
+                  <h1 style="font-size: 1.3rem !important;">THOBE</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cat-item ">
+              <div class="second-card">
+                <div class="box py-3">
+                  <img src="images/ght.png" alt="">
+                </div>
+
+                <div class="cta">
+                  <h1 style="font-size: 1.3rem !important;">SHEMAGH</h1>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cat-item ">
+              <div class="second-card">
+                <div class="box py-3">
+                  <img src="images/three.jpg" alt="">
+                </div>
+
+                <div class="cta">
+                  <h1 style="font-size: 1.3rem !important;">SHAWL</h1>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- <div class="col-md-3">
+            <div class="cat-item image-zoom-effect">
+              <div class="second-card">
+                <div class="box">
+                  <img src="images/three.jpg" alt="">
+                </div>
+
+                <div class="cta">
+                  <h1 style="font-size: 1.3rem !important;">INNER WEAR</h1>
+                </div>
+              </div>
+
+            </div>
+          </div> -->
+          <!-- <div class="col-md-4 py-2">
+            <div class="cat-item image-zoom-effect">
+              <div class="image-holder" >
+                  <img src="images/five.jpeg" alt="categories" class="product-image img-fluid">
+                <div class="favorit-items">
+                             <a class="inside">Shop Now</a>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4 py-2">
+            <div class="cat-item image-zoom-effect">
+              <div class="image-holder" >
+                  <img src="images/five.jpeg" alt="categories" class="product-image img-fluid">
+                <div class="favorit-items">
+                             <a class="inside">Shop Now</a>
+                  </div>
+              </div>
+              
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ftco-section fact">
+    <div class="container">
+      <div class="row no-gutters ftco-services">
+        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="icon d-flex justify-content-center align-items-center mb-4">
+              <span> <i class="fa fa-google-wallet  iconwid" aria-hidden="true"></i></span>
+            </div>
+            <div class="media-body">
+              <h3 class="font26 ">Excellent Material</h3>
+              <p class="font16 ">Far far away, behind the word mountains, far from the countries Vokalia and
+                Consonantia,
+                there live the
+                blind texts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="icon d-flex justify-content-center align-items-center mb-4">
+              <span> <i class='fa fa-tags iconwid'></i></span>
+            </div>
+            <div class="media-body">
+              <h3 class="font26 ">Quality Product</h3>
+              <p class="font16 ">Far far away, behind the word mountains, far from the countries Vokalia and
+                Consonantia,
+                there live the
+                blind texts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="icon d-flex justify-content-center align-items-center mb-4">
+              <span> <i class="fa fa-handshake-o  iconwid" aria-hidden="true"></i></span>
+            </div>
+            <div class="media-body">
+              <h3 class="font26 ">Trusted by Clients</h3>
+              <p class="font16 ">Far far away, behind the word mountains, far from the countries Vokalia and
+                Consonantia,
+                there live the
+                blind texts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <section class="container pb-4" id="about">
+            <div class="containers">
+                <div class="contentLeft">
+                  <div class="row mob-img" >
+                      <div class="imgWrapper" >
+                          <img src="images/five.jpeg" alt="">
+                      </div>
+                      <div class="imgWrapper">
+                          <img src="images/five.jpeg" alt="">
+                      </div>
+                      <div class="imgWrapper">
+                          <img src="images/five.jpeg" alt="">
+                      </div>
+                      <div class="imgWrapper">
+                          <img src="images/five.jpeg" alt="">
+                      </div>
+                  </div>
+                </div>
+                <div class="contentRight">
+                  <div class="content">
+                    <h4></h4>
+                    <h2 style="font-size: 28px;margin-top: -18px;">About Us</h2>
+                    <p style="font-size: 15px;">
+                        Welcome to Dar Al Azal Trading LLC, a trusted leader in the electronics trading industry in Dubai. With 20 years of expertise, we are committed to providing high-quality electronic products and services that meet the diverse needs of our customers.
+                    </p>
+                    <p style="margin-top:-28px;font-size: 15px;">
+                        Founded in Dubai, Dar Al Azal Trading LLC has established itself as a reliable supplier and distributor of cutting-edge electronics, including consumer electronics, home appliances, and more. Our goal is to offer innovative solutions and top-tier products to both businesses and consumers, ensuring that all our clients have access to the best technology on the market.
+                    </p>
+                  </div>
+                </div>
+              </div>
+        </section> -->
+
+  <section class="about-section ftco-section">
+    <div class="container">
+      <div class="row">
+        <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+          <div class="inner-column">
+            <h3 class="underline">About Us</h3>
+            <p class="textcol mt-md-5" data-aos="slide-up">
+              Palmera Group of Companies, founded in 1975, is a multinational corporation that specializes in trading of
+              textiles, All kind of arabic garments. Palmera Group, headquartered in Dubai, UAE.
+            </p>
+            <p class="textcol" data-aos="slide-up">
+              Palmera Group of Companies, founded in 1975, is a multinational corporation that specializes in trading of
+              textiles, All kind of arabic garments. Palmera Group, headquartered in Dubai, UAE.
+            </p>
+          </div>
+        </div>
+
+        <div class="image-column col-lg-6 col-md-12 col-sm-12">
+          <div class="inner-column wow ">
+            <figure class="image-1" data-aos="fade-right"><a href="#" class="lightbox-image" data-fancybox="images"><img
+                  src="images/product/kandura/p (1).jpg" alt="" class="img1 "></a></figure>
+            <figure class="image-2" data-aos="fade-left"><a href="#" class="lightbox-image" data-fancybox="images"><img src="images/product/kandura/p8.png"
+                  alt="" class="img2 floating"></a></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+  <section id="ghatra" class="prod ghatra  product-carousel py-3 position-relative overflow-hidden">
+    <div class="container-fluid">
+      <div class="container">
+
+      </div>
+      <div class="d-flex flex-wrap justify-content-center align-items-center mt-5 mb-3">
+        <h3 class="text-uppercase underline">Our Products</h3>
+      </div>
+      <div class="d-flex flex-wrap justify-content-end mt-5 mb-3">
+        <a href="index.html" class="btn-link fw-600" style="color: black;">View All Products</a>
+      </div>
+      <div class="row">
+        <div class="col-3 align-content-center bodercolor">
+          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
+            <h5 class="text-uppercase fonticonn headline headline--themovement headline--large">THOBE</h5>
+            <!-- <p>Explore our latest collection of Kandura, designed for comfort and style.</p> -->
+            <!-- <a href="shop.html" class="btn btn-primary">Shop Now</a> -->
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="swiper product-swiper open-up" data-aos="zoom-out">
+            <div class="swiper-wrapper d-flex">
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (7).png" alt="categories" class="product-image img-fluid">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (11).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (3).png" alt="categories" class="product-image img-fluid">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (2).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (5).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (6).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (12).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (1).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (10).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (8).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/banner/p (9).png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div -->
+          </div>
+          <div class="icon-arrow icon-arrow-left">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="icon-arrow icon-arrow-right">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="thobe" class="prod1 thobe product-carousel py-3 position-relative overflow-hidden">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9">
+          <div class="swiper product-swiper open-up" data-aos="zoom-out">
+            <div class="swiper-wrapper d-flex">
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="icon-arrow2 icon-arrow-left">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="icon-arrow2 icon-arrow-right">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="col-3 align-content-center bodercolor1">
+          <div class="product-category align-items-center text-center mb-4" data-aos="fade-left">
+            <h5 class="text-uppercase headline headline--themovement headline--large fonticonn">Ghatra</h5>
+            <!-- <p class="font16">Explore our latest collection of Ghatra, designed for comfort and style.</p> -->
+            <!-- <a href="shop.html" class="btn btn-primary">Shop Now</a> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="shawl" class="prod shawl product-carousel py-5 position-relative overflow-hidden">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 align-content-center bodercolor">
+          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
+            <h5 class="text-uppercase headline headline--themovement headline--large fonticonn">INNER WEARS</h5>
+            <!-- <p>Explore our latest collection of Kandura, designed for comfort and style.</p> -->
+            <!-- <a href="shop.html" class="btn btn-primary">Shop Now</a> -->
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="swiper product-swiper open-up" data-aos="zoom-out">
+            <div class="swiper-wrapper d-flex">
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/k1.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/k2.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/k3.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/k4.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder position-relative">
+                    <a>
+                      <img src="images/product/kandura/k5.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+          <div class="icon-arrow1 icon-arrow-left">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="icon-arrow1 icon-arrow-right">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="shamgh" class="prod1 shamgh product-carousel py-3 position-relative overflow-hidden">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9">
+          <div class="swiper product-swiper open-up" data-aos="zoom-out">
+            <div class="swiper-wrapper d-flex">
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh1.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a>
+                      <img src="images/kh2.png" alt="categories" class="product-image img-fluid">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="icon-arrow2 icon-arrow-left">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="icon-arrow2 icon-arrow-right">
+            <span style="margin-left: 12px;margin-top: -5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
+            <svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="col-3 align-content-center bodercolor1">
+          <div class="product-category align-items-center text-center mb-4" data-aos="fade-left">
+            <h5 class="text-uppercase headline headline--themovement headline--large fonticonn">Ghatra</h5>
+            <!-- <p class="font16">Explore our latest collection of Ghatra, designed for comfort and style.</p> -->
+            <!-- <a href="shop.html" class="btn btn-primary">Shop Now</a> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-deal custom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="design">
+            <div class="image"></div>
+          </div>
+          <!-- <img src="images/41.png" class="img-fluid" alt=""> -->
+        </div>
+        <div class="col-md-6">
+          <div class="heading-section heading-section-white ">
+            <span class="subheading mb-5" style="font-family:Emirates bold;color: black;">PALMERA CUSTOM PROJECT</span>
+            <h2 class="text-deal mt-5">Do You Want Custom Project With Palmera?</h2>
+          </div>
+          <!-- <div id="timer" class="d-flex mb-4">
+						  <div class="time" id="days"></div>
+						  <div class="time pl-4" id="hours"></div>
+						  <div class="time pl-4" id="minutes"></div>
+						  <div class="time pl-4" id="seconds"></div>
+						</div> -->
+          <div>
+            <p class="text-p">Contact Us Now</p>
+            <!-- <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p> -->
+            <a class="cta-btn" href="tel:+971569983361" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                width="30" height="30" fill="#305c2c" class="bi bi-telephone-forward" viewBox="0 0 16 16">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
+              </svg></a>
+            <!-- <ul class="thumb-deal d-flex mt-4">
+								<li class="img" style="background-image: url(images/product-6.png);"></li>
+								<li class="img" style="background-image: url(images/product-2.png);"></li>
+								<li class="img" style="background-image: url(images/product-4.png);"></li>
+							</ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+      About Us Section
+    ============================-->
+  <!-- <section id="about">
+
+    <div class="container wow fadeInUp">
+
+      <div class="row">
+        <div class="col-lg-6 about-img wow zoomIn" style="animation-duration: 2s;">
+          <div class="marquee-wrapper">
+            <div class="container">
+              <div class="marquee-block">
+                <div class="marquee-inner to-left">
+                  <span>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                  </span>
+                  <span>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k1.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="marquee-block">
+                <div class="marquee-inner to-right">
+                  <span>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+                     
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                  </span>
+                  <span>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                    <div class="marquee-item"
+                      style="background: url(images/product/kandura/k2.jpg) no-repeat;background-size: cover;">
+
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6  wow fadeInUpBig section-header" style="animation-duration: 2s;">
+          <h3 class=" ">About Us</h3>
+          <p class="textcol mt-md-5">
+            Palmera Group of Companies, founded in 1975, is a multinational corporation that specializes in trading of
+            textiles, All kind of african and arabic garments. Palmera Group, founded by the late Mr. Moidu Haji PK,
+            opened its first shop in Deira Dubai in 1975 and has since expanded to 21 outlets across the UAE, OMAN and
+            INDIA.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- #about -->
+
+  <section class="video py-2 overflow-hidden">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="video-content open-up" data-aos="zoom-out">
+          <div class="video-bg">
+            <img src="images/shami.png" alt="video" class="video-image img-fluid">
+          </div>
+          <!-- <div class="video-player">
+            <a class="youtube">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <use xlink:href="#play"></use>
+              </svg>
+              <img src="images/text-bg.png" alt="pattern" class="text-rotate">
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="spacer">
+    <div class="container">
+      <div class="testimonial-section">
+        <div class="testi-user-img">
+          <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="u3" src="https://md-aqil.github.io/images/2091127763_1_1_1.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img class="u1" src="https://md-aqil.github.io/images/beautiful-beauty-face-2657838.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img class="u2" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img class="u4" src="https://md-aqil.github.io/images/beautiful-beauty-face-2657838.jpg" alt="">
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="user-saying">
+          <div class="swiper-container testimonial">
+            <div class="swiper-wrapper ">
+              <div class="swiper-slide">
+                <div class="quote">
+                  <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
+                  <p>
+                    “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto. Neque quidem iure
+                    dignissimos laborum accusamus sunt dolore inventore dolor. Nesciunt voluptate a nostrum possimus
+                    deserunt praesentium magni eaque inventore.“
+                  </p>
+                  <div class="name">-Ramkishor Verma-</div>
+                  <div class="designation">University Student</div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="quote">
+                  <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
+
+                  <p>
+                    “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto. Neque quidem iure
+                    dignissimos laborum accusamus sunt dolore inventore dolor. Nesciunt voluptate a nostrum possimus
+                    deserunt praesentium magni eaque inventore.“
+                  </p>
+                  <div class="name">-Ramkishor Verma-</div>
+                  <div class="designation">University Student</div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="quote">
+                  <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
+
+                  <p>
+                    “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto. Neque quidem iure
+                    dignissimos laborum accusamus sunt dolore inventore dolor. Nesciunt voluptate a nostrum possimus
+                    deserunt praesentium magni eaque inventore.“
+                  </p>
+                  <div class="name">-Ramkishor Verma-</div>
+                  <div class="designation">University Student</div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="quote">
+                  <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
+
+                  <p>
+                    “This is best and biggest unified platform
+                    for instant online admission. We can easily
+                    take admission for any course in any institute..“
+                  </p>
+                  <div class="name">-Ramkishor Verma-</div>
+                  <div class="designation">University Student</div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section>
+    <div class="container">
+      
+    </div>
+  </section> -->
+
+  <section class="ftco-section1 newsletter bg-light" style="background: url(images/TEXTBG.png) no-repeat;">
+    <div class="container text-center py-5">
+      <span class="btn btn-dark btn-lg text-uppercase">TOUCH ON US</span>
+    </div>
+  </section>
+
+  <section class="instagram position-relative">
+    <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
+      <a href="https://www.instagram.com/templatesjungle/" class="btn btn-dark px-5">Follow us on Instagram</a>
+    </div>
+    <div class="row g-0">
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k1.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k2.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k3.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k4.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k5.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <div class="insta-item">
+          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+            <img src="images/product/kandura/k1.jpg" alt="instagram" class="insta-image img-fluid">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <!-- <h3>Yarmook</h3> -->
+            <a href="#intro"><img src="images/logogre.png" alt="AL YARMOOK" title="AL YARMOOK"
+                style="height:100px;width: auto;" /></a>
+            <!-- <img src="assets/img/logo.webp" alt="AL YARMOOK" title="AL YARMOOK" style="height:100px;width: auto;" /> -->
+            <p class="pt-2">With experience in garment trading for more than a decade, Palmera Garments are comfortable
+              clothing that becomes your second skin.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#home">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Products</a></li>
+              <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li> -->
+              <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact black">
+            <h4>Contact Us</h4>
+            <p>
+              Murshid Bazar, Near Gold Souq <br>Gate No.1 Opp Belhoul Masjid,<br>Deira, Dubai - UAE
+              <br>
+              <strong>Phone:</strong>+971 3 123456<br>
+              <strong>Email:</strong>palmera@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a class="twitter"><i class="fa fa-twitter"></i></a>
+              <a class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/alyarmookgenere/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <!-- <a href="" class="instagram"><i class="bi bi-instagram"></i></a> -->
+              <a class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Location</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.6961054091903!2d55.34994977437397!3d25.280806377657168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d1df728e813%3A0xc3e601eb5ce98180!2sFOUR%20BROS%20PERFUMES!5e0!3m2!1sen!2sin!4v1729520349673!5m2!1sen!2sin"
+              style="border:0; width: 100%; height: 200px;border-radius: 30px" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" frameborder="2"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Palmera</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Developed by <a class="instagram" href="https://faisan333.github.io/Faisan.github.io/" target="_blank">
+          <!-- <i class="bi bi-instagram" style="width:16px;height:16px;color:#C13584;"></i> -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#960cbd" class="bi bi-code-square"
+            viewBox="0 0 16 16">
+            <path
+              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+            <path
+              d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+
+  <div class="wa__btn_popup back-to-top">
+    <div class="wa__btn_popup_txt">Need help? <span><strong>Contact us!</strong></span></div>
+    <div class="wa__btn_popup_icon"></div>
+  </div>
+  <div class="wa__popup_chat_box">
+    <div class="wa__popup_heading">
+      <div class="wa__popup_title"><strong>Questions? Doubts?</strong></div>
+      <div class="wa__popup_intro">Chat with us via <strong>WhatsApp</strong>
+        <div id="\&quot;eJOY__extension_root\&quot;"></div>
+      </div>
+    </div>
+    <div class="wa__popup_content wa__popup_content_left">
+      <div class="wa__popup_notice">We will respond as soon as possible.</div>
+      <div class="wa__popup_content_list">
+        <div class="wa__popup_content_item "><a target="_blank" href="https://wa.me/+971523621586"
+            class="wa__stt wa__stt_online">
+            <div class="wa__popup_avatar">
+              <div class="wa__cs_img_wrap"
+                style="background: url(images/logogreen.png) center center no-repeat; background-size: cover;"></div>
+            </div>
+            <div class="wa__popup_txt">
+              <div class="wa__member_name">Palmera</div>
+              <div class="wa__member_duty">Support Team</div>
+            </div>
+          </a></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <a href="https://wa.me/+971559810575" target="_blank" class="back-to-top" type="button" class="btn" data-toggle="tooltip" data-placement="left" title="Whatsapp Us">
+		<svg style="pointer-events:none; display:block; height:50px; width:50px;" width="60px" height="60px" viewBox="0 0 1024 1024">
+		  <defs>
+		  <path id="htwasqicona-chat" d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z"></path>
+		  </defs>
+		  <linearGradient id="htwasqiconb-chat" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978" x2="512.001" y2="1025.023">
+			  <stop offset="0" stop-color="#61fd7d"></stop>
+			  <stop offset="1" stop-color="#2bb826"></stop>
+		  </linearGradient>
+		  <use xlink:href="#htwasqicona-chat" overflow="visible" style="fill: url(#htwasqiconb-chat)" fill="url(#htwasqiconb-chat)"></use>
+		  <g>
+			  <path style="fill: #FFFFFF;" fill="#FFF" d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z"></path>
+		  </g>
+		  </svg>
+	  </a> -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="shop/bootstrap.min.css"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+  <!-- <script src="shop/shop.js"></script> -->
 </body>
+
 </html>
