@@ -1219,11 +1219,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .mainfont{
-  font-size: 90px;
+  font-size: 70px;
   text-shadow: 0px 0px 10px #305c2c, 0px 0px 0px #fff;
 }
 .subfont{
-  font-size: 90px;
+  font-size: 70px;
   text-shadow: 0px 0px 10px #305c2c, 0px 0px 0px #fff;
 }
 .py1 {
@@ -1536,7 +1536,7 @@ content: "";
   z-index: 0;
 }
 .prod {
-  background: url("../images/p1.png") center top no-repeat fixed;
+  /* background: url("../images/p1.png") center top no-repeat fixed; */
   background-size: cover;
   /* padding: 60px 0 0 0; */
   position: relative;
@@ -1553,7 +1553,7 @@ content: "";
   z-index: 0;
 }
 .prod1 {
-  background: url("../images/p2.png") center top no-repeat fixed;
+  /* background: url("../images/p2.png") center top no-repeat fixed; */
   background-size: cover;
   /* padding: 60px 0 0 0; */
   position: relative;
@@ -1738,7 +1738,7 @@ content: "";
   .heading-section.heading-section-white .subheading {
     color: rgba(255, 255, 255, 0.9); }
   .heading-section.heading-section-white h2 {
-    font-weight: 700;
+    font-weight: 500;
     color: #000; }
     .heading-section.heading-section-white h2:after, .heading-section.heading-section-white h2:before {
       display: none; }
@@ -1748,7 +1748,7 @@ content: "";
     .ftco-deal .text-p {
   color: #000;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 500;
   font-family:"Emirates bold";
  }
  .cta-btn {
@@ -1762,17 +1762,17 @@ content: "";
   border-radius: 25px;
   transition: 0.5s;
   margin-top: 10px;
-  border: 2px solid #305c2c;
-  color: #305c2c;
+  border: 2px solid black;
+  color: black;
 }
 
 .cta-btn:hover {
-  background: #000;
-  border: 2px solid black;
+  background: green;
+  border: 2px solid white;
 }
 .ftco-deal .text-deal {
   color: #fff;
-  font-size: 55px;
+  font-size: 35px;
   font-weight: 700;
   font-family:"Sheepman W03 Bold Slanted";
  }
@@ -2841,4 +2841,6 @@ content: "";
 } */
 
 
-
+.product-image{
+  border-radius: 15px 50px;
+}
