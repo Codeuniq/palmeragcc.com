@@ -9091,7 +9091,7 @@ h1, h2, h3, h4, h5,
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: rgba(0, 0, 0, 0.3); }
+      color: rgba(0, 0, 0, 0.5); }
     .product .text .bottom-area {
       position: absolute;
       top: -65px;
@@ -12883,13 +12883,13 @@ video {
   text-align: center;
   width: 100%;
   padding: 0.5rem;
-  color: white;
+  color: black;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   border-radius: 2em / 5em;
   border: none;
-  background: linear-gradient(0deg, #870808 0%, #b62122 71%);
+  background: linear-gradient(45deg, #D2AC47 0%, #F7EF8A 71%);
 }
 
 #google_translate_element select {

@@ -48,6 +48,8 @@ function showSlider(type){
     }, timeAutoNext)
 }
 
+
+
 (function() {
   var $$ = function $$(selector, context) {
     context = context || document;

@@ -244,4 +244,11 @@
     padding-left: 0px;
     padding-bottom: 125px;
 }
+.carousel{
+    height: 50vh;
+    /* margin-top: -50px; */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 }
