@@ -2342,12 +2342,13 @@ a.btn-link.text-light:after {
 }
 
 #google_translate_element select {
-  background: #305c2c;
-  color: #fff4e4;
-  border: none;
-  font-weight: bold;
-  border-radius: 3px;
-  padding: 4px 4px
+  background: white;
+    color: #000000;
+    border: none;
+    font-weight: bold;
+    border-radius: 13px;
+    padding: 1px 2px;
+    border: 1px solid gold
 }
  
 .goog-te-gadget {
