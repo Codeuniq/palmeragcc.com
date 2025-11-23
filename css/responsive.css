@@ -1,5 +1,9 @@
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
+    .proimge{
+        height: 200px;
+        width: auto;
+    }
     .img-h{
             height: 112px !important;
             margin-top: -11px;
@@ -115,10 +119,18 @@
   right: 2rem;
   z-index: 9999;
 }
+.proimge{
+        height: 200px;
+        width: auto;
+    }
 }
 
 /*Mobile Query*/
 @media only screen and (max-width: 480px) {
+    .proimge{
+        height: 75px;
+        width: auto;
+    }
     .img-h{
             height: 70px !important;
             width: 80px;
@@ -146,12 +158,12 @@
 
     .icon-arrow.icon-arrow-left {
         left: 111px;
-        top: 325px;
+        top: 169px;
     }
 
     .icon-arrow.icon-arrow-right {
         right: 15px;
-        top: 325px;
+        top: 169px;
     }
 
     .icon-arrow1.icon-arrow-left {
