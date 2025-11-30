@@ -1,7 +1,7 @@
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
     .proimge{
-        height: 200px;
+        height: 180px;
         width: auto;
     }
     .img-h{
@@ -69,6 +69,13 @@
   right: 2rem;
   z-index: 9999;
 }
+.propara{
+        font-size: 12px;
+    }
+    .proimges{
+        height: 150px;
+       
+}
 }
 
 /*Tablet Query*/
@@ -120,16 +127,30 @@
   z-index: 9999;
 }
 .proimge{
-        height: 200px;
+        height: 180px;
         width: auto;
     }
+.propara{
+        font-size: 12px;
+    }
+.proimges{
+        height: 150px;
+       
+}
 }
 
 /*Mobile Query*/
 @media only screen and (max-width: 480px) {
     .proimge{
-        height: 75px;
+        height: 60px;
         width: auto;
+    }
+    .proimges{
+        height:60px;
+       
+}
+    .propara{
+        font-size: 6px;
     }
     .img-h{
             height: 70px !important;
@@ -217,11 +238,11 @@
     .mainfont{
         margin-top: 350px;
   font-size: 40px;
-  text-shadow: 0px 0px 10px #305c2c, 0px 0px 0px #fff;
+  text-shadow: 0px 0px 10px #003626, 0px 0px 0px #fff;
 }
 .subfont{
   font-size: 40px;
-  text-shadow: 0px 0px 10px #305c2c, 0px 0px 0px #fff;
+  text-shadow: 0px 0px 10px #003626, 0px 0px 0px #fff;
 }
 .fnc-slide__heading-line:nth-child(2) {
   text-align: center;
