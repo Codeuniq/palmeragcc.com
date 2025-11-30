@@ -8194,16 +8194,16 @@ h1, h2, h3, h4, h5,
     color: white; }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: #003626 !important;
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 3;
   padding: 0; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: white !important;
+      background: #003626 !important;
       /* position: relative; */
       top: 0;
       padding: 10px 15px; } }
@@ -8234,10 +8234,10 @@ h1, h2, h3, h4, h5,
     padding-right: 20px;
     font-weight: 500;
     color: #fff;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     opacity: 1 !important;
-    font-family: "Emirates Bold";
+    font-family: "Marcellus", Roboto, sans-serif;
    }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
       color: #fff; }
@@ -8299,12 +8299,12 @@ h1, h2, h3, h4, h5,
         color: #fff;
         background: #dbcc8f; } }
   .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-    color: #fff; 
+    color: #FFD700; 
     
   }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-        color: #fff; } }
+        color: #FFD700; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
     color: rgba(255, 255, 255, 0.5) !important;
@@ -8321,7 +8321,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     top: 0;
     margin-top: -130px;
-    background: rgba(255, 255, 255, 0.75) !important;
+    background: #003626;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 1.5625rem 2.8125rem rgb(66 66 66 / 8%); }
     .ftco-navbar-light.scrolled .nav-item.active > a {
@@ -9751,7 +9751,7 @@ textarea.form-control {
   color: #fff;
   font-size: 25px;
   font-weight: 700;
-  font-family:"Emirates bold";
+  font-family: "Marcellus", Roboto, sans-serif;
  }
 
  .ftco-deal .text-deal {
@@ -9837,58 +9837,7 @@ textarea.form-control {
   .gallery:hover .icon, .gallery:focus .icon {
     opacity: 1; }
 
-.ftco-footer {
-  font-size: 14px;
-  padding: 7em 0;
-  color: white;
-  background: black;
-  /* background: url("../images/fotter.webp") center top no-repeat fixed;
-    background-size: cover; */
- }
-  .ftco-footer .ftco-footer-logo {
-    text-transform: uppercase;
-    letter-spacing: .1em; }
-  .ftco-footer .ftco-footer-widget h2 {
-    font-weight: normal;
-    margin-bottom: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #fff; }
-  .ftco-footer .ftco-footer-widget ul li {
-    font-size: 14px;
-    margin-bottom: 0px; }
-    .ftco-footer .ftco-footer-widget ul li a {
-      color: rgba(255, 255, 255, 0.8); }
-  .ftco-footer .ftco-footer-widget .btn-primary {
-    border: 2px solid #fff !important; }
-    .ftco-footer .ftco-footer-widget .btn-primary:hover {
-      border: 2px solid #fff !important; }
 
-.ftco-footer-social li {
-  list-style: none;
-  margin: 0 10px 0 0;
-  display: inline-block; }
-  .ftco-footer-social li a {
-    height: 50px;
-    width: 50px;
-    display: block;
-    float: left;
-    background: #dbcc8f;
-    border-radius: 50%;
-    position: relative; }
-    .ftco-footer-social li a span {
-      position: absolute;
-      font-size: 26px;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      color: #fff; }
-    .ftco-footer-social li a:hover {
-      color: #000000; }
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -9901,7 +9850,7 @@ textarea.form-control {
 }
 
 #footer .footer-top {
-  background: #fff;
+  background: #003626;
   padding: 60px 0 30px 0;
 }
 
@@ -9925,7 +9874,7 @@ textarea.form-control {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
-  color: #000 !important;
+  color: #fff;
 }
 
 #footer .footer-top .social-links a {
@@ -9945,17 +9894,16 @@ textarea.form-control {
 
 #footer .footer-top .social-links a:hover {
   background: #003626;
-  color: #000;
+  color: #fff;
 }
 
 #footer .footer-top h4 {
   font-size: 14px;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 12px;
-  font-family: "Marcellus", Roboto, sans-serif;
 }
 
 #footer .footer-top h4::before,
@@ -9973,7 +9921,7 @@ textarea.form-control {
 }
 
 #footer .footer-top h4::after {
-  background: #003626;
+  background: #D4AF37;
   width: 60px;
 }
 
@@ -9993,7 +9941,7 @@ textarea.form-control {
 }
 
 #footer .footer-top .footer-links ul li {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #D4AF37;
   padding: 10px 0;
 }
 
@@ -10002,8 +9950,7 @@ textarea.form-control {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #000 !important;
-  font-family: "Marcellus", Roboto, sans-serif;
+  color: #fff;
 }
 
 #footer .footer-top .footer-links ul a:hover {
@@ -10016,8 +9963,6 @@ textarea.form-control {
 
 #footer .footer-top .footer-contact p {
   line-height: 26px;
-  font-family: "Marcellus", Roboto, sans-serif;
-  color: #000;
 }
 
 #footer .footer-top .footer-newsletter {
@@ -11392,7 +11337,7 @@ path:hover{
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-family:"Emirates bold";
+  font-family: "Marcellus", Roboto, sans-serif;
 }
 .team__item__text p {
   color: #ffffff;
@@ -11960,7 +11905,7 @@ footer p a:hover{
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../images/comm.png) center no-repeat;
+  background: url(../images/Product-page_13.jpg) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
@@ -12055,7 +12000,8 @@ footer p a:hover{
   margin-bottom: 100px; }
 
 .breadcrumb-banner {
-  padding: 90px 0 100px 0; }
+  height: 610px; }
+  
   .breadcrumb-banner h1 {
     font-weight: 600;
     color: #fff; }
@@ -12893,12 +12839,13 @@ video {
 }
 
 #google_translate_element select {
-  background: #003626;
-  color: #fff4e4;
-  border: none;
-  font-weight: bold;
-  border-radius: 3px;
-  padding: 4px 4px
+  background: white;
+    color: #000000;
+    border: none;
+    font-weight: bold;
+    border-radius: 13px;
+    padding: 1px 2px;
+    border: 1px solid gold
 }
  
 .goog-te-gadget {

@@ -709,7 +709,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 6em 0; } }
+      padding: 3em 0; } }
 
       .favorit-items
       {position:absolute;
@@ -996,7 +996,7 @@ marquee {
 
 .second-card {
   min-width: 240px;
-  height: 350px;
+  height: 399px;
   background: #fff2e2;
   position: relative;
   border-radius: 20px;
@@ -2535,7 +2535,7 @@ content: "";
 
 
 .product-image{
-  border-radius: 50px 0px;
+  border-radius: 20px 0px;
 }
 
 /* carousel */
@@ -2645,7 +2645,7 @@ content: "";
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 3;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -2843,7 +2843,6 @@ div#google_translate_element div.goog-te-gadget-simple {
   background-size: cover;
   /* padding: 60px 0 0 0; */
   position: relative;
-  min-height: calc(100vh - 20px);
 }
 
 .prodes{
@@ -2858,7 +2857,7 @@ div#google_translate_element div.goog-te-gadget-simple {
 }
 .probut{
   background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #808080;
     color: #eee;
     width: 130px;
     height: 40px;
