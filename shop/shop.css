@@ -11905,7 +11905,7 @@ footer p a:hover{
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../images/Product-page_13.jpg) center no-repeat;
+  background: url(../images/probanner.png) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
