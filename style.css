@@ -823,7 +823,9 @@ a {
     .ftco-navbar-light.scrolled .nav-link {
       padding-top: 0.9rem !important;
       padding-bottom: 0.9rem !important;
-      color: #000 !important; }
+      color: #fff !important;
+      background-color: #003626;
+     }
       .ftco-navbar-light.scrolled .nav-link.active {
         color: #FFD700 !important; }
     .ftco-navbar-light.scrolled.awake {
@@ -831,8 +833,8 @@ a {
       -webkit-transition: .3s all ease-out;
       -o-transition: .3s all ease-out;
       transition: .3s all ease-out; 
-      height:84px;
-      z-index: 4;
+      height:100px;
+      z-index: 6;
     }
     .ftco-navbar-light.scrolled.sleep {
       -webkit-transition: .3s all ease-out;
