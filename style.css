@@ -833,7 +833,7 @@ a {
       -webkit-transition: .3s all ease-out;
       -o-transition: .3s all ease-out;
       transition: .3s all ease-out; 
-      height:100px;
+      height:150px;
       z-index: 6;
     }
     .ftco-navbar-light.scrolled.sleep {
