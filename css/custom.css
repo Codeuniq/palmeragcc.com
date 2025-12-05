@@ -1003,16 +1003,6 @@ marquee {
   overflow: hidden;
 }
 
-/* .second-card::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  bottom: 0;
-  right: 0;
-  border-radius: 20px 0 0 0;
-} */
 
 .second-card .box {
   width: 100%;
@@ -1020,32 +1010,6 @@ marquee {
    position: relative;
 }
 
-/* .second-card  .box::after{
-content: "";
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  bottom: 0;
-  right: 100px;
-  border-radius: 0 0 20px 0;
-  z-index: 1;
-  box-shadow: 5px 5px #fff;
-} */
-
-
-/* .second-card .box::before{
-content: "";
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  bottom:100px;
-  right: 0;
-  border-radius: 0 0 20px 0;
-  z-index: 1;
-  box-shadow: 5px 5px #fff;
-} */
 
 .second-card .box img {
   width: 100%;
@@ -1053,21 +1017,6 @@ content: "";
     /* border-radius: 20px 20px 0 20px; */
 }
 
-/* .second-card .cta {
-  width: 90px;
-  height: 90px;
-  background: red;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  
-} */
 
 .bodercolor{
   background: #fff;
@@ -1299,30 +1248,6 @@ content: "";
   max-width:300px;
   font-size: 32px;
 }
-/* .underline:after{
-  content:"";
-  width:80px;
-  height:2.5px;
-  background:#003626;
-  position:absolute;
-  bottom:-6px;
-  left:50%;
-  margin-left:-40px;
-  z-index:1;
-}
-.underline:before{
-  content:"";
-  width:9px;
-  height:9px;
-  background:transparent;
-  outline:1px solid #000;
-  position:absolute;
-  bottom:-9px;
-  z-index:2;
-  transform:rotate(45deg);
-  backface-visibility:hidden;
-  animation:wander infinite 4s;
-} */
 @keyframes wander{
   0%{right:50%; margin-right:-3.5px;}
   50%{right:45%; margin-right:-3.5px;}
@@ -1343,15 +1268,6 @@ content: "";
   to   { transform: translate(0, -0px); }    
 }
 
-/* img tag doesn't suppert before and after so we use div instead */
-/* .custom {
-  background: url("../images/bg.png") center top no-repeat fixed;
-  background-size: cover;
-  padding: 60px 0 0 0;
-  position: relative;
-  z-index: 0;
-  min-height: calc(144vh - 20px);
-} */
 .image {
 	position: relative;
 	width: 100%;
@@ -2605,42 +2521,7 @@ content: "";
     border: 1px solid #F7EF8A;
     color: #F7EF8A;
 }
-/* thumbail */
-/* .thumbnail{
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 20px;
-}
-.thumbnail .item{
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
-    position: relative;
-}
-.thumbnail .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.thumbnail .item .content{
-    color: #fff;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-}
-.thumbnail .item .content .title{
-    font-weight: 500;
-}
-.thumbnail .item .content .description{
-    font-weight: 300;
-} */
-/* arrows */
+
 .arrows{
     position: absolute;
     top: 80%;
@@ -2862,3 +2743,4 @@ div#google_translate_element div.goog-te-gadget-simple {
     width: 130px;
     height: 40px;
 }
+

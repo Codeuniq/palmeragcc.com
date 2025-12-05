@@ -8961,6 +8961,7 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 8px 0px #bdbdbd;
+  height: 355px;
  }
  
   @media (max-width: 991.98px) {
@@ -12866,3 +12867,57 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
 .filter{
   filter: drop-shadow(0px 0px 3px #fff);
 } 
+
+
+/* .product .product-bottom-details {
+  z-index: 6;
+  visibility: hidden;
+}
+.product:hover .product-bottom-details {
+  animation: show .3s .4s linear forwards;
+}
+
+@keyframes show {
+  to {
+    visibility: visible;
+  }
+} */
+
+.product .text {
+  height: 35%;
+  text-wrap: normal;
+  transition: 0.4s all ease;isibility: hidden;
+}
+
+
+/* Hidding the entire so anything we put in will only show on hover */
+
+.product-bottom-details {
+  visibility: hidden;
+}
+
+/* Hover affects */
+
+.product:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Using className + hover followed by child element allows you to change child elements when parent is hovered */
+
+.product:hover .product-bottom-details {
+  visibility: visible;
+  transition: 0.4s all ease;
+  transition-delay: 0.1999s;
+}
+
+.product:hover .text {
+  transition: 0.4s all ease;
+  height: 65%;
+  opacity: 1;
+}
+
+.product:hover .cardTop {
+  height: 35%;
+  opacity: 0.8;
+  transition: 0.4s all ease;
+}
