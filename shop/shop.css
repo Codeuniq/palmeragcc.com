@@ -8957,7 +8957,7 @@ h1, h2, h3, h4, h5,
   margin-bottom: 30px;
   position: relative;
   z-index: 0;
-  background: #fff;
+  background: transparent;
   /* -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -9041,6 +9041,7 @@ h1, h2, h3, h4, h5,
   .product .img {
     display: block;
     height: 300px; 
+    border-radius: 20px;
   }
 
   @media only screen and (min-width: 550px) and (max-width: 900px){
@@ -9065,13 +9066,15 @@ h1, h2, h3, h4, h5,
     transition: all 0.3s ease; }
     .product .icon span {
       color: #000000; }
-  .product:hover .icon {
+  /* .product:hover .icon {
     opacity: 1; }
   .product:hover .img-prod .overlay {
-    opacity: 1; }
+    opacity: 1; } */
   .product .text {
     position: relative;
-    width: 100%; }
+    width: 100%; 
+    text-align: left !important;
+  }
     .product .text h3 {
       font-size: 14px;
       margin-bottom: 8px;
@@ -9083,7 +9086,9 @@ h1, h2, h3, h4, h5,
     .product .text p.price {
       margin-bottom: 0;
       color: #000000;
-      font-weight: 400; }
+      font-weight: 700;
+      font-size: 14px; 
+  }
       .product .text p.price span.price-dc {
         text-decoration: line-through;
         color: #b3b3b3; }
@@ -12901,9 +12906,9 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
 
 /* Hover affects */
 
-.product:hover {
+/* .product:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-}
+} */
 
 /* Using className + hover followed by child element allows you to change child elements when parent is hovered */
 
