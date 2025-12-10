@@ -8205,7 +8205,7 @@ h1, h2, h3, h4, h5,
 }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #003626 !important;
+      /* background: #003626 !important; */
       /* position: relative; */
       top: 0;
       padding: 10px 15px; } }
@@ -11999,11 +11999,17 @@ footer p a:hover{
       padding-top: 80px; } }
   @media (max-width: 767px) {
     .organic-breadcrumb {
-      background: none;
+      height:222PX !important;
+      /* background: none;
       background: -webkit-linear-gradient(90deg, #003626 0%, #003626 100%);
       background: -moz-linear-gradient(90deg, #003626 0%, #003626 100%);
       background: -o-linear-gradient(90deg, #003626 0%, #003626 100%);
-      background: linear-gradient(90deg, #003626 0%, #003626 100%); } }
+      background: linear-gradient(90deg, #003626 0%, #003626 100%);  */
+    } 
+  .banner-area{
+    height:222PX !important;
+  }
+}
 
 #category .organic-breadcrumb {
   margin-bottom: 100px; }
