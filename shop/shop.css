@@ -9040,7 +9040,7 @@ h1, h2, h3, h4, h5,
       transition: all 1s ease; } */
   .product .img {
     display: block;
-    height: 300px; 
+    height: auto; 
     border-radius: 20px;
   }
 
