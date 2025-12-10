@@ -11992,7 +11992,7 @@ footer p a:hover{
 .organic-breadcrumb {
   background: url(../images/contact-page.png) center no-repeat;
   background-size: cover;
-  padding-top: 10px; 
+  /* padding-top: 10px;  */
 }
   @media (max-width: 991px) {
     .organic-breadcrumb {
