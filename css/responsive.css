@@ -241,11 +241,13 @@
         left: 16px;
         /* top: 418px; */
         margin-top: -33px;
+        z-index: 4px !important;
     }
 
     .icon-arrow2.icon-arrow-right {
         right: 111px;
         top: 89px;
+        z-index: 4px !important;
     }
 
 

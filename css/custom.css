@@ -2362,7 +2362,7 @@ marquee {
 
 #footer .footer-top h4::before {
   right: 0;
-  background: #d3d3d3;
+  background: transparent;
 }
 
 #footer .footer-top h4::after {
@@ -2738,9 +2738,18 @@ div#google_translate_element div.goog-te-gadget-simple {
 }
 .probut{
   background-color: transparent;
-    border: 1px solid #808080;
-    color: #eee;
-    width: 130px;
+    border: 1.5px solid #003626;
+    color: #003626 !important;
+    width: 113px;
     height: 40px;
+    border-radius: 30px;
 }
 
+.instabtn {
+  color: #ffc107;
+    border-radius: 30px;
+    font-size: 24px !important;
+    background-color: #305c2c;
+    padding: 9px;
+    border: 1px solid #ffc107;
+ }
