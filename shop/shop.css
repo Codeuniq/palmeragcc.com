@@ -9927,7 +9927,7 @@ textarea.form-control {
 
 #footer .footer-top h4::before {
   right: 0;
-  background: #d3d3d3;
+  background: transparent;
 }
 
 #footer .footer-top h4::after {
