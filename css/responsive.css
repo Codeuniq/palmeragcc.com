@@ -1,5 +1,8 @@
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
+    .aboutimage{
+        height: 550px;
+    }
     .breadcrumb-banner {
   height: 600px;
  }
@@ -95,6 +98,9 @@
 
 /*Tablet Query*/
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .aboutimage{
+        height: 550px;
+    }
     .img-h {
         height: 112px !important;
         margin-top: -11px;
