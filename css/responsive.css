@@ -1,5 +1,14 @@
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
+    .palogH{
+        height:62px;
+        width: auto;
+    }
+    .palog{
+        margin-left: 71px;
+        height:62px;
+        width: auto;
+    }
     .aboutimage{
         height: 550px;
     }
@@ -98,6 +107,10 @@
 
 /*Tablet Query*/
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .palogH{
+        height:62px;
+        width: auto;
+    }
     .aboutimage{
         height: 550px;
     }
@@ -168,6 +181,11 @@
 
     .prote {
         margin-top: 420px;
+    }
+    .palog{
+        margin-left: 71px;
+        height:62px;
+        width: auto;
     }
 }
 
@@ -331,5 +349,14 @@
 
     .prodes {
         font-size: 20px;
+    }
+    .palog{
+        margin-left: 15px;
+        height:40px !important;
+        width: auto;
+    }
+    .palogH{
+        height:40px;
+        width: auto;
     }
 }
