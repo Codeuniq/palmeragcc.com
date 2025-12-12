@@ -3385,7 +3385,8 @@ input[type="button"].btn-block {
     color: black;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; 
-    font-family: "Emirates Bold";
+    font-family: "Marcellus", Roboto, sans-serif;
+    border-radius: 20px;
   }
     .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
       border-color: #e9ecef #e9ecef #dee2e6; }
