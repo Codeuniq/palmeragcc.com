@@ -2499,6 +2499,7 @@ marquee {
     background: linear-gradient(45deg, #F7EF8A, #F7EF8A, #D2AC47, #F7EF8A, #F7EF8A, #F7EF8A, #D2AC47, #F7EF8A,  #D2AC47, #F7EF8A);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
   
 }
 .carousel .list .item .topic{
