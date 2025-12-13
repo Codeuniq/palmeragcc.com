@@ -2516,11 +2516,13 @@ marquee {
     background-color: transparent;
     border: 1px solid #F7EF8A;
     color: #F7EF8A;
+    border-radius: 20px;
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
     border: 1px solid #F7EF8A;
     color: #F7EF8A;
+    border-radius: 20px;
 }
 
 .arrows{
