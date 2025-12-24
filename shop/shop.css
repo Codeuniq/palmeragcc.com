@@ -9043,7 +9043,7 @@ h1, h2, h3, h4, h5,
       transition: all 1s ease; } */
   .product .img {
     display: block;
-    height: 300px; 
+    height: auto; 
     border-radius: 20px;
   }
 
@@ -12901,7 +12901,7 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
 } */
 
 .product .text {
-  height: 35%;
+  height: 45%;
   text-wrap: normal;
   transition: 0.4s all ease;isibility: hidden;
 }
@@ -12923,18 +12923,18 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
 
 .product:hover .product-bottom-details {
   visibility: visible;
-  transition: 0.4s all ease;
-  transition-delay: 0.1999s;
+  transition: 0.1s all ease;
+  transition-delay: 0.1s;
 }
 
 .product:hover .text {
   transition: 0.4s all ease;
   height: 65%;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .product:hover .cardTop {
   height: 60%;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   transition: 0.4s all ease;
 }
