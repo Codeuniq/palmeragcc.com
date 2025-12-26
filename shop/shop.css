@@ -12952,6 +12952,13 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
   object-fit: cover;
   border-radius: 20px;
 }
+.PRimg {
+  transition: 0.3s;
+}
+
+.PRimg:hover {
+  transform: scale(1.1);
+}
 
 /* Buttons */
 .PRBTN {
