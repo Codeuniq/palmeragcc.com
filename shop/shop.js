@@ -386,6 +386,49 @@ $(".testimonials-carousel").owlCarousel({
         $(this).css('background-image', 'url(' + bg + ')');
     });
 
+window.addEventListener("load", function () {
+
+  document.querySelectorAll(".carousel").forEach(carousel => {
+
+    const slider = carousel.querySelector(".content_inner_slider");
+    const images = carousel.querySelectorAll(".PRimg");
+    const prevBtn = carousel.querySelector(".prev_button");
+    const nextBtn = carousel.querySelector(".next_button");
+    const dots = carousel.querySelectorAll(".dot");
+
+    let index = 0;
+    const total = images.length;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+
+      dots.forEach(dot => dot.classList.remove("active"));
+      if (dots[index]) dots[index].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % total;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + total) % total;
+      updateSlider();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+      });
+    });
+
+    updateSlider();
+  });
+
+});
+
+
   
 
 
@@ -394,17 +437,17 @@ $(".testimonials-carousel").owlCarousel({
 })(jQuery);
 
 
-var world = document.getElementsByTagName("path");
-for (var i = 0; i < world.length; i++) {
-  var country = world[i];
-  country.setAttribute("data-toggle", "tooltip");
-  country.setAttribute("data-placement", "top");
-  country.setAttribute("title", country.getAttribute("id"));
-}
+// var world = document.getElementsByTagName("path");
+// for (var i = 0; i < world.length; i++) {
+//   var country = world[i];
+//   country.setAttribute("data-toggle", "tooltip");
+//   country.setAttribute("data-placement", "top");
+//   country.setAttribute("title", country.getAttribute("id"));
+// }
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
 
 AOS.init({
 	duration: 1200,
