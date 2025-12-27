@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Modern Product Manager</title>
+<title>Palmera</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -40,6 +40,22 @@ body{
 
 h3{margin:0 0 16px;font-weight:600}
 
+/* FILTERS */
+.filters{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+  flex-wrap:nowrap; /* keep in one line */
+  align-items:center; /* vertically center */
+}
+.filters input, .filters select{
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  flex:1; /* grow evenly */
+  min-width:120px; /* prevent too small */
+}
+
 /* TABLE */
 table{width:100%;border-collapse:collapse;font-size:14px}
 thead{background:#f8fafc;position:sticky;top:0}
@@ -75,8 +91,19 @@ input,select{
 }
 input:focus,select:focus{border-color:var(--primary);outline:none}
 
-/* IMAGE UPLOAD */
-.images-upload{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+/* IMAGE UPLOAD (Infinite & Scrollable) */
+.images-upload{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+  max-height:150px;
+  overflow-y:auto;
+  padding:4px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#f9fafb;
+}
 .image-wrapper{position:relative}
 .image-thumb{width:64px;height:64px;border-radius:10px;object-fit:cover}
 .remove-img{
@@ -118,6 +145,7 @@ button.save:hover{opacity:.9}
 
 @media(max-width:900px){
   .container{grid-template-columns:1fr}
+  .filters{flex-direction:column;align-items:stretch;} /* stack on small screens */
 }
 </style>
 </head>
@@ -129,6 +157,23 @@ button.save:hover{opacity:.9}
 <!-- PRODUCTS TABLE -->
 <div class="card">
 <h3>Products</h3>
+
+<!-- SEARCH & FILTER -->
+<div class="filters">
+  <input type="text" id="searchInput" placeholder="Search by Name or Code">
+  <select id="filterCategory">
+    <option value="">All Categories</option>
+    <option>Thobe</option>
+    <option>Shemagh</option>
+    <option>Shawl</option>
+  </select>
+  <select id="filterStatus">
+    <option value="">All Status</option>
+    <option>Available</option>
+    <option>Unavailable</option>
+  </select>
+</div>
+
 <table>
 <thead>
 <tr>
@@ -203,6 +248,7 @@ const tableBody = document.getElementById("tableBody");
 const imagesUpload = document.getElementById("imagesUpload");
 const imgInput = document.getElementById("imgInput");
 const formTitle = document.getElementById("formTitle");
+const statusInput = document.getElementById("statusInput");
 
 /* STATUS TOGGLE */
 document.querySelectorAll(".status-option").forEach(opt=>{
@@ -286,15 +332,27 @@ function deleteProduct(i){
   }
 }
 
-/* TABLE */
+/* TABLE & FILTER */
+const searchInput = document.getElementById("searchInput");
+const filterCategory = document.getElementById("filterCategory");
+const filterStatus = document.getElementById("filterStatus");
+
 function renderTable(){
+  let filtered = products.filter(p=>{
+    const searchText = searchInput.value.toLowerCase();
+    const matchesSearch = p.name.toLowerCase().includes(searchText) || p.code.toLowerCase().includes(searchText);
+    const matchesCategory = filterCategory.value ? p.category===filterCategory.value : true;
+    const matchesStatus = filterStatus.value ? p.status===filterStatus.value : true;
+    return matchesSearch && matchesCategory && matchesStatus;
+  });
+
   tableBody.innerHTML="";
-  products.forEach((p,i)=>{
+  filtered.forEach((p,i)=>{
     tableBody.innerHTML+=`
     <tr>
       <td>
-        <button class="action edit" onclick="editProduct(${i})"><i class="fa fa-pen"></i></button>
-        <button class="action delete" onclick="deleteProduct(${i})"><i class="fa fa-trash"></i></button>
+        <button class="action edit" onclick="editProduct(${products.indexOf(p)})"><i class="fa fa-pen"></i></button>
+        <button class="action delete" onclick="deleteProduct(${products.indexOf(p)})"><i class="fa fa-trash"></i></button>
       </td>
       <td>${p.code}</td>
       <td>${p.name}</td>
@@ -308,6 +366,7 @@ function renderTable(){
   });
 }
 
+/* RESET FORM */
 function resetForm(){
   productForm.reset();
   images=[];
@@ -319,6 +378,12 @@ function resetForm(){
   renderImages();
 }
 
+/* FILTER EVENTS */
+searchInput.addEventListener("input",renderTable);
+filterCategory.addEventListener("change",renderTable);
+filterStatus.addEventListener("change",renderTable);
+
+/* INITIAL RENDER */
 renderTable();
 renderImages();
 </script>
