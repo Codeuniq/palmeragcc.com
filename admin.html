@@ -1,39 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Palmera</title>
-  <meta charset="utf-8">
-  <meta name="description" content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
-  <link href="images/favi.png" rel="icon">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="author" content="MUHAMMED FAISAN">
+  <title>Palmera Admin</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="admin/admin.css">
 </head>
 <body>
 
 <!-- SIDEBAR -->
-<div class="sidebar">
-   <img src="images/logohd.webp" class="palogH" alt="" title="" style="margin-left: 21px;height: auto;width: 125px;" />
-  <a href="#" style="margin-top: 30px;"><i class="fa fa-box"></i> Products</a>
-  <a href="#"><i class="fa fa-user"></i> Users</a>
-  <a href="#"><i class="fa fa-cog"></i> Settings</a>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <img src="images/logohd.png" alt="" class="logo">
+  </div>
+  <ul class="sidebar-menu">
+    <li><a ><i class="fa fa-box"></i> <span>Products</span></a></li>
+    <!-- <li><a ><i class="fa fa-user"></i> <span>Users</span></a></li> -->
+    <li><a  ><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+  </ul>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main">
   <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">Palmera Admin</div>
-    <div class="profile"><i class="fa fa-user-circle"></i></div>
-  </div>
+  <header class="navbar">
+    <div class="nav-left">
+      <i class="fa fa-bars" id="toggleBtn"></i>
+      <span>Dashboard</span>
+    </div>
+    <div class="nav-right">
+      <img src="images/favi.png" alt="Small Round" class="round-image"> <span style="color: white;">Admin</span>
+    </div>
+  </header>
 
   <!-- CONTENT CONTAINER -->
-  <div class="container">
+   <div class="container">
+
     <!-- PRODUCTS TABLE -->
     <div class="card">
       <h3>Products</h3>
@@ -104,11 +108,12 @@
             <i class="fa fa-times-circle"></i> Unavailable
           </div>
         </div>
-        <input type="hidden" id="statusInput" value="Available">
 
+        <input type="hidden" id="statusInput" value="Available">
         <button class="save" type="submit">Save Product</button>
       </form>
     </div>
+
   </div>
 </div>
 

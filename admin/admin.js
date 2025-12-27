@@ -1,3 +1,13 @@
+/* SIDEBAR TOGGLE */
+// const toggleBtn = document.getElementById("toggleBtn");
+// const sidebar = document.getElementById("sidebar");
+// toggleBtn.onclick = () => {
+//   sidebar.classList.toggle("collapsed");
+// };
+
+/* YOUR ORIGINAL PRODUCT LOGIC JS GOES HERE */
+
+
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let images = [];
 let editIndex = null;
@@ -30,7 +40,6 @@ document.querySelectorAll(".status-option").forEach(opt=>{
 imagesUpload.addEventListener("click", function(e){
   if(e.target.closest(".add-img")) imgInput.click();
 });
-
 imgInput.addEventListener("change", e => {
   [...e.target.files].forEach(f => {
     const reader = new FileReader();
@@ -39,7 +48,6 @@ imgInput.addEventListener("change", e => {
   });
   imgInput.value = "";
 });
-
 function renderImages(){
   imagesUpload.innerHTML=`<div class="add-img"><i class="fa fa-plus"></i></div>`;
   images.forEach((img,i)=>{
@@ -56,7 +64,6 @@ function removeImage(i){images.splice(i,1);renderImages()}
 productForm.onsubmit=e=>{
   e.preventDefault();
   if(images.length===0) return alert("Upload at least one image");
-
   const product={
     code:codeInput.value.trim(),
     category:categoryInput.value,
@@ -65,7 +72,6 @@ productForm.onsubmit=e=>{
     status:statusInput.value,
     images:[...images]
   };
-
   editIndex!==null ? products[editIndex]=product : products.push(product);
   localStorage.setItem("products",JSON.stringify(products));
   resetForm();
@@ -90,7 +96,6 @@ function editProduct(i){
   formTitle.innerText="Edit Product";
   window.scrollTo({top:0,behavior:"smooth"});
 }
-
 function deleteProduct(i){
   if(confirm("Delete product?")){
     products.splice(i,1);
@@ -147,3 +152,8 @@ filterStatus.addEventListener("change",renderTable);
 /* INITIAL RENDER */
 renderTable();
 renderImages();
+
+
+
+
+
