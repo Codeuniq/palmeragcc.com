@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Product Manager</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --primary:#6366f1;
+  --danger:#ef4444;
+  --success:#22c55e;
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --text:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:24px;
+  padding:24px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+h3{margin:0 0 16px;font-weight:600}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:#f8fafc;position:sticky;top:0}
+th,td{padding:12px;text-align:center}
+th{color:#475569}
+tbody tr{border-bottom:1px solid #e5e7eb}
+tbody tr:hover{background:#f8fafc}
+
+img{width:42px;height:42px;border-radius:8px;object-fit:cover}
+
+.status-badge{
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:12px;
+}
+.status-available{background:#ecfdf5;color:#16a34a}
+.status-unavailable{background:#fef2f2;color:#dc2626}
+
+.action{border:none;background:none;cursor:pointer;font-size:15px}
+.action.edit{color:#475569}
+.action.delete{color:var(--danger)}
+
+/* FORM */
+label{font-size:13px;font-weight:600;color:#475569}
+input,select{
+  width:100%;
+  padding:10px 12px;
+  margin:6px 0 14px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  font-size:14px;
+}
+input:focus,select:focus{border-color:var(--primary);outline:none}
+
+/* IMAGE UPLOAD */
+.images-upload{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.image-wrapper{position:relative}
+.image-thumb{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.remove-img{
+  position:absolute;top:-6px;right:-6px;
+  width:20px;height:20px;border:none;border-radius:50%;
+  background:var(--danger);color:#fff;font-size:11px;cursor:pointer
+}
+.add-img{
+  width:64px;height:64px;border:2px dashed #c7d2fe;
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  color:var(--primary);cursor:pointer
+}
+
+/* STATUS TOGGLE */
+.status-toggle{display:flex;gap:12px;margin:6px 0 16px}
+.status-option{
+  flex:1;padding:12px;border-radius:12px;
+  border:2px solid #e5e7eb;text-align:center;
+  font-weight:600;cursor:pointer;color:#64748b;
+  transition:.25s
+}
+.status-option i{margin-right:6px}
+.status-option.active{
+  border-color:var(--success);
+  background:#ecfdf5;color:#16a34a
+}
+.status-option.unavailable.active{
+  border-color:var(--danger);
+  background:#fef2f2;color:#dc2626
+}
+
+/* BUTTON */
+button.save{
+  width:100%;padding:12px;border:none;border-radius:12px;
+  background:var(--primary);color:#fff;font-size:15px;font-weight:600;
+  cursor:pointer
+}
+button.save:hover{opacity:.9}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PRODUCTS TABLE -->
+<div class="card">
+<h3>Products</h3>
+<table>
+<thead>
+<tr>
+  <th>Actions</th>
+  <th>Code</th>
+  <th>Name</th>
+  <th>Category</th>
+  <th>Status</th>
+  <th>Price</th>
+  <th>Images</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+
+<!-- ADD / EDIT FORM -->
+<div class="card">
+<h3 id="formTitle">Add Product</h3>
+
+<form id="productForm">
+
+<label>Images</label>
+<div class="images-upload" id="imagesUpload">
+  <div class="add-img" onclick="imgInput.click()">
+    <i class="fa fa-plus"></i>
+  </div>
+</div>
+<input type="file" id="imgInput" multiple hidden>
+
+<label>Item Code</label>
+<input type="text" id="codeInput" required>
+
+<label>Category</label>
+<select id="categoryInput" required>
+  <option value="">Select Category</option>
+  <option>Thobe</option>
+  <option>Shemagh</option>
+  <option>Shawl</option>
+</select>
+
+<label>Product Name</label>
+<input type="text" id="nameInput" required>
+
+<label>Price</label>
+<input type="number" id="priceInput">
+
+<label>Status</label>
+<div class="status-toggle">
+  <div class="status-option active" data-value="Available">
+    <i class="fa fa-check-circle"></i> Available
+  </div>
+  <div class="status-option unavailable" data-value="Unavailable">
+    <i class="fa fa-times-circle"></i> Unavailable
+  </div>
+</div>
+<input type="hidden" id="statusInput" value="Available">
+
+<button class="save" type="submit">Save Product</button>
+
+</form>
+</div>
+
+</div>
+
+<script>
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let images = [];
+let editIndex = null;
+
+const tableBody = document.getElementById("tableBody");
+const imagesUpload = document.getElementById("imagesUpload");
+const imgInput = document.getElementById("imgInput");
+const formTitle = document.getElementById("formTitle");
+
+/* STATUS TOGGLE */
+document.querySelectorAll(".status-option").forEach(opt=>{
+  opt.addEventListener("click",()=>{
+    document.querySelectorAll(".status-option").forEach(o=>o.classList.remove("active","unavailable"));
+    opt.classList.add("active");
+    if(opt.dataset.value==="Unavailable") opt.classList.add("unavailable");
+    statusInput.value = opt.dataset.value;
+  });
+});
+
+/* IMAGE UPLOAD */
+imgInput.addEventListener("change",e=>{
+  [...e.target.files].forEach(f=>{
+    const r=new FileReader();
+    r.onload=()=>{images.push(r.result);renderImages()};
+    r.readAsDataURL(f);
+  });
+  imgInput.value="";
+});
+
+function renderImages(){
+  imagesUpload.innerHTML=`<div class="add-img" onclick="imgInput.click()"><i class="fa fa-plus"></i></div>`;
+  images.forEach((img,i)=>{
+    imagesUpload.prepend(Object.assign(document.createElement("div"),{
+      className:"image-wrapper",
+      innerHTML:`<img src="${img}" class="image-thumb">
+      <button class="remove-img" onclick="removeImage(${i})">×</button>`
+    }));
+  });
+}
+function removeImage(i){images.splice(i,1);renderImages()}
+
+/* SUBMIT */
+productForm.onsubmit=e=>{
+  e.preventDefault();
+  if(images.length===0) return alert("Upload at least one image");
+
+  const product={
+    code:codeInput.value.trim(),
+    category:categoryInput.value,
+    name:nameInput.value.trim(),
+    price:priceInput.value,
+    status:statusInput.value,
+    images:[...images]
+  };
+
+  editIndex!==null ? products[editIndex]=product : products.push(product);
+  localStorage.setItem("products",JSON.stringify(products));
+  resetForm();
+  renderTable();
+};
+
+/* EDIT */
+function editProduct(i){
+  const p=products[i];
+  codeInput.value=p.code;
+  categoryInput.value=p.category;
+  nameInput.value=p.name;
+  priceInput.value=p.price;
+  statusInput.value=p.status;
+
+  document.querySelectorAll(".status-option").forEach(o=>o.classList.remove("active","unavailable"));
+  const active=document.querySelector(`.status-option[data-value="${p.status}"]`);
+  active.classList.add("active");
+  if(p.status==="Unavailable") active.classList.add("unavailable");
+
+  images=[...p.images];
+  renderImages();
+  editIndex=i;
+  formTitle.innerText="Edit Product";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* DELETE */
+function deleteProduct(i){
+  if(confirm("Delete product?")){
+    products.splice(i,1);
+    localStorage.setItem("products",JSON.stringify(products));
+    renderTable();
+  }
+}
+
+/* TABLE */
+function renderTable(){
+  tableBody.innerHTML="";
+  products.forEach((p,i)=>{
+    tableBody.innerHTML+=`
+    <tr>
+      <td>
+        <button class="action edit" onclick="editProduct(${i})"><i class="fa fa-pen"></i></button>
+        <button class="action delete" onclick="deleteProduct(${i})"><i class="fa fa-trash"></i></button>
+      </td>
+      <td>${p.code}</td>
+      <td>${p.name}</td>
+      <td>${p.category}</td>
+      <td><span class="status-badge ${p.status==="Available"?"status-available":"status-unavailable"}">${p.status}</span></td>
+      <td>${p.price||"-"}</td>
+      <td>
+        ${p.images.map(img=>`<img src="${img}" style="width:40px;height:40px;border-radius:6px;margin:2px;">`).join('')}
+      </td>
+    </tr>`;
+  });
+}
+
+function resetForm(){
+  productForm.reset();
+  images=[];
+  editIndex=null;
+  statusInput.value="Available";
+  document.querySelectorAll(".status-option").forEach(o=>o.classList.remove("active","unavailable"));
+  document.querySelector('.status-option[data-value="Available"]').classList.add("active");
+  formTitle.innerText="Add Product";
+  renderImages();
+}
+
+renderTable();
+renderImages();
+</script>
+
+</body>
+</html>
