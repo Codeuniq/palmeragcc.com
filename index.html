@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-  <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6345949850114046"
-  crossorigin="anonymous">
-</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6345949850114046"
+    crossorigin="anonymous">
+    </script>
   <title>Palmera</title>
   <meta charset="utf-8">
-  <meta name="description" content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
+  <meta name="description"
+    content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
   <link href="images/favi.png" rel="icon">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,22 +80,38 @@
           <li class="nav-item "><a href="shop.html" class="nav-link">Products</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           <li class="nav-item"><a class="nav-link">
-              <div id='google_translate_element'></div>
+              <div id="google_translate_element" style="display:none;"></div>
+              <!-- Custom buttons -->
+<div style="margin-top: 10px;">
+  <button onclick="translatePage('en')">EN</button>
+  <button onclick="translatePage('ar')">AR</button>
+</div>
             </a></li>
           <!-- <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li> -->
         </ul>
       </div>
 
-      <script>
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            autoDisplay: 'true',
-            includedLanguages: 'en,ar', // <- remove this line to show all language
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-          }, 'google_translate_element');
-        }
-      </script>
+      <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,ar',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+
+// Function to translate page
+function translatePage(lang) {
+  if(lang === 'en') {
+    // Reset page to English by reloading original URL
+    var originalUrl = window.location.href.split('?')[0];
+    window.location.href = originalUrl;
+  } else if(lang === 'ar') {
+    // Redirect via Google Translate
+    window.location.href = 'https://translate.google.com/translate?sl=en&tl=ar&u=' + encodeURIComponent(window.location.href);
+  }
+}
+</script>
     </div>
   </nav>
   <!-- NAV END -->
@@ -227,7 +243,8 @@
             </div>
             <div class="media-body">
               <h3 class="font26 ">Excellent Material</h3>
-              <p class="font16 ">Crafted from carefully selected, high-quality materials, each Palmera piece offers superior comfort, 
+              <p class="font16 ">Crafted from carefully selected, high-quality materials, each Palmera piece offers
+                superior comfort,
                 durability, and a refined finish that reflects our commitment to premium quality.</p>
             </div>
           </div>
@@ -235,13 +252,14 @@
         <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
           <div class="media block-6 services">
             <div class="icon d-flex justify-content-center align-items-center mb-4">
-              <span><span><img src="images/quality product.png" alt="" style="height:100px;width: auto;" /></span></span>
+              <span><span><img src="images/quality product.png" alt=""
+                    style="height:100px;width: auto;" /></span></span>
             </div>
             <div class="media-body">
               <h3 class="font26 ">Quality Product</h3>
               <p class="font16 ">
                 Each Palmera product is made with precision and care, delivering exceptional quality,
-                 lasting durability, and timeless elegance in every detail.
+                lasting durability, and timeless elegance in every detail.
               </p>
             </div>
           </div>
@@ -253,8 +271,9 @@
             </div>
             <div class="media-body">
               <h3 class="font26 ">Trusted by Clients</h3>
-              <p class="font16 ">Palmera is trusted by clients for its consistent quality, refined craftsmanship, and commitment to
-                 delivering premium traditional wear with confidence and reliability.</p>
+              <p class="font16 ">Palmera is trusted by clients for its consistent quality, refined craftsmanship, and
+                commitment to
+                delivering premium traditional wear with confidence and reliability.</p>
             </div>
           </div>
         </div>
@@ -680,8 +699,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <a href="#intro"><img src="images/logohd.webp" alt="" title=""
-                style="height:100px;width: auto;" /></a>
+            <a href="#intro"><img src="images/logohd.webp" alt="" title="" style="height:100px;width: auto;" /></a>
             <p class="pt-2">With experience in garment trading for more than a decade, Palmera Garments are comfortable
               clothing that becomes your second skin.</p>
           </div>
