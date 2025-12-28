@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
 
   // demo credentials
-  if (email === "admin@example.com" && password === "123456") {
+  if (email === "Palmera" && password === "1234") {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userEmail", email);
 
