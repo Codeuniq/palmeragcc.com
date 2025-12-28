@@ -11908,7 +11908,7 @@ footer p a:hover{
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../../images/probanner.png) center no-repeat;
+  background: url(../../images/probanner.webp) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
@@ -11984,7 +11984,7 @@ footer p a:hover{
     color: #222222; }
 
 .organic-breadcrumb {
-  background: url(../../images/contact-page.png) center no-repeat;
+  background: url(../../images/contact-page.webp) center no-repeat;
   background-size: cover;
   /* padding-top: 10px;  */
 }

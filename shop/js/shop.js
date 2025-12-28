@@ -388,7 +388,7 @@ $(".testimonials-carousel").owlCarousel({
 
 window.addEventListener("load", function () {
 
-  document.querySelectorAll(".carousel").forEach(carousel => {
+  document.querySelectorAll(".carousels").forEach(carousel => {
 
     const slider = carousel.querySelector(".content_inner_slider");
     const images = carousel.querySelectorAll(".PRimg");
