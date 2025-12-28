@@ -154,6 +154,23 @@ renderTable();
 renderImages();
 
 
+// 🔒 Page protection
+if(localStorage.getItem("isLoggedIn") !== "true"){
+  window.location.href = "login.html";
+}
+
+// show email
+document.getElementById("userEmail").innerText =
+  localStorage.getItem("userEmail");
+
+// logout (FIXED)
+document.getElementById("logoutLink").addEventListener("click", function(e){
+  e.preventDefault(); // 🚨 IMPORTANT
+  localStorage.clear();
+  window.location.href = "login.html";
+});
+
+
 
 
 

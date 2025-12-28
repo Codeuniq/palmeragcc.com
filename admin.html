@@ -16,9 +16,9 @@
     <img src="images/logohd.png" alt="" class="logo">
   </div>
   <ul class="sidebar-menu">
-    <li><a ><i class="fa fa-box"></i> <span>Products</span></a></li>
-    <!-- <li><a ><i class="fa fa-user"></i> <span>Users</span></a></li> -->
-    <li><a  ><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+    <li><a href="admin.html"><i class="fa fa-box"></i> <span>Products</span></a></li>
+    <!-- <li><a href="#"><i class="fa fa-user"></i> <span>Users</span></a></li> -->
+    <li><a id="logoutLink"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
   </ul>
 </div>
 
@@ -37,7 +37,10 @@
 
   <!-- CONTENT CONTAINER -->
    <div class="container">
-
+    <div class="card">
+      <h3>Welcome, <strong id="userEmail"></strong></h3>
+      <!-- <p>Use the sidebar to navigate through the admin panel.</p> -->
+    </div>
     <!-- PRODUCTS TABLE -->
     <div class="card">
       <h3>Products</h3>

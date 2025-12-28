@@ -42,7 +42,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: "Marcellus", Roboto, sans-serif !important;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -8560,7 +8560,7 @@ h1, h2, h3, h4, h5,
     height: 750px;
     z-index: 0;
     /* background: #dbcc8f;  */
-    background: url("../images/banner.webp") center top no-repeat;
+    background: url("../../../images/banner.webp") center top no-repeat;
     background-size: cover;
     
   }
@@ -9741,7 +9741,7 @@ textarea.form-control {
 
     .ftco-deal {
       padding: 50px;
-      background: url(../images/2back.webp) center center no-repeat;
+      background: url(../../images/2back.webp) center center no-repeat;
       /* background-repeat: no-repeat; */
       background-size: cover;
       overflow: hidden;
@@ -11100,13 +11100,13 @@ path:hover{
 .box:first-child
 {
   /* background: #0B2B43; */
-  background: url("../images/front1.webp") center top no-repeat fixed;
+  background: url("../../images/front1.webp") center top no-repeat fixed;
     background-size: cover;
 }
 .box:nth-child(2)
 {
 	/* background: #7FC6A4; */
-  background: url("../images/back2.webp") center top no-repeat fixed;
+  background: url("../../images/back2.webp") center top no-repeat fixed;
     background-size: cover;
 }
 /* .box:nth-child(3)
@@ -11185,7 +11185,7 @@ path:hover{
 
 
 .worldmap{
-  background: url("../images/mapback.webp") center top no-repeat fixed;
+  background: url("../../images/mapback.webp") center top no-repeat fixed;
     background-size: cover;
     z-index: -1;
 }
@@ -11330,7 +11330,7 @@ path:hover{
   top: 0;
   height: 100%;
   width: 100%;
-  background: url("../images/team-hover.webp");
+  background: url("../../images/team-hover.webp");
   content: "";
   z-index: -1;
 }
@@ -11704,7 +11704,7 @@ footer p a:hover{
   .project-wrap.hotel .img {
     height: 320px; }
     .sec-product{
-      background: url("../images/lightgrey.webp")  top no-repeat fixed;
+      background: url("../../images/lightgrey.webp")  top no-repeat fixed;
     background-size: cover;
     padding: 7em 0;
     }
@@ -11735,7 +11735,7 @@ footer p a:hover{
     border-top: none;
     margin-top: -40px;
     background:white;
-    /* background: url("../images/front2.webp") center top no-repeat fixed;
+    /* background: url("../../images/front2.webp") center top no-repeat fixed;
     background-size: cover; */
     -webkit-box-shadow: 0px 10px 23px -8px rgba(0, 0, 0, 0.11);
     -moz-box-shadow: 0px 10px 23px -8px rgba(0, 0, 0, 0.11);
@@ -11783,7 +11783,7 @@ footer p a:hover{
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../images/bg-about-img.webp) top left no-repeat;
+  background: url(../../images/bg-about-img.webp) top left no-repeat;
   background-size: contain;
 }
 
@@ -11791,7 +11791,7 @@ footer p a:hover{
 --------------------------------*/
 #call-to-action {
   padding: 10px;
-  background: url(../images/2back.webp) center center no-repeat;
+  background: url(../../images/2back.webp) center center no-repeat;
   /* background-repeat: no-repeat; */
   background-size: cover;
   overflow: hidden;
@@ -11871,16 +11871,16 @@ footer p a:hover{
 }
 
 .hover-img1:hover {
-  background-image: url(../images/04.webp) !important;
+  background-image: url(../../images/04.webp) !important;
 }
 .hover-img2:hover {
-  background-image: url(../images/11.webp) !important;
+  background-image: url(../../images/11.webp) !important;
 }
 .hover-img3:hover {
-  background-image: url(../images/15.webp) !important;
+  background-image: url(../../images/15.webp) !important;
 }
 .hover-img4:hover {
-  background-image: url(../images/28.webp) !important;
+  background-image: url(../../images/28.webp) !important;
 }
 
 .back-to-top {
@@ -11908,7 +11908,7 @@ footer p a:hover{
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../images/probanner.png) center no-repeat;
+  background: url(../../images/probanner.png) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
@@ -11984,7 +11984,7 @@ footer p a:hover{
     color: #222222; }
 
 .organic-breadcrumb {
-  background: url(../images/contact-page.png) center no-repeat;
+  background: url(../../images/contact-page.png) center no-repeat;
   background-size: cover;
   /* padding-top: 10px;  */
 }
@@ -12054,7 +12054,7 @@ footer p a:hover{
 
 
 .visit-tailor-area{position:relative;display:flex;align-items:center;margin:0px 100px}.visit-tailor-area::before{position:absolute;content:"";background:#F2E1D9;width:68%;height:100%;z-index:-9;right:0;top:0}@media only screen and (min-width: 768px) and (max-width: 991px){.visit-tailor-area::before{position:unset}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area::before{position:unset}}@media (max-width: 575px){.visit-tailor-area::before{position:unset}}@media only screen and (min-width: 1200px) and (max-width: 1440px){.visit-tailor-area{margin:0px 10px}}@media only screen and (min-width: 992px) and (max-width: 1199px){.visit-tailor-area{margin:0px 0px}}@media only screen and (min-width: 768px) and (max-width: 991px){.visit-tailor-area{margin:0px 0px;display:block}}@media (max-width: 575px){.visit-tailor-area{display:block;margin:0px 0px}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area{margin:0px 0px;display:block}}.visit-tailor-area .tailor-details{width:30%;padding:20px 20px 20px 60px}@media only screen and (min-width: 992px) and (max-width: 1199px){.visit-tailor-area .tailor-details{width:53%;padding:20px 20px 20px 50px}}@media only screen and (min-width: 1200px) and (max-width: 1600px){.visit-tailor-area .tailor-details{width:41%}}@media only screen and (min-width: 768px) and (max-width: 991px){.visit-tailor-area .tailor-details{width:100%;padding:50px 30px}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area .tailor-details{width:100%;padding:50px 30px}}@media (max-width: 575px){.visit-tailor-area .tailor-details{width:100%;padding:50px 30px}}.visit-tailor-area .tailor-details span{margin-bottom:22px;display:block;color:#7d8da4}.visit-tailor-area .tailor-details h2{font-size:56px;display:block;font-weight:600;line-height:1.2;margin-bottom:22px;text-transform:inherit}@media only screen and (min-width: 992px) and (max-width: 1199px){.visit-tailor-area .tailor-details h2{font-size:50px}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area .tailor-details h2{font-size:50px}}@media (max-width: 575px){.visit-tailor-area .tailor-details h2{font-size:29px}}.visit-tailor-area .tailor-details p.pera-top{color:#010A44;line-height:1.7;font-size:18px}.visit-tailor-area .tailor-details p.pera-bottom{margin-bottom:41px;font-size:14px}@media (max-width: 575px){.visit-tailor-area .tailor-details p.pera-bottom{font-size:15px}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area .tailor-details p.pera-bottom{font-size:13px}}.visit-tailor-area 
-.tailor-offers{background-image:url(../images/abo.webp);background-size:100%;background-size:cover;background-repeat:no-repeat;background-position:center center;height:570px;width:50%;margin:130px 0}
+.tailor-offers{background-image:url(../../images/abo.webp);background-size:100%;background-size:cover;background-repeat:no-repeat;background-position:center center;height:570px;width:50%;margin:130px 0}
 @media only screen and (min-width: 992px) and (max-width: 1199px){.visit-tailor-area .tailor-offers{width:49%}}@media (max-width: 575px){.visit-tailor-area .tailor-offers{width:100%;height:500px;margin:0px 0}}@media only screen and (min-width: 576px) and (max-width: 767px){.visit-tailor-area .tailor-offers{width:100%;height:500px;margin:0px 0}}@media only screen and (min-width: 768px) and (max-width: 991px){.visit-tailor-area .tailor-offers{width:100%;height:500px;margin:0px 0}}
 
 
@@ -12062,7 +12062,7 @@ footer p a:hover{
 .aboutbanner_area {
   position: relative;
   z-index: 1;
-  background: url(../images/banner.webp) no-repeat scroll center center;
+  background: url(../../images/banner.webp) no-repeat scroll center center;
   background-size: cover;
 
 }
@@ -12094,7 +12094,7 @@ footer p a:hover{
   content: "";
   width: 313px;
   height: 365px;
-  background: url(../images/45.webp) no-repeat scroll center center;
+  background: url(../../images/45.webp) no-repeat scroll center center;
   background-size: cover;
   /* background: linear-gradient(to right, red , orange); */
   position: absolute;
@@ -12111,7 +12111,7 @@ footer p a:hover{
     content: "";
     width: 165px;
     height: 249px;
-    background: url(../images/45.webp) no-repeat scroll center center;
+    background: url(../../images/45.webp) no-repeat scroll center center;
     background-size: cover;
     /* background: linear-gradient(to right, red , orange); */
     position: absolute;
@@ -12194,7 +12194,7 @@ footer p a:hover{
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background: url(../images/41.webp);
+	background: url(../../images/41.webp);
 	background-size: 100%;
 	box-shadow: 0 0 20px #bac3c3;
 }
@@ -12549,7 +12549,7 @@ footer p a:hover{
 }
 
 .sec-about{
-  background: url("../images/back3.webp")  top no-repeat fixed;
+  background: url("../../images/back3.webp")  top no-repeat fixed;
 background-size: cover;
 }
 .sec-about::before {
@@ -12624,7 +12624,7 @@ video {
 .contact-area {
   position: relative;
   z-index: 1;
-  background: url(../images/banner.webp) no-repeat scroll center center;
+  background: url(../../images/banner.webp) no-repeat scroll center center;
   background-size: cover;
 
 }
@@ -12656,7 +12656,7 @@ video {
   content: "";
   width: 313px;
   height: 360px;
-  background: url(../images/22.webp) no-repeat scroll center center;
+  background: url(../../images/22.webp) no-repeat scroll center center;
   background-size: cover;
   /* background: linear-gradient(to right, red , orange); */
   position: absolute;
@@ -12673,7 +12673,7 @@ video {
     content: "";
     width: 168px;
     height: 245px;
-    background: url(../images/22.webp) no-repeat scroll center center;
+    background: url(../../images/22.webp) no-repeat scroll center center;
     background-size: cover;
     /* background: linear-gradient(to right, red , orange); */
     position: absolute;
@@ -12824,7 +12824,7 @@ video {
   color: black;
 }
 .starrat{
-  font-size: 12px;
+  font-size: 11px;
   color: gold;
   margin-top: 5px;
 }
@@ -12930,7 +12930,7 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
   transition: 0.4s all ease;
 }
 
-.carousel {
+.carousels {
   width: 100%;
   max-width: 500px;
   /* margin: 40px auto; */
