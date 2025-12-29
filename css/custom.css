@@ -2460,14 +2460,14 @@ marquee {
   height: 100%;
   left: 0;
   top: 0;
-  background: transparent url("https://cdn-icons-png.flaticon.com/128/1384/1384095.webp") center center no-repeat;
+  background: transparent url("../images/app/WHATSAPP.png") center center no-repeat;
   background-size: 30px auto;
   -webkit-background-size: 30px auto;
   -moz-background-size: 30px auto;
   -webkit-transition: 0.4s ease all;
   -moz-transition: 0.4s ease all;
   transition: 0.4s ease all;
-  filter: invert(1) grayscale(100%) brightness(2);
+  /* filter: invert(1) grayscale(100%) brightness(2); */
 }
 
 .wa__btn_popup .wa__btn_popup_icon:after {
@@ -2479,10 +2479,10 @@ marquee {
   height: 100%;
   left: 0;
   top: 0;
-  background: transparent url("https://cdn-icons-png.flaticon.com/128/2976/2976286.webp") center center no-repeat;
-  background-size: 14px auto;
-  -webkit-background-size: 14px auto;
-  -moz-background-size: 14px auto;
+  background: transparent url("../images/app/WHATSAPP.png") center center no-repeat;
+  background-size: 30px auto;
+  -webkit-background-size: 30px auto;
+  -moz-background-size: 30px auto;
   transition: 0.4s ease all;
   -webkit-transition: 0.4s ease all;
   -moz-transition: 0.4s ease all;
@@ -2490,7 +2490,7 @@ marquee {
   -moz-transform: scale(0) rotate(-360deg);
   -ms-transform: scale(0) rotate(-360deg);
   transform: scale(0) rotate(-360deg);
-  filter: invert(1) grayscale(100%) brightness(2);
+  /* filter: invert(1) grayscale(100%) brightness(2); */
 }
 
 .wa__btn_popup.wa__active .wa__btn_popup_icon:before {

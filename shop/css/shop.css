@@ -11845,7 +11845,7 @@ h5,
 @media (max-width: 991.98px) {
   .ftco-navbar-light .navbar-nav {
     padding-bottom: 10px;
-    background: white;
+    background: #003626;
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
   }
@@ -11877,7 +11877,8 @@ h5,
     padding-bottom: .9rem;
     justify-content: center;
     display: flex;
-    /* color: rgba(255, 255, 255, 0.7); */
+    color: #fff;
+    background: #003626;
   }
 
   .ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover {
@@ -12042,18 +12043,20 @@ h5,
 
 @media (max-width: 991.98px) {
   .ftco-navbar-light.scrolled .navbar-nav {
-    background: white;
+    background: #003626;
     border-radius: 0px;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
+    border-radius: 15px;
   }
 }
 
 @media (max-width: 767.98px) {
   .ftco-navbar-light.scrolled .navbar-nav {
-    background: white;
+    background: #003626;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    border-radius: 15px;
   }
 }
 
@@ -18089,45 +18092,7 @@ div#goog-gt-tt {
   }
 } */
 
-.product .text {
-  height: 45%;
-  text-wrap: normal;
-  transition: 0.4s all ease;
-  isibility: hidden;
-}
 
-
-/* Hidding the entire so anything we put in will only show on hover */
-
-.product-bottom-details {
-  visibility: hidden;
-}
-
-/* Hover affects */
-
-/* .product:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-} */
-
-/* Using className + hover followed by child element allows you to change child elements when parent is hovered */
-
-.product:hover .product-bottom-details {
-  visibility: visible;
-  transition: 0.1s all ease;
-  transition-delay: 0.1s;
-}
-
-.product:hover .text {
-  transition: 0.4s all ease;
-  height: 85%;
-  /* opacity: 1; */
-}
-
-.product:hover .cardTop {
-  height: 60%;
-  /* opacity: 0.8; */
-  transition: 0.4s all ease;
-}
 
 .carousels {
   width: 100%;

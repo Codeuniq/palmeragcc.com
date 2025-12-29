@@ -1,5 +1,44 @@
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
+    .product .text {
+  height: 45%;
+  text-wrap: normal;
+  transition: 0.4s all ease;
+  isibility: hidden;
+}
+
+
+/* Hidding the entire so anything we put in will only show on hover */
+
+.product-bottom-details {
+  visibility: hidden;
+}
+
+/* Hover affects */
+
+/* .product:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+} */
+
+/* Using className + hover followed by child element allows you to change child elements when parent is hovered */
+
+.product:hover .product-bottom-details {
+  visibility: visible;
+  transition: 0.1s all ease;
+  transition-delay: 0.1s;
+}
+
+.product:hover .text {
+  transition: 0.4s all ease;
+  height: 85%;
+  /* opacity: 1; */
+}
+
+.product:hover .cardTop {
+  height: 60%;
+  /* opacity: 0.8; */
+  transition: 0.4s all ease;
+}
     .palogH{
         height:62px;
         width: auto;
@@ -107,6 +146,45 @@
 
 /*Tablet Query*/
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .product .text {
+  height: 45%;
+  text-wrap: normal;
+  transition: 0.4s all ease;
+  isibility: hidden;
+}
+
+
+/* Hidding the entire so anything we put in will only show on hover */
+
+.product-bottom-details {
+  visibility: hidden;
+}
+
+/* Hover affects */
+
+/* .product:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+} */
+
+/* Using className + hover followed by child element allows you to change child elements when parent is hovered */
+
+.product:hover .product-bottom-details {
+  visibility: visible;
+  transition: 0.1s all ease;
+  transition-delay: 0.1s;
+}
+
+.product:hover .text {
+  transition: 0.4s all ease;
+  height: 85%;
+  /* opacity: 1; */
+}
+
+.product:hover .cardTop {
+  height: 60%;
+  /* opacity: 0.8; */
+  transition: 0.4s all ease;
+}
     .palogH{
         height:62px;
         width: auto;
@@ -343,6 +421,9 @@
         height: 245px;
     }
 
+    .ftco-navbar-light.scrolled{
+        height: 90px !important;
+    }
     .prote {
         margin-top: 161px;
     }
