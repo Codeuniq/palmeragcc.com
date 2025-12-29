@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-	 <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6345949850114046"
-  crossorigin="anonymous">
-</script>
-<title>Palmera Products</title>
-  <meta charset="utf-8">
-  <meta name="description" content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
-  <link href="images/favi.webp" rel="icon">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="author" content="MUHAMMED FAISAN">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6345949850114046"
+		crossorigin="anonymous">
+		</script>
+	<title>Palmera Products</title>
+	<meta charset="utf-8">
+	<meta name="description"
+		content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
+	<link href="images/favi.webp" rel="icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="author" content="MUHAMMED FAISAN">
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css'>
 	<link rel='stylesheet' href='https://www.insightindia.com/mcss/icon-font.css'>
@@ -63,20 +63,21 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto ">
 					<li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
-					<!-- <li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
-				  <div class="dropdown-menu" aria-labelledby="dropdown04">
-					  <a class="dropdown-item" href="shop.html">Shop</a>
-					<a class="dropdown-item" href="product-single.html">Single Product</a>
-					<a class="dropdown-item" href="cart.html">Cart</a>
-					<a class="dropdown-item" href="checkout.html">Checkout</a>
-				  </div>
-				</li> -->
-					<!-- <li class="nav-item"><a  class="nav-link">About Us</a></li> -->
 					<li class="nav-item active"><a href="shop.html" class="nav-link">Products</a></li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					<!-- <li class="nav-item"><a class="nav-link">
+							<div class="cart-icon" onclick="openCart()">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-bag" viewBox="0 0 16 16">
+									<path
+										d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+								</svg>
+								<span id="cartCount">5</span>
+							</div>
+
+						</a></li> -->
 					<li class="nav-item"><a class="nav-link">
-							<div id='google_translate_element'></div>
+							<div id='google_translate_element' style="margin-top:8px;"></div>
 						</a></li>
 					<!-- <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li> -->
 				</ul>
@@ -112,6 +113,52 @@
 	</section>
 	<!--================End Home Banner Area =================-->
 
+	<!-- CART MODAL -->
+	<div id="cartModal" class="cart-modal">
+		<div class="cart-content">
+
+			<!-- HEADER -->
+			<div class="cart-header">
+				<h3>Shopping Cart</h3>
+				<span class="close-btn" onclick="closeCart()">&times;</span>
+			</div>
+
+			<!-- CART ITEMS -->
+			<div class="cart-items">
+
+				<!-- PRODUCT 1 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img id="mainImage1" src="images/product/thobe/1.webp" class="main-img">
+					</div>
+					<div class="item-info">
+						<h4>Thobe Classic</h4>
+						<p>$25.00</p>
+					</div>
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+
+				<!-- PRODUCT 2 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img id="mainImage2" src="images/kh1.webp" class="main-img">
+					</div>
+					<div class="item-info">
+						<h4>Shawl</h4>
+						<p>$15.00</p>
+					</div>
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="cart-footer">
+				<button class="checkout-btn">Checkout</button>
+			</div>
+
+		</div>
+	</div>
 
 
 	<section class="ftco-product bg-light">
@@ -202,7 +249,8 @@
 										</div>
 										<div class="text  py-3 pb-4 px-3 cardTop">
 											<div class="pricing">
-												<p class="price"><span><img src="images/aed.webp" style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />120.00</span>
+												<p class="price"><span><img src="images/aed.webp"
+															style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />120.00</span>
 												</p>
 											</div>
 											<h3>PALMERA SHEMAGH PREMIUM</h3>

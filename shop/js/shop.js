@@ -450,4 +450,40 @@ window.addEventListener("load", function () {
 // })
 
   
-  
+function openCart() {
+  document.getElementById("cartModal").style.display = "flex";
+}
+
+function closeCart() {
+  document.getElementById("cartModal").style.display = "none";
+}
+
+function changeQty(id, value) {
+  let qtyEl = document.getElementById(id);
+  let qty = parseInt(qtyEl.innerText);
+  qty += value;
+  if (qty < 1) qty = 1;
+  qtyEl.innerText = qty;
+  updateTotal();
+}
+
+function changeImage(id, el) {
+  document.getElementById("mainImage" + id).src = el.src;
+}
+
+function removeItem(el) {
+  el.closest(".cart-item").remove();
+  updateTotal();
+}
+
+// Calculate total (static demo)
+function updateTotal() {
+  let items = document.querySelectorAll(".cart-item");
+  let total = 0;
+  items.forEach(item => {
+    let price = parseFloat(item.querySelector(".item-info p").innerText.replace("$",""));
+    let qty = parseInt(item.querySelector(".qty span").innerText);
+    total += price * qty;
+  });
+  document.getElementById("cartTotal").innerText = `$${total.toFixed(2)}`;
+}
