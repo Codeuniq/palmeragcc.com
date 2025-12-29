@@ -19,7 +19,6 @@
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css'>
 	<link rel='stylesheet' href='https://www.insightindia.com/mcss/icon-font.css'>
-	<!-- <link href="assets/img/logo.webp" rel="apple-touch-icon"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -65,9 +64,9 @@
 					<li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
 					<li class="nav-item active"><a href="shop.html" class="nav-link">Products</a></li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-					<!-- <li class="nav-item"><a class="nav-link">
+					<li class="nav-item"><a class="nav-link">
 							<div class="cart-icon" onclick="openCart()">
-								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#DCCCA0"
 									class="bi bi-bag" viewBox="0 0 16 16">
 									<path
 										d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
@@ -75,7 +74,7 @@
 								<span id="cartCount">5</span>
 							</div>
 
-						</a></li> -->
+						</a></li>
 					<li class="nav-item"><a class="nav-link">
 							<div id='google_translate_element' style="margin-top:8px;"></div>
 						</a></li>
@@ -133,7 +132,8 @@
 					</div>
 					<div class="item-info">
 						<h4>Thobe Classic</h4>
-						<p>$25.00</p>
+						<p style="color: black;font-size: 17px;font-family: sans-serif;"><img src="images/aed.webp"
+								style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />25.00</p>
 					</div>
 					<span class="remove" onclick="removeItem(this)">&times;</span>
 				</div>
@@ -145,7 +145,8 @@
 					</div>
 					<div class="item-info">
 						<h4>Shawl</h4>
-						<p>$15.00</p>
+						<p style="color: black;font-size: 17px;font-family: sans-serif;"><img src="images/aed.webp"
+								style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />15.00</p>
 					</div>
 					<span class="remove" onclick="removeItem(this)">&times;</span>
 				</div>
@@ -278,20 +279,34 @@
 												<div class="stock-dot"></div>
 												<span>Out Of Stock</span>
 											</div>
-											<div class="product-bottom-details" style="margin-top: 11px;">
+											<div class="product-bottom-details"
+												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
+
 												<a id="hm-whatsapp-button"
 													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank">
-													<button class="userlogin-button">
+													target="_blank" style="flex:1;">
+													<button class="userlogin-button" style="width:100%;">
 														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16" style="color: white; ">
+															viewBox="0 0 16 16">
 															<path
 																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>&nbsp;&nbsp;<span class="mt-2"
-															style="font-size: 13px;font-weight: 700;">BUY NOW</span>
+														</svg>
+														<span
+															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
+															NOW</span>
 													</button>
 												</a>
+
+												<!-- CART PLUS BUTTON -->
+												<button class="icon-only-btn" title="Add to Cart">
+													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+														fill="#003626" class="bi bi-plus-square-fill"
+														viewBox="0 0 16 16">
+														<path
+															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+													</svg>
+												</button>
 
 											</div>
 										</div>
@@ -370,20 +385,34 @@
 												<div class="stock-dot"></div>
 												<span>Out Of Stock</span>
 											</div>
-											<div class="product-bottom-details" style="margin-top: 11px;">
+											<div class="product-bottom-details"
+												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
+
 												<a id="hm-whatsapp-button"
 													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank">
-													<button class="userlogin-button">
+													target="_blank" style="flex:1;">
+													<button class="userlogin-button" style="width:100%;">
 														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16" style="color: white; ">
+															viewBox="0 0 16 16">
 															<path
 																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>&nbsp;&nbsp;<span class="mt-2"
-															style="font-size: 13px;font-weight: 700;">BUY NOW</span>
+														</svg>
+														<span
+															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
+															NOW</span>
 													</button>
 												</a>
+
+												<!-- CART PLUS BUTTON -->
+												<button class="icon-only-btn" title="Add to Cart">
+													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+														fill="#003626" class="bi bi-plus-square-fill"
+														viewBox="0 0 16 16">
+														<path
+															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+													</svg>
+												</button>
 
 											</div>
 										</div>
@@ -463,22 +492,37 @@
 												<div class="stock-dot"></div>
 												<span>Out Of Stock</span>
 											</div>
-											<div class="product-bottom-details" style="margin-top: 11px;">
+											<div class="product-bottom-details"
+												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
+
 												<a id="hm-whatsapp-button"
 													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank">
-													<button class="userlogin-button">
+													target="_blank" style="flex:1;">
+													<button class="userlogin-button" style="width:100%;">
 														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16" style="color: white; ">
+															viewBox="0 0 16 16">
 															<path
 																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>&nbsp;&nbsp;<span class="mt-2"
-															style="font-size: 13px;font-weight: 700;">BUY NOW</span>
+														</svg>
+														<span
+															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
+															NOW</span>
 													</button>
 												</a>
 
+												<!-- CART PLUS BUTTON -->
+												<button class="icon-only-btn" title="Add to Cart">
+													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+														fill="#003626" class="bi bi-plus-square-fill"
+														viewBox="0 0 16 16">
+														<path
+															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+													</svg>
+												</button>
+
 											</div>
+
 										</div>
 									</div>
 								</div>
@@ -555,20 +599,34 @@
 												<div class="stock-dot"></div>
 												<span>Out Of Stock</span>
 											</div>
-											<div class="product-bottom-details" style="margin-top: 11px;">
+											<div class="product-bottom-details"
+												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
+
 												<a id="hm-whatsapp-button"
 													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank">
-													<button class="userlogin-button">
+													target="_blank" style="flex:1;">
+													<button class="userlogin-button" style="width:100%;">
 														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16" style="color: white; ">
+															viewBox="0 0 16 16">
 															<path
 																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>&nbsp;&nbsp;<span class="mt-2"
-															style="font-size: 13px;font-weight: 700;">BUY NOW</span>
+														</svg>
+														<span
+															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
+															NOW</span>
 													</button>
 												</a>
+
+												<!-- CART PLUS BUTTON -->
+												<button class="icon-only-btn" title="Add to Cart">
+													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+														fill="#003626" class="bi bi-plus-square-fill"
+														viewBox="0 0 16 16">
+														<path
+															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+													</svg>
+												</button>
 
 											</div>
 										</div>
