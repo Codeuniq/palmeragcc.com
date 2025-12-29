@@ -18240,6 +18240,17 @@ button:active {
   font-size: 13px;
 }
 
+.out-stock .stock-dot {
+  background-color: red;
+  /* Green dot */
+}
+
+.out-stock span {
+  color: red;
+  /* Text color */
+  font-size: 13px;
+}
+
 .add-cart-btn {
   padding: 12px 20px;
   background: #111;
