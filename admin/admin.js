@@ -170,6 +170,16 @@ document.getElementById("logoutLink").addEventListener("click", function(e){
   window.location.href = "login.html";
 });
 
+// logout (FIXED)
+document.getElementById("logoutLinkS").addEventListener("click", function(e){
+  e.preventDefault(); // 🚨 IMPORTANT
+  localStorage.clear();
+  window.location.href = "login.html";
+});
+
+
+
+
 const profileIcon = document.getElementById('profileIcon');
   const dropdownMenu = document.getElementById('dropdownMenu');
 
