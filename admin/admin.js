@@ -159,23 +159,18 @@ if(localStorage.getItem("isLoggedIn") !== "true"){
   window.location.href = "login.html";
 }
 
-// show email
-document.getElementById("userEmail").innerText =
-  localStorage.getItem("userEmail");
-
 // logout (FIXED)
 document.getElementById("logoutLink").addEventListener("click", function(e){
   e.preventDefault(); // 🚨 IMPORTANT
   localStorage.clear();
   window.location.href = "login.html";
 });
-
-// logout (FIXED)
-document.getElementById("logoutLinkS").addEventListener("click", function(e){
+document.getElementById("logoutLinks").addEventListener("click", function(e){
   e.preventDefault(); // 🚨 IMPORTANT
   localStorage.clear();
   window.location.href = "login.html";
 });
+
 
 
 
