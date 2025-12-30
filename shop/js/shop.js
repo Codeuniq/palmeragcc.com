@@ -487,3 +487,26 @@ function updateTotal() {
   });
   document.getElementById("cartTotal").innerText = `$${total.toFixed(2)}`;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash; // e.g., #shemagh-PALMERA1
+    if(hash) {
+        const [tabId, productId] = hash.substring(1).split('-');
+
+        // Activate the tab
+        const tabLink = document.querySelector(`.nav-link[href="#${tabId}"]`);
+        if(tabLink) {
+            if(typeof bootstrap !== 'undefined') {
+                const tab = new bootstrap.Tab(tabLink);
+                tab.show();
+            } else if(typeof $ !== 'undefined') {
+                $(tabLink).tab('show');
+            }
+        }
+
+        // Scroll to product
+        const product = document.getElementById(productId);
+        if(product) {
+            product.scrollIntoView({behavior: "smooth", block: "start"});
+        }
+    }
+});
