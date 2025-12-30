@@ -18148,7 +18148,7 @@ div#goog-gt-tt {
 }
 
 /* Dots */
-.dots {
+/* .dots {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -18167,7 +18167,7 @@ div#goog-gt-tt {
 
 .dot.active {
   background: #000;
-}
+} */
 
 button {
   border: none;
