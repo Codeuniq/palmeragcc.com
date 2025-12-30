@@ -18182,9 +18182,9 @@ button:active {
 
 /* Stock Badge */
 .stock-badge {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
+  position: relative;
+  /* bottom: 12px;
+  right: 12px; */
   display: flex;
   align-items: center;
   gap: 6px;
@@ -18195,19 +18195,6 @@ button:active {
   backdrop-filter: blur(6px);
 }
 
-/* In Stock */
-.in-stock {
-  background: rgba(0, 180, 90, 0.15);
-  color: #00b45a;
-}
-
-.in-stock .dot {
-  width: 8px;
-  height: 8px;
-  background: #00b45a;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
 
 .out-stock {
   background: rgba(220, 53, 69, 0.15);
