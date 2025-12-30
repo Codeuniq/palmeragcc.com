@@ -18180,40 +18180,53 @@ button:active {
   box-shadow: none;
 }
 
-.stock-status {
-  display: inline-flex;
+/* Stock Badge */
+.stock-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
   align-items: center;
-  font-family: Arial, sans-serif;
-  font-weight: 500;
   gap: 6px;
+  padding: 2px 4px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
 }
 
-.stock-dot {
-  width: 10px;
-  height: 10px;
+/* In Stock */
+.in-stock {
+  background: rgba(0, 180, 90, 0.15);
+  color: #00b45a;
+}
+
+.in-stock .dot {
+  width: 8px;
+  height: 8px;
+  background: #00b45a;
   border-radius: 50%;
+  animation: pulse 1.5s infinite;
 }
 
-.in-stock .stock-dot {
-  background-color: #22c55e;
-  /* Green dot */
-}
-
-.in-stock span {
-  color: #22c55e;
-  /* Text color */
-  font-size: 13px;
-}
-
-.out-stock .stock-dot {
-  background-color: red;
-  /* Green dot */
-}
-
-.out-stock span {
+.out-stock {
+  background: rgba(220, 53, 69, 0.15);
   color: red;
-  /* Text color */
-  font-size: 13px;
+}
+
+.out-stock .dot {
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .add-cart-btn {
@@ -18357,13 +18370,15 @@ button:active {
   align-items: center;
   justify-content: center;
 }
+
 .icon-only-btn {
   background: none;
   border: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  color: #000; /* icon color */
+  color: #000;
+  /* icon color */
 }
 
 .icon-only-btn:hover {
