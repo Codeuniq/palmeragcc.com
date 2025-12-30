@@ -4765,7 +4765,7 @@ input[type="button"].btn-block {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   font-family: "Marcellus", Roboto, sans-serif;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .nav-tabs .nav-link:hover,
