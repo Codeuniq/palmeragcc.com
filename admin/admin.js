@@ -5,9 +5,7 @@ toggleBtn.onclick = () => {
   sidebar.classList.toggle("collapsed");
 };
 
-/* YOUR ORIGINAL PRODUCT LOGIC JS GOES HERE */
-
-
+//PRODUCT UPLOADING AND LISTING
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let images = [];
 let editIndex = null;
