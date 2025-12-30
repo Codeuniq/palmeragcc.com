@@ -1160,18 +1160,18 @@ marquee {
 .bodercolor {
   background: #fff;
   border-radius: 25px 25px 25px 25px;
-  border: 1.5px solid black;
+  border: 1.5px solid #003626;
   z-index: 3;
-  border-width: 2px 2px 2px 2px;
+  border-width: 1px 1px 1px 1px;
   /* Top, Right, Bottom, Left */
 }
 
 .bodercolor1 {
   background: #fff;
   border-radius: 25px 25px 25px 25px;
-  border: 1.5px solid black;
+  border: 1.5px solid #003626;
   z-index: 3;
-  border-width: 2px 2px 2px 2px;
+  border-width: 1px 1px 1px 1px;
   /* Top, Right, Bottom, Left */
 }
 
