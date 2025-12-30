@@ -4761,7 +4761,7 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link {
   border: 1px solid transparent;
-  color: black;
+  color: #af8665;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   font-family: "Marcellus", Roboto, sans-serif;
@@ -4781,9 +4781,9 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #fff;
-  background-color: #003626;
-  border-color: #dee2e6 #dee2e6 #fff;
+  color: #003626;
+  background-color: transparent;
+  border: 1px solid #003626;
   font-family: "Emirates Bold";
 }
 
@@ -18370,4 +18370,20 @@ button:active {
 
 .icon-only-btn:hover {
   color: #ffc107;
+}
+
+.see-more-btn {
+    background-color: #f3e3d3; /* light beige */
+    color: #1f4d3a;           /* dark green text */
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;       /* very slight rounding */
+    letter-spacing: 0.5px;
+}
+
+.see-more-btn:hover {
+    opacity: 0.9;
 }
