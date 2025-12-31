@@ -428,3 +428,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 });
+
+//modal qty
+function qtyChange(btn, val) {
+  let qtyEl = btn.parentElement.querySelector(".qty-num");
+  let qty = parseInt(qtyEl.innerText);
+  qty += val;
+  if (qty < 1) qty = 1;
+  qtyEl.innerText = qty;
+}
+
+//PRODUCT QUTY
+function customQtyChange(btn, val) {
+  let qtyEl = btn.parentElement.querySelector(".custom-qty-num");
+  let qty = parseInt(qtyEl.innerText);
+  qty += val;
+  if (qty < 1) qty = 1;
+  qtyEl.innerText = qty;
+}
+

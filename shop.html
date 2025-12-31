@@ -132,36 +132,64 @@
 				<!-- PRODUCT 1 -->
 				<div class="cart-item">
 					<div class="cart-gallery">
-						<img id="mainImage1" src="images/product/thobe/1.webp" class="main-img">
+						<img src="images/product/thobe/1.webp" class="main-img">
 					</div>
+
 					<div class="item-info">
 						<h4>Thobe Classic</h4>
-						<p style="color: black;font-size: 17px;font-family: sans-serif;"><img src="images/aed.webp"
-								style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />25.00</p>
+
+						<div class="price-qty">
+							<p class="price">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>25.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
 					</div>
+
+
 					<span class="remove" onclick="removeItem(this)">&times;</span>
 				</div>
 
 				<!-- PRODUCT 2 -->
 				<div class="cart-item">
 					<div class="cart-gallery">
-						<img id="mainImage2" src="images/kh1.webp" class="main-img">
+						<img src="images/kh1.webp" class="main-img">
 					</div>
+
 					<div class="item-info">
-						<h4>Shawl</h4>
-						<p style="color: black;font-size: 17px;font-family: sans-serif;"><img src="images/aed.webp"
-								style="height: 15px;width: auto;margin-top: -4px;padding-right: 2px;" />15.00</p>
+						<h4>Thobe Classic</h4>
+
+						<div class="price-qty">
+							<p class="price">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>25.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
 					</div>
 					<span class="remove" onclick="removeItem(this)">&times;</span>
 				</div>
-
 			</div>
 
 			<!-- FOOTER -->
 			<div class="cart-footer">
-				<a id="chechout"
-					href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-					target="_blank" style="flex:1;">
+				<a id="chechout" href="https://wa.me/+971507135589?text=I'd like to place an order." target="_blank"
+					style="flex:1;">
 					<button class="userlogin-button" style="width:100%;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
 							class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
@@ -172,9 +200,9 @@
 					</button>
 				</a>
 			</div>
-
 		</div>
 	</div>
+
 
 
 	<section class="ftco-product">
@@ -193,7 +221,8 @@
 			<div class="prod-header">
 				<ul class="nav nav-tabs justify-content-center" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link tab-btn active" data-category="shemagh" data-toggle="tab" href="#shemagh" role="tab">
+						<a class="nav-link tab-btn active" data-category="shemagh" data-toggle="tab" href="#shemagh"
+							role="tab">
 							<!-- <i class="now-ui-icons objects_umbrella-13"></i>  -->
 							Shemagh
 						</a>
@@ -205,7 +234,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link tab-btn" data-category="thobe"  data-toggle="tab" href="#thobe" role="tab">
+						<a class="nav-link tab-btn" data-category="thobe" data-toggle="tab" href="#thobe" role="tab">
 							<!-- <i class="now-ui-icons ui-2_settings-90"></i>  -->
 							Thobe
 						</a>
@@ -263,7 +292,8 @@
 											</ul>
 										</div>
 										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div style="display: flex; justify-content: space-between; align-items: center;">
+											<div
+												style="display: flex; justify-content: space-between; align-items: center;">
 												<div class="pricing">
 													<p class="price">
 														<span>
@@ -274,9 +304,10 @@
 													</p>
 												</div>
 
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
+												<div id="modernQtySelector" class="custom-qty">
+													<button onclick="customQtyChange(this,-1)">−</button>
+													<span class="custom-qty-num">1</span>
+													<button onclick="customQtyChange(this,1)">+</button>
 												</div>
 											</div>
 											<h3>PALMERA SHEMAGH PREMIUM</h3>
@@ -296,7 +327,12 @@
 													</p>
 												</div>
 											</div>
-
+											<div class="d-flex justify-content-end mt-3">
+												<div class="stock-badge out-stock">
+													<span class="dot"></span>
+													Out Of Stock
+												</div>
+											</div>
 											<div class="product-bottom-details"
 												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
 
@@ -345,7 +381,9 @@
 													<img src="images/product/thobe/1.webp" class="PRimg">
 													<img src="images/product/thobe/2.webp" class="PRimg">
 													<img src="images/product/thobe/3.webp" class="PRimg">
+
 												</div>
+
 												<button class="prev_button PRBTN">
 													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 														fill="currentColor" class="bi bi-caret-left-fill"
@@ -373,7 +411,8 @@
 											</ul>
 										</div>
 										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div style="display: flex; justify-content: space-between; align-items: center;">
+											<div
+												style="display: flex; justify-content: space-between; align-items: center;">
 												<div class="pricing">
 													<p class="price">
 														<span>
@@ -384,9 +423,10 @@
 													</p>
 												</div>
 
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
+												<div id="modernQtySelector" class="custom-qty">
+													<button onclick="customQtyChange(this,-1)">−</button>
+													<span class="custom-qty-num">1</span>
+													<button onclick="customQtyChange(this,1)">+</button>
 												</div>
 											</div>
 											<h3>PALMERA SHEMAGH PREMIUM</h3>
@@ -404,6 +444,12 @@
 														<span class="fa fa-star starrat"></span>
 														<span class="fa fa-star starrat"></span>
 													</p>
+												</div>
+											</div>
+											<div class="d-flex justify-content-end mt-3">
+												<div class="stock-badge out-stock">
+													<span class="dot"></span>
+													Out Of Stock
 												</div>
 											</div>
 											<div class="product-bottom-details"
@@ -455,7 +501,9 @@
 													<img src="images/product/thobe/1.webp" class="PRimg">
 													<img src="images/product/thobe/2.webp" class="PRimg">
 													<img src="images/product/thobe/3.webp" class="PRimg">
+
 												</div>
+
 												<button class="prev_button PRBTN">
 													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 														fill="currentColor" class="bi bi-caret-left-fill"
@@ -483,7 +531,8 @@
 											</ul>
 										</div>
 										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div style="display: flex; justify-content: space-between; align-items: center;">
+											<div
+												style="display: flex; justify-content: space-between; align-items: center;">
 												<div class="pricing">
 													<p class="price">
 														<span>
@@ -494,9 +543,10 @@
 													</p>
 												</div>
 
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
+												<div id="modernQtySelector" class="custom-qty">
+													<button onclick="customQtyChange(this,-1)">−</button>
+													<span class="custom-qty-num">1</span>
+													<button onclick="customQtyChange(this,1)">+</button>
 												</div>
 											</div>
 											<h3>PALMERA SHEMAGH PREMIUM</h3>
@@ -514,6 +564,12 @@
 														<span class="fa fa-star starrat"></span>
 														<span class="fa fa-star starrat"></span>
 													</p>
+												</div>
+											</div>
+											<div class="d-flex justify-content-end mt-3">
+												<div class="stock-badge out-stock">
+													<span class="dot"></span>
+													Out Of Stock
 												</div>
 											</div>
 											<div class="product-bottom-details"
@@ -546,7 +602,6 @@
 												</button>
 
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -565,6 +620,7 @@
 													<img src="images/product/thobe/1.webp" class="PRimg">
 													<img src="images/product/thobe/2.webp" class="PRimg">
 													<img src="images/product/thobe/3.webp" class="PRimg">
+
 												</div>
 
 												<button class="prev_button PRBTN">
@@ -594,7 +650,8 @@
 											</ul>
 										</div>
 										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div style="display: flex; justify-content: space-between; align-items: center;">
+											<div
+												style="display: flex; justify-content: space-between; align-items: center;">
 												<div class="pricing">
 													<p class="price">
 														<span>
@@ -605,9 +662,10 @@
 													</p>
 												</div>
 
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
+												<div id="modernQtySelector" class="custom-qty">
+													<button onclick="customQtyChange(this,-1)">−</button>
+													<span class="custom-qty-num">1</span>
+													<button onclick="customQtyChange(this,1)">+</button>
 												</div>
 											</div>
 											<h3>PALMERA SHEMAGH PREMIUM</h3>
@@ -625,6 +683,12 @@
 														<span class="fa fa-star starrat"></span>
 														<span class="fa fa-star starrat"></span>
 													</p>
+												</div>
+											</div>
+											<div class="d-flex justify-content-end mt-3">
+												<div class="stock-badge out-stock">
+													<span class="dot"></span>
+													Out Of Stock
 												</div>
 											</div>
 											<div class="product-bottom-details"
