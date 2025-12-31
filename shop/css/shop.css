@@ -18426,7 +18426,7 @@ button:active {
 
 .modern-qty button {
   width: 28px;
-  height: 28px;
+  /* height: 28px; */
   border-radius: 50%;
   border: none;
   background: #fff;
@@ -18462,7 +18462,7 @@ button:active {
 
 .custom-qty button {
   width: 28px;
-  height: 28px;
+  /* height: 28px; */
   border-radius: 50%;
   border: none;
   background: #fff;
