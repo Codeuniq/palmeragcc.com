@@ -3,6 +3,8 @@ const sliderState = {};
 
 /* LOAD PRODUCTS */
 function load_items() {
+	// Iniatial page load
+	updateCartCount();
 	$.ajax({
 		url: `${API_BASE}/api/method/palmeragcc.apis.api.get_all_products`,
 		type: "GET",
@@ -123,7 +125,7 @@ function productCardTemplate(product, index) {
 						</button>
 					</a>
 
-					<button class="icon-only-btn" title="Add to Cart">
+					<button class="icon-only-btn" title="Add to Cart" onclick="add_to_cart(this);">
 						<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="#003626" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
 							<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
 						</svg>
@@ -175,4 +177,149 @@ function order_via_whatsapp(el) {
 	);
 
 	el.href = `https://wa.me/971507135589?text=${message}`;
+}
+
+function getCart() {
+	return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart) {
+	localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function add_to_cart(el) {
+	const product = el.closest(".product");
+	if (!product) return;
+
+	const item_code = product.querySelector("h2")?.innerText || "Item Code";
+	const item_name = product.querySelector("h3")?.innerText || "Item Name";
+	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
+	const item_price = product.querySelector(".price span")?.innerText || "0.00";
+	// Get FIRST image from slider
+	const slider = product.querySelector(".content_inner_slider img");
+	const item_image = slider ? slider.src : "";
+
+	let cart = getCart();
+
+	const item_data = {
+		id: item_code,
+		name: item_name,
+		price: Number(item_price),
+		image: item_image,
+		qty: Number(qty)
+	};
+
+	const existing = cart.find(item => item.id === item_data.id);
+
+	if (existing) {
+		existing.qty += Number(qty);
+	} else {
+		cart.push(item_data);
+	}
+
+	saveCart(cart);
+	updateCartCount();
+}
+
+function open_cart_popup() {
+	renderCart();
+	document.getElementById("cartModal").style.display = "flex";
+}
+
+function closeCart() {
+	document.getElementById("cartModal").style.display = "none";
+}
+
+function renderCart() {
+	const cart = getCart();
+	const container = document.querySelector(".cart-items");
+	const totalEl = document.querySelector(".cart-footer .total strong");
+
+	container.innerHTML = "";
+	let total = 0;
+	let whatsappText = "I'd like to place an order:%0A";
+
+	if (!cart.length) {
+		container.innerHTML = "<p style='text-align:center'>Cart is empty</p>";
+		totalEl.innerHTML = "0.00";
+		return;
+	}
+
+	cart.forEach((item, index) => {
+		total += item.price * item.qty;
+
+		whatsappText += `*${item.id}* - *${item.name}* x ${item.qty} %0A`;
+
+		container.innerHTML += `
+		<div class="cart-item">
+			<div class="cart-gallery">
+				<img src="${item.image}" class="main-img">
+			</div>
+
+			<div class="item-info">
+				<h4>${item.name}</h4>
+				<div class="price-qty">
+					<p class="price">
+						<img src="images/aed.webp" style="height:15px;margin-top:-4px;padding-right:2px;">
+						<span>${item.price.toFixed(2)}</span>
+					</p>
+
+					<div class="qty modern-qty">
+						<button onclick="updateQty(${index}, -1)">-</button>
+						<span class="qty-num">${item.qty}</span>
+						<button onclick="updateQty(${index}, 1)">+</button>
+					</div>
+				</div>
+			</div>
+
+		  <span class="remove" onclick="removeItem(${index})">&times;</span>
+		</div>
+	  `;
+	});
+
+	totalEl.innerHTML = `
+	  <img src="images/aed.webp" style="height:12px;margin-top:-4px;padding-right:2px;">
+	  ${total.toFixed(2)}
+	`;
+
+	document.getElementById("chechout").href = `https://wa.me/971507135589?text=${whatsappText}`;
+}
+
+function updateQty(index, change) {
+	let cart = getCart();
+	cart[index].qty += change;
+
+	if (cart[index].qty <= 0) {
+		cart.splice(index, 1);
+	}
+
+	saveCart(cart);
+	updateCartCount();
+	renderCart();
+}
+
+function removeItem(index) {
+	let cart = getCart();
+	cart.splice(index, 1);
+	saveCart(cart);
+	updateCartCount();
+	renderCart();
+}
+
+function updateCartCount() {
+	const cart = JSON.parse(localStorage.getItem("cart")) || [];
+	const cartCountEl1 = document.getElementById("cartCount1");
+	const cartCountEl2 = document.getElementById("cartCount2");
+
+	const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+	if (totalQty > 0) {
+		cartCountEl1.textContent = totalQty;
+		cartCountEl2.textContent = totalQty;
+		cartCountEl1.style.display = "flex";
+		cartCountEl2.style.display = "flex";
+	} else {
+		cartCountEl1.style.display = "none";
+		cartCountEl2.style.display = "none";
+	}
 }
