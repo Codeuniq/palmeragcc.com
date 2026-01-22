@@ -140,29 +140,32 @@ function productCardTemplate(product, index) {
 /* SLIDER CONTROLS */
 function slideNext(index) {
 	const slider = document.querySelector(
-		`.carousels[data - index="${index}"] .content_inner_slider`
+		`.carousels[data-index="${index}"] .content_inner_slider`
 	);
 	if (!slider) return;
 
 	const total = slider.children.length;
 	sliderState[index] = (sliderState[index] || 0) + 1;
+
 	if (sliderState[index] >= total) sliderState[index] = 0;
 
-	slider.style.transform = `translateX(-${sliderState[index] * 100} %)`;
+	slider.style.transform = `translateX(-${sliderState[index] * 100}%)`;
 }
 
 function slidePrev(index) {
 	const slider = document.querySelector(
-		`.carousels[data - index= "${index}"] .content_inner_slider`
+		`.carousels[data-index="${index}"] .content_inner_slider`
 	);
 	if (!slider) return;
 
 	const total = slider.children.length;
 	sliderState[index] = (sliderState[index] || 0) - 1;
+
 	if (sliderState[index] < 0) sliderState[index] = total - 1;
 
-	slider.style.transform = `translateX(-${sliderState[index] * 100} %)`;
+	slider.style.transform = `translateX(-${sliderState[index] * 100}%)`;
 }
+
 
 function order_via_whatsapp(el) {
 	const product = el.closest(".product");
