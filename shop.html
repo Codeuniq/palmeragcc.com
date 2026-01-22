@@ -38,9 +38,17 @@
 	<link rel="stylesheet" href="shop/css/flaticon.css">
 	<link rel="stylesheet" href="shop/css/shop.css">
 	<link rel="stylesheet" href="css/responsive.css">
+
+	<style>
+		.ftco-animate {
+			opacity: 1 !important;
+			visibility: visible !important;
+		}
+	</style>
 </head>
 
-<body class="goto-here">
+
+<body class="goto-here" onload="load_items()">
 	<!-- ? Preloader Start -->
 
 	<!-- Preloader Start-->
@@ -191,7 +199,7 @@
 				<div class="total">
 					<span>Total</span>
 					<strong><img src="images/aed.webp"
-									style="height:12px;width:auto;margin-top:-4px;padding-right:2px;" />25.00</strong>
+							style="height:12px;width:auto;margin-top:-4px;padding-right:2px;" />25.00</strong>
 				</div>
 				<a id="chechout" href="https://wa.me/+971507135589?text=I'd like to place an order." target="_blank"
 					style="flex:1;">
@@ -212,533 +220,48 @@
 
 	<section class="ftco-product">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<p style="font-family: Emirates Bold;"
-						style="color:#343434	;font-family: NexaRegular; font-size:16px; font-weight:600;">
-						A stylish and elegant Arabic wear, designed for comfort and cultural flair, perfect for any
-						occasion.
-					</p>
+
+			<!-- TABS -->
+			<ul class="nav nav-tabs justify-content-center" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#shemagh">Shemagh</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#shawl">Shawl</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#thobe">Thobe</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#inner">Innerwear</a>
+				</li>
+			</ul>
+
+			<!-- TAB CONTENT -->
+			<div class="tab-content pt-4">
+
+				<div class="tab-pane fade show active" id="shemagh">
+					<div class="row" id="shemagh_items"></div>
 				</div>
+
+				<div class="tab-pane fade" id="shawl">
+					<div class="row" id="shawl_items"></div>
+				</div>
+
+				<div class="tab-pane fade" id="thobe">
+					<div class="row" id="thobe_items"></div>
+				</div>
+
+				<div class="tab-pane fade" id="inner">
+					<div class="row" id="inner_items"></div>
+				</div>
+
 			</div>
 		</div>
-		<div class="prod">
-			<div class="prod-header">
-				<ul class="nav nav-tabs justify-content-center" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link tab-btn active" data-category="shemagh" data-toggle="tab" href="#shemagh"
-							role="tab">
-							<!-- <i class="now-ui-icons objects_umbrella-13"></i>  -->
-							Shemagh
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link tab-btn" data-category="shawl" data-toggle="tab" href="#shawl" role="tab">
-							<!-- <i class="now-ui-icons ui-2_settings-90"></i>  -->
-							Shawl
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link tab-btn" data-category="thobe" data-toggle="tab" href="#thobe" role="tab">
-							<!-- <i class="now-ui-icons ui-2_settings-90"></i>  -->
-							Thobe
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link tab-btn" data-category="inner" data-toggle="tab" href="#inner" role="tab">
-							<!-- <i class="now-ui-icons ui-2_settings-90"></i>  -->
-							Innerwear
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="prod-body" data-aos="fade-up">
-				<!-- Tab panes -->
-				<div class="tab-content text-center">
-					<div class="tab-pane active" id="shemagh" role="tabpanel">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-6 col-md-6 col-lg-3  ftco-animate d-flex">
-									<div class="product d-flex flex-column">
-										<div class="carousels">
-											<div class="carousel_slider">
-												<div class="content_inner_slider">
-													<img src="images/product/thobe/1.webp" class="PRimg">
-													<img src="images/product/thobe/2.webp" class="PRimg">
-													<img src="images/product/thobe/3.webp" class="PRimg">
-
-												</div>
-
-												<button class="prev_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-left-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-													</svg>
-
-												</button>
-												<button class="next_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-right-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-													</svg>
-
-												</button>
-											</div>
-
-											<ul class="dots d-none">
-												<li class="dot"></li>
-												<li class="dot"></li>
-												<li class="dot"></li>
-											</ul>
-										</div>
-										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div
-												style="display: flex; justify-content: space-between; align-items: center;">
-												<div class="pricing">
-													<p class="price">
-														<span>
-															<img src="images/aed.webp"
-																style="height: 12px; width: auto; margin-top:-2px; padding-right: 2px;" />
-															120.00
-														</span>
-													</p>
-												</div>
-
-												<div id="modernQtySelector" class="custom-qty">
-													<button onclick="customQtyChange(this,-1)">−</button>
-													<span class="custom-qty-num">1</span>
-													<button onclick="customQtyChange(this,1)">+</button>
-												</div>
-											</div>
-											<h3>PALMERA SHEMAGH PREMIUM</h3>
-
-
-											<div class="d-flex margb">
-												<div class="cat">
-													<span>Palmera</span>
-												</div>
-												<div class="rating">
-													<p class="text-right mb-0">
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-													</p>
-												</div>
-											</div>
-											<div class="d-flex justify-content-center mt-3">
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
-												</div>
-											</div>
-											<div class="product-bottom-details"
-												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
-
-												<a id="hm-whatsapp-button"
-													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank" style="flex:1;">
-													<button class="userlogin-button" style="width:100%;">
-														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16">
-															<path
-																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>
-														<span
-															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
-															NOW</span>
-													</button>
-												</a>
-
-												<!-- CART PLUS BUTTON -->
-												<button class="icon-only-btn" title="Add to Cart">
-													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-														fill="#003626" class="bi bi-plus-square-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
-													</svg>
-												</button>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<button class="see-more-btn">See More</button>
-					</div>
-					<div class="tab-pane" id="shawl" role="tabpanel">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-6 col-md-6 col-lg-3  ftco-animate d-flex">
-									<div class="product d-flex flex-column">
-										<div class="carousels">
-											<div class="carousel_slider">
-												<div class="content_inner_slider">
-													<img src="images/product/thobe/1.webp" class="PRimg">
-													<img src="images/product/thobe/2.webp" class="PRimg">
-													<img src="images/product/thobe/3.webp" class="PRimg">
-
-												</div>
-
-												<button class="prev_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-left-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-													</svg>
-
-												</button>
-												<button class="next_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-right-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-													</svg>
-
-												</button>
-											</div>
-
-											<ul class="dots d-none">
-												<li class="dot"></li>
-												<li class="dot"></li>
-												<li class="dot"></li>
-											</ul>
-										</div>
-										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div
-												style="display: flex; justify-content: space-between; align-items: center;">
-												<div class="pricing">
-													<p class="price">
-														<span>
-															<img src="images/aed.webp"
-																style="height: 12px; width: auto; margin-top:-2px; padding-right: 2px;" />
-															120.00
-														</span>
-													</p>
-												</div>
-
-												<div id="modernQtySelector" class="custom-qty">
-													<button onclick="customQtyChange(this,-1)">−</button>
-													<span class="custom-qty-num">1</span>
-													<button onclick="customQtyChange(this,1)">+</button>
-												</div>
-											</div>
-											<h3>PALMERA SHEMAGH PREMIUM</h3>
-
-
-											<div class="d-flex margb">
-												<div class="cat">
-													<span>Palmera</span>
-												</div>
-												<div class="rating">
-													<p class="text-right mb-0">
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-													</p>
-												</div>
-											</div>
-											<div class="d-flex justify-content-center mt-3">
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
-												</div>
-											</div>
-											<div class="product-bottom-details"
-												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
-
-												<a id="hm-whatsapp-button"
-													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank" style="flex:1;">
-													<button class="userlogin-button" style="width:100%;">
-														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16">
-															<path
-																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>
-														<span
-															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
-															NOW</span>
-													</button>
-												</a>
-
-												<!-- CART PLUS BUTTON -->
-												<button class="icon-only-btn" title="Add to Cart">
-													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-														fill="#003626" class="bi bi-plus-square-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
-													</svg>
-												</button>
-
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<button class="see-more-btn">See More</button>
-					</div>
-					<div class="tab-pane" id="thobe" role="tabpanel">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-6 col-md-6 col-lg-3  ftco-animate d-flex">
-									<div class="product d-flex flex-column">
-										<div class="carousels">
-											<div class="carousel_slider">
-												<div class="content_inner_slider">
-													<img src="images/product/thobe/1.webp" class="PRimg">
-													<img src="images/product/thobe/2.webp" class="PRimg">
-													<img src="images/product/thobe/3.webp" class="PRimg">
-
-												</div>
-
-												<button class="prev_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-left-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-													</svg>
-
-												</button>
-												<button class="next_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-right-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-													</svg>
-
-												</button>
-											</div>
-
-											<ul class="dots d-none">
-												<li class="dot"></li>
-												<li class="dot"></li>
-												<li class="dot"></li>
-											</ul>
-										</div>
-										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div
-												style="display: flex; justify-content: space-between; align-items: center;">
-												<div class="pricing">
-													<p class="price">
-														<span>
-															<img src="images/aed.webp"
-																style="height: 12px; width: auto; margin-top:-2px; padding-right: 2px;" />
-															120.00
-														</span>
-													</p>
-												</div>
-
-												<div id="modernQtySelector" class="custom-qty">
-													<button onclick="customQtyChange(this,-1)">−</button>
-													<span class="custom-qty-num">1</span>
-													<button onclick="customQtyChange(this,1)">+</button>
-												</div>
-											</div>
-											<h3>PALMERA SHEMAGH PREMIUM</h3>
-
-
-											<div class="d-flex margb">
-												<div class="cat">
-													<span>Palmera</span>
-												</div>
-												<div class="rating">
-													<p class="text-right mb-0">
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-													</p>
-												</div>
-											</div>
-											<div class="d-flex justify-content-center mt-3">
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
-												</div>
-											</div>
-											<div class="product-bottom-details"
-												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
-
-												<a id="hm-whatsapp-button"
-													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank" style="flex:1;">
-													<button class="userlogin-button" style="width:100%;">
-														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16">
-															<path
-																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>
-														<span
-															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
-															NOW</span>
-													</button>
-												</a>
-
-												<!-- CART PLUS BUTTON -->
-												<button class="icon-only-btn" title="Add to Cart">
-													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-														fill="#003626" class="bi bi-plus-square-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
-													</svg>
-												</button>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<button class="see-more-btn">See More</button>
-					</div>
-					<div class="tab-pane" id="inner" role="tabpanel">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-6 col-md-6 col-lg-3  ftco-animate d-flex">
-									<div class="product d-flex flex-column">
-										<div class="carousels">
-											<div class="carousel_slider">
-												<div class="content_inner_slider">
-													<img src="images/product/thobe/1.webp" class="PRimg">
-													<img src="images/product/thobe/2.webp" class="PRimg">
-													<img src="images/product/thobe/3.webp" class="PRimg">
-
-												</div>
-
-												<button class="prev_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-left-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-													</svg>
-
-												</button>
-												<button class="next_button PRBTN">
-													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-														fill="currentColor" class="bi bi-caret-right-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-													</svg>
-
-												</button>
-											</div>
-
-											<ul class="dots d-none">
-												<li class="dot"></li>
-												<li class="dot"></li>
-												<li class="dot"></li>
-											</ul>
-										</div>
-										<div class="text  py-3 pb-4 px-3 cardTop">
-											<div
-												style="display: flex; justify-content: space-between; align-items: center;">
-												<div class="pricing">
-													<p class="price">
-														<span>
-															<img src="images/aed.webp"
-																style="height: 12px; width: auto; margin-top:-2px; padding-right: 2px;" />
-															120.00
-														</span>
-													</p>
-												</div>
-
-												<div id="modernQtySelector" class="custom-qty">
-													<button onclick="customQtyChange(this,-1)">−</button>
-													<span class="custom-qty-num">1</span>
-													<button onclick="customQtyChange(this,1)">+</button>
-												</div>
-											</div>
-											<h3>PALMERA SHEMAGH PREMIUM</h3>
-
-
-											<div class="d-flex margb">
-												<div class="cat">
-													<span>Palmera</span>
-												</div>
-												<div class="rating">
-													<p class="text-right mb-0">
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-														<span class="fa fa-star starrat"></span>
-													</p>
-												</div>
-											</div>
-											<div class="d-flex justify-content-center mt-3">
-												<div class="stock-badge out-stock">
-													<span class="dot"></span>
-													Out Of Stock
-												</div>
-											</div>
-											<div class="product-bottom-details"
-												style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
-
-												<a id="hm-whatsapp-button"
-													href="https://wa.me/+971507135589?text= I'd like to place an order for the Children Electronic GHATRA."
-													target="_blank" style="flex:1;">
-													<button class="userlogin-button" style="width:100%;">
-														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-															fill="black" class="bi bi-bag-heart-fill"
-															viewBox="0 0 16 16">
-															<path
-																d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-														</svg>
-														<span
-															style="font-size:13px;font-weight:700;margin-left:6px;">BUY
-															NOW</span>
-													</button>
-												</a>
-
-												<!-- CART PLUS BUTTON -->
-												<button class="icon-only-btn" title="Add to Cart">
-													<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-														fill="#003626" class="bi bi-plus-square-fill"
-														viewBox="0 0 16 16">
-														<path
-															d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
-													</svg>
-												</button>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<button class="see-more-btn">See More</button>
-					</div>
-				</div>
-
 	</section>
-	<!--==========================
-    Footer
-  ============================-->
+
+
+	<!--=========== Footer ===================-->
 	<footer id="footer">
 		<div class="footer-top">
 			<div class="container">
@@ -870,6 +393,7 @@
 	<script src="shop/js/google-map.js"></script>
 	<script src="shop/js/shop.js"></script>
 	<script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+	<script src="js/shop.js"></script>
 
 </body>
 
