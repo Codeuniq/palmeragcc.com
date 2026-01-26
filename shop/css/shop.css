@@ -18452,26 +18452,27 @@ button:active {
 }
 
 .custom-qty {
-  display: inline-flex;
-  align-items: center;
-  background: #f4f4f4;
-  border-radius: 999px;
-  padding: 2px;
-  gap: 2px;
+    display: inline-flex;
+    align-items: center;
+    background: #f4f4f4;
+    border-radius: 999px;
+    padding: 0px;
+    gap: 4px;
+    height: 23px;
 }
 
 .custom-qty button {
-  width: 28px;
-  /* height: 28px; */
-  border-radius: 50%;
-  border: none;
-  background: #fff;
-  color: #111;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-  transition: all 0.2s ease;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #111;
+    font-size: 12px;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
 }
 
 .custom-qty button:hover {

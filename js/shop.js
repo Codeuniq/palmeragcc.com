@@ -69,11 +69,26 @@ function productCardTemplate(product, index) {
 					<div class="content_inner_slider">
 						${imageSlides}
 					</div>
-					<button class="prev_button PRBTN" onclick="slidePrev(${index})"><</button>
-					<button class="next_button PRBTN" onclick="slideNext(${index})">></button>
+					
+					<button class="prev_button PRBTN" onclick="slidePrev(${index})">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+								fill="currentColor" class="bi bi-caret-left-fill"
+								viewBox="0 0 16 16">
+								<path
+								d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+							</svg>
+					</button>
+					<button class="next_button PRBTN" onclick="slideNext(${index})">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+									fill="currentColor" class="bi bi-caret-right-fill"
+									viewBox="0 0 16 16">
+									<path
+									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+							</svg>
+							</button>
 				</div>
 			</div>
-			<div style="display:flex; justify-content:space-between; align-items:center;">
+			<div class="p-2" style="display:flex; justify-content:space-between; align-items:center;">
 				<div class="pricing">
 					<p class="price">
 						<span>
@@ -84,12 +99,12 @@ function productCardTemplate(product, index) {
 				</div>
 	
 				<div class="custom-qty">
-					<button onclick="customQtyChange(this,-1)">-</button>
+					<button onclick="customQtyChange(this,-1)">−</button>
 					<span class="custom-qty-num">1</span>
 					<button onclick="customQtyChange(this,1)">+</button>
 				</div>
 			</div>
-			<div class="text p-3">
+			<div class="text p-2 pt-0">
 				<h2 style="display:none;">${item_code}</h2>
 				<h3>${item_name}</h3>
 				<small>${brand}</small>
