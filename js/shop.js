@@ -123,7 +123,23 @@ function productCardTemplate(product, index) {
 					</div>
 				</div>
 
-				${stock_badge}
+				<div class="d-flex justify-content-between align-items-center" style="gap:10px;">
+					<div class="size-row">
+					<span class="size-text">Size:</span>
+
+					<select class="size-dropdown">
+						<option>Choose</option>
+						<option>36</option>
+						<option>38</option>
+						<option>40</option>
+						<option>42</option>
+						<option>44</option>
+					</select>
+				</div>
+					<div class="stock-badge out-stock dot">
+						${stock_badge}
+					</div>
+				</div>
 
 				<div class="product-bottom-details" style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
 					<!-- BUY NOW BUTTON -->
