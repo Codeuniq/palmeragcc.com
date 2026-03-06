@@ -136,7 +136,7 @@ function productCardTemplate(product, index) {
 						<option>44</option>
 					</select>
 				</div>
-					<div class="stock-badge out-stock dot">
+					<div class="stock-badge">
 						${stock_badge}
 					</div>
 				</div>
