@@ -292,6 +292,7 @@ function renderCart() {
 
 			<div class="item-info">
 				<h4>${item.name}</h4>
+				<h5 style="color: #000;">Size : 56</h5>
 				<div class="price-qty">
 					<p class="price">
 						<img src="images/aed.webp" style="height:15px;margin-top:-4px;padding-right:2px;">
