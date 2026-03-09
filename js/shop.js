@@ -38,20 +38,13 @@ function productCardTemplate(product, index) {
 	const item_code = product.name || "";
 	const item_name = product.item_name || "";
 	const brand = product.brand || "";
-	let stock_badge = "";
-	if (product.status === "Available") {
-		stock_badge = '<br>';
-	}
-	else {
-		stock_badge = `
-		<div class="d-flex justify-content-center mt-3">
-			<div class="stock-badge out-stock">
-				<span class="dot"></span>
-				Out Of Stock
-			</div>
-		</div>
-		`
-	}
+	let stock_badge = get_stock_badge(1);
+
+	const sizeOptions = product.sizes?.map(size => `
+		<option value="${size.size}" data-qty="${size.qty}">
+			${size.size}
+		</option>
+	`).join("") || '<option value="NA" data-qty="0">Choose</option>';
 
 	const images = product.images?.length
 		? product.images
@@ -99,7 +92,7 @@ function productCardTemplate(product, index) {
 				</div>
 	
 				<div class="custom-qty">
-					<button onclick="customQtyChange(this,-1)">−</button>
+					<button onclick="customQtyChange(this,-1)">-</button>
 					<span class="custom-qty-num">1</span>
 					<button onclick="customQtyChange(this,1)">+</button>
 				</div>
@@ -128,15 +121,10 @@ function productCardTemplate(product, index) {
 					<span class="size-text">Size:</span>
 
 					<select class="size-dropdown">
-						<option>Choose</option>
-						<option>36</option>
-						<option>38</option>
-						<option>40</option>
-						<option>42</option>
-						<option>44</option>
+						${sizeOptions}
 					</select>
 				</div>
-					<div class="stock-badge">
+					<div class="stock-badge-container">
 						${stock_badge}
 					</div>
 				</div>
@@ -166,6 +154,21 @@ function productCardTemplate(product, index) {
 		</div >
 	</div >
 		`;
+}
+
+function get_stock_badge(in_stock) {
+	if (in_stock) {
+		return `<br>`;
+	}
+
+	return `
+		<div class="d-flex justify-content-center mt-3">
+			<div class="stock-badge out-stock">
+				<span class="dot"></span>
+				Out Of Stock
+			</div>
+		</div>
+	`;
 }
 
 /* SLIDER CONTROLS */
@@ -205,9 +208,10 @@ function order_via_whatsapp(el) {
 	const item_code = product.querySelector("h2")?.innerText || "Item Code";
 	const item_name = product.querySelector("h3")?.innerText || "Item Name";
 	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
+	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
 
 	const message = encodeURIComponent(
-		`I'd like to order *${item_code}* - *${item_name}* of Qty: *${qty}*.`
+		`I'd like to order *${item_code}* - *${item_name}* - (${item_size}) of Qty: *${qty}*.`
 	);
 
 	el.href = `https://wa.me/971507135589?text=${message}`;
@@ -229,6 +233,8 @@ function add_to_cart(el) {
 	const item_name = product.querySelector("h3")?.innerText || "Item Name";
 	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
 	const item_price = product.querySelector(".price span")?.innerText || "0.00";
+	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
+
 	// Get FIRST image from slider
 	const slider = product.querySelector(".content_inner_slider img");
 	const item_image = slider ? slider.src : "";
@@ -240,10 +246,11 @@ function add_to_cart(el) {
 		name: item_name,
 		price: Number(item_price),
 		image: item_image,
-		qty: Number(qty)
+		qty: Number(qty),
+		size: item_size
 	};
 
-	const existing = cart.find(item => item.id === item_data.id);
+	const existing = cart.find(item => item.id === item_data.id && item.size === item_data.size);
 
 	if (existing) {
 		existing.qty += Number(qty);
@@ -282,7 +289,7 @@ function renderCart() {
 	cart.forEach((item, index) => {
 		total += item.price * item.qty;
 
-		whatsappText += `*${item.id}* - *${item.name}* x ${item.qty} %0A`;
+		whatsappText += `*${item.id}* - *${item.name}* ( *${item.size}* ) x ${item.qty} %0A`;
 
 		container.innerHTML += `
 		<div class="cart-item">
@@ -292,7 +299,7 @@ function renderCart() {
 
 			<div class="item-info">
 				<h4>${item.name}</h4>
-				<h5 style="color: #000;">Size : 56</h5>
+				<h5 style="color: #000;">Size : ${item.size}</h5>
 				<div class="price-qty">
 					<p class="price">
 						<img src="images/aed.webp" style="height:15px;margin-top:-4px;padding-right:2px;">
@@ -358,3 +365,11 @@ function updateCartCount() {
 		cartCountEl2.style.display = "none";
 	}
 }
+
+$(document).on("change", ".size-dropdown", function () {
+	const selected = $(this).find("option:selected");
+	const qty = parseFloat(selected.data("qty")) || 0;
+	const badge = get_stock_badge(qty > 0);
+
+	$(".stock-badge-container").html(badge);
+});
