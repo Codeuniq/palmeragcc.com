@@ -1,12 +1,12 @@
-const API_BASE = "https://erp.palmeragcc.com";
 const sliderState = {};
+const API_BASE_URL = CONFIG.API_BASE_URL
 
 /* LOAD PRODUCTS */
 function load_items() {
 	// Iniatial page load
 	updateCartCount();
 	$.ajax({
-		url: `${API_BASE}/api/method/palmeragcc.apis.api.get_all_products`,
+		url: `${API_BASE_URL}/api/method/palmeragcc.apis.api.get_all_products`,
 		type: "GET",
 		dataType: "json",
 		success: function (res) {
@@ -37,14 +37,6 @@ function productCardTemplate(product, index) {
 	const price = product.item_price || "0.00";
 	const item_code = product.name || "";
 	const item_name = product.item_name || "";
-	const brand = product.brand || "";
-	let stock_badge = get_stock_badge(1);
-
-	const sizeOptions = product.sizes?.map(size => `
-		<option value="${size.size}" data-qty="${size.qty}">
-			${size.size}
-		</option>
-	`).join("") || '<option value="NA" data-qty="0">Choose</option>';
 
 	const images = product.images?.length
 		? product.images
@@ -90,17 +82,10 @@ function productCardTemplate(product, index) {
 						</span>
 					</p>
 				</div>
-	
-				<div class="custom-qty">
-					<button onclick="customQtyChange(this,-1)">-</button>
-					<span class="custom-qty-num">1</span>
-					<button onclick="customQtyChange(this,1)">+</button>
-				</div>
 			</div>
-			<div class="text p-2 pt-0">
+			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${item_code}'" style="cursor:pointer;">
 				<h2 style="display:none;">${item_code}</h2>
 				<h3>${item_name}</h3>
-				<small>${brand}</small>
 				<div class="d-flex margb">
 					<div class="cat">
 						<span>Palmera</span>
@@ -115,60 +100,10 @@ function productCardTemplate(product, index) {
 						</p>
 					</div>
 				</div>
-
-				<div class="d-flex justify-content-between align-items-center" style="gap:10px;">
-					<div class="size-row">
-					<span class="size-text">Size:</span>
-
-					<select class="size-dropdown">
-						${sizeOptions}
-					</select>
-				</div>
-					<div class="stock-badge-container">
-						${stock_badge}
-					</div>
-				</div>
-
-				<div class="product-bottom-details" style="margin-top:11px; display:flex; align-items:center; gap:10px; width:100%;">
-					<!-- BUY NOW BUTTON -->
-					<a href="#" onclick="order_via_whatsapp(this);"
-						target = "_blank"
-						style = "flex:1;" >
-						<button class="userlogin-button" style="width:100%;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
-								<path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-							</svg>
-							<span style="font-size:13px;font-weight:700;margin-left:6px;">
-								BUY NOW
-							</span>
-						</button>
-					</a>
-
-					<button class="icon-only-btn" title="Add to Cart" onclick="add_to_cart(this);">
-						<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="#003626" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-							<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
-						</svg>
-					</button>
-				</div >
 			</div >
 		</div >
 	</div >
 		`;
-}
-
-function get_stock_badge(in_stock) {
-	if (in_stock) {
-		return `<br>`;
-	}
-
-	return `
-		<div class="d-flex justify-content-center mt-3">
-			<div class="stock-badge out-stock">
-				<span class="dot"></span>
-				Out Of Stock
-			</div>
-		</div>
-	`;
 }
 
 /* SLIDER CONTROLS */
@@ -200,7 +135,6 @@ function slidePrev(index) {
 	slider.style.transform = `translateX(-${sliderState[index] * 100}%)`;
 }
 
-
 function order_via_whatsapp(el) {
 	const product = el.closest(".product");
 	if (!product) return;
@@ -223,44 +157,6 @@ function getCart() {
 
 function saveCart(cart) {
 	localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function add_to_cart(el) {
-	const product = el.closest(".product");
-	if (!product) return;
-
-	const item_code = product.querySelector("h2")?.innerText || "Item Code";
-	const item_name = product.querySelector("h3")?.innerText || "Item Name";
-	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
-	const item_price = product.querySelector(".price span")?.innerText || "0.00";
-	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
-
-
-	// Get FIRST image from slider
-	const slider = product.querySelector(".content_inner_slider img");
-	const item_image = slider ? slider.src : "";
-
-	let cart = getCart();
-
-	const item_data = {
-		id: item_code,
-		name: item_name,
-		price: Number(item_price),
-		image: item_image,
-		qty: Number(qty),
-		size: item_size
-	};
-
-	const existing = cart.find(item => item.id === item_data.id && item.size === item_data.size);
-
-	if (existing) {
-		existing.qty += Number(qty);
-	} else {
-		cart.push(item_data);
-	}
-
-	saveCart(cart);
-	updateCartCount();
 }
 
 function open_cart_popup() {
@@ -366,14 +262,3 @@ function updateCartCount() {
 		cartCountEl2.style.display = "none";
 	}
 }
-
-$(document).on("change", ".size-dropdown", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const selected = $(this).find("option:selected");
-    const qty = parseFloat(selected.data("qty")) || 0;
-    const badge = get_stock_badge(qty > 0);
-
-    // Traverse up to the parent product card, then find only its badge container
-    $(this).closest(".product").find(".stock-badge-container").html(badge);
-});

@@ -446,4 +446,3 @@ function customQtyChange(btn, val) {
   if (qty < 1) qty = 1;
   qtyEl.innerText = qty;
 }
-
