@@ -235,6 +235,7 @@ function add_to_cart(el) {
 	const item_price = product.querySelector(".price span")?.innerText || "0.00";
 	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
 
+
 	// Get FIRST image from slider
 	const slider = product.querySelector(".content_inner_slider img");
 	const item_image = slider ? slider.src : "";
@@ -366,10 +367,13 @@ function updateCartCount() {
 	}
 }
 
-$(document).on("change", ".size-dropdown", function () {
-	const selected = $(this).find("option:selected");
-	const qty = parseFloat(selected.data("qty")) || 0;
-	const badge = get_stock_badge(qty > 0);
+$(document).on("change", ".size-dropdown", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const selected = $(this).find("option:selected");
+    const qty = parseFloat(selected.data("qty")) || 0;
+    const badge = get_stock_badge(qty > 0);
 
-	$(".stock-badge-container").html(badge);
+    // Traverse up to the parent product card, then find only its badge container
+    $(this).closest(".product").find(".stock-badge-container").html(badge);
 });
