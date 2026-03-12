@@ -16,7 +16,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="MUHAMMED FAISAN">
-    <!-- <link href="assets/img/logo.webp" rel="apple-touch-icon"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -41,10 +40,7 @@
 
 </head>
 
-<body class="goto-here">
-
-    <!-- ? Preloader Start -->
-
+<body class="goto-here" onload="load_item_details()">
     <!-- Preloader Start-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container-fluid">
@@ -106,7 +102,8 @@
     </nav>
     <!-- END nav -->
 
-    <div id="cartModalitem" class="cart-modal">
+    <!-- CART MODAL -->
+    <div id="cartModal" class="cart-modal">
         <div class="cart-content">
 
             <!-- HEADER -->
@@ -140,129 +137,47 @@
             </div>
         </div>
     </div>
+    <!-- CART MODAL END -->
 
     <section class="ftco-section contact-section bg-light" loading="lazy">
         <div class="container">
-            <div class="product-page">
-
-                <!-- LEFT IMAGE -->
-
-                <div class="gallery">
-
-                    <div class="thumbnails">
-                        <img src="images/product/thobe/1.webp" onclick="changeImage(this)">
-                        <img src="images/product/thobe/2.webp" onclick="changeImage(this)">
-                        <img src="images/product/thobe/3.webp" onclick="changeImage(this)">
-                        <img src="images/product/thobe/4.webp" onclick="changeImage(this)">
-                        <img src="images/product/thobe/1.webp" onclick="changeImage(this)">
-                    </div>
-
-                    <div class="main-image">
-                        <img id="mainImage" src="images/product/thobe/1.webp">
-                    </div>
-
-                    <div class="zoom-view" id="zoomView"></div>
-
-                </div>
-
-
-                <!-- RIGHT PRODUCT -->
-
-                <div class="product-info">
-
-                    <h2 class="product-title">Palmera Box -PR2</h2>
-
-                    <div class="details-title">DETAILS</div>
-
-                    <p class="desc">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                    </p>
-
-                    <p class="choose">Choose Size</p>
-
-                    <div class="sizes">
-                        <div class="size-circle">50</div>
-                        <div class="size-circle">52</div>
-                        <div class="size-circle">54</div>
-                        <div class="size-circle">56</div>
-                    </div>
-                    <div class="buy-row">
-                        <div class="qty">
-                            <button onclick="changeQty(-1)">−</button>
-                            <span id="qty">1</span>
-                            <button onclick="changeQty(1)">+</button>
-                        </div>
-                    </div>
-
-                    <div class="buy-row">
-                        <button class="buy-btn">Add to Cart</button>
-                    </div>
-
-                    <div class="price">100 <img src="images/aed.webp"
-                            style="height:17px; margin-left:5px; padding-right:2px;" /></div>
-
-                    <p class="tax">Taxes are included.</p>
-
-                </div>
+            <div class="product-page" id="product-page">
 
             </div>
-
-
         </div>
     </section>
 
     <section class="similar-items bg-light">
         <h3>Similar Items</h3>
-
-        <div class="items-container">
-
-            <div class="item">
-                <img src="images/product/thobe/1.webp" alt="">
-            </div>
-
-            <div class="item">
-                <img src="images/product/thobe/2.webp" alt="">
-            </div>
-
-            <div class="item">
-                <img src="images/product/thobe/3.webp" alt="">
-            </div>
-
-            <div class="item">
-                <img src="images/product/thobe/4.webp" alt="">
-            </div>
-
+        <div class="items-container" id="items-container">
         </div>
     </section>
 
     <!--==========================
     Footer
-  ============================-->
+    ============================-->
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-3 col-md-6 footer-info">
                         <!-- <h3>Yarmook</h3> -->
-                        <a href="#intro"><img src="images/logohd.webp" alt="AL YARMOOK" title="AL YARMOOK"
-                                style="height:100px;width: auto;" /></a>
+                        <a href="#intro">
+                            <img src="images/logohd.webp" alt="AL YARMOOK" title="AL YARMOOK"
+                                style="height:100px;width: auto;" />
+                        </a>
                         <!-- <img src="assets/img/logo.webp" alt="AL YARMOOK" title="AL YARMOOK" style="height:100px;width: auto;" /> -->
-                        <p class="pt-2">With experience in garment trading for more than a decade, Palmera Garments are
-                            comfortable
-                            clothing that becomes your second skin.</p>
+                        <p class="pt-2">
+                            With experience in garment trading for more than a decade, Palmera Garments are
+                            comfortable clothing that becomes your second skin.
+                        </p>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="#home">Home</a></li>
-                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li> -->
                             <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Products</a></li>
-                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li> -->
-                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
                         </ul>
                     </div>
 
@@ -354,10 +269,11 @@
 
     <!-- loader -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="shop/js/google-map.js"></script>
-    <!-- <script src="shop/js/shop.js"></script> -->
+    <script src="js/config.js"></script>
     <script src="js/item-details.js"></script>
     <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
 
