@@ -386,6 +386,5 @@ function productCardTemplate(product, index) {
 				</div>
 			</div >
 		</div >
-	</div >
 		`;
 }

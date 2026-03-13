@@ -13892,7 +13892,8 @@ textarea.form-control {
 
 @media (max-width: 767.98px) {
 	.ftco-section {
-		padding: 6em 0;
+		padding-top: 13em;
+	padding-bottom: 3em;
 	}
 }
 
@@ -18759,6 +18760,17 @@ button:active {
 		padding: 10px 20px;
 	}
 
+	.thumbnails {
+		flex-direction: row;
+		justify-content: center;
+		order: 2;
+	}
+
+	.thumbnails img {
+		width: 60px;
+		height: 70px;
+	}
+
 	.qty span {
 		font-size: 18px;
 		font-weight: 600;
@@ -18799,4 +18811,22 @@ button:active {
 	height: 220px;
 	object-fit: cover;
 	border-radius: 4px;
+}
+/* Tablet */
+@media (max-width:900px){
+    .items-container{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+    .items-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .item img{
+        height:200px;
+    }
 }
