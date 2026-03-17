@@ -184,9 +184,10 @@ function renderCart() {
 	}
 
 	cart.forEach((item, index) => {
-		total += item.price * item.qty;
+		let item_total = item.price * item.qty;
+		total += item_total;
 
-		whatsappText += `*${item.id}* - *${item.name}* ( *${item.size}* ) x ${item.qty} %0A`;
+		whatsappText += `*${item.id}* - *${item.name}* ( *${item.size}* ) x ${item.qty} - ${item_total.toFixed(2)} AED %0A`;
 
 		container.innerHTML += `
 		<div class="cart-item">
@@ -215,6 +216,8 @@ function renderCart() {
 		</div>
 	  `;
 	});
+
+	whatsappText += `%0ATotal: ${total.toFixed(2)} AED`;
 
 	totalEl.innerHTML = `
 	  <img src="images/aed.webp" style="height:12px;margin-top:-4px;padding-right:2px;">
@@ -250,7 +253,7 @@ function updateCartCount() {
 	const cartCountEl1 = document.getElementById("cartCount1");
 	const cartCountEl2 = document.getElementById("cartCount2");
 
-	const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+	const totalQty = cart.length;
 
 	if (totalQty > 0) {
 		cartCountEl1.textContent = totalQty;
