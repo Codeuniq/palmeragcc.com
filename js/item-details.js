@@ -208,6 +208,56 @@ function renderCart() {
 	document.getElementById("chechout").href = `https://wa.me/971507135589?text=${whatsappText}`;
 }
 
+
+window.showToast = function(message, type = "success") {
+
+  // create style once
+  if (!document.getElementById("toast-style")) {
+    const style = document.createElement("style");
+    style.id = "toast-style";
+    style.innerHTML = `
+      .toast-msg {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        background: #333;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.3s ease;
+        z-index: 999999;
+      }
+
+      .toast-msg.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .toast-success { background: linear-gradient(135deg,#00c853,#64dd17); }
+      .toast-error { background: linear-gradient(135deg,#d50000,#ff5252); }
+    `;
+    document.head.appendChild(style);
+  }
+
+  const toast = document.createElement("div");
+  toast.className = `toast-msg toast-${type}`;
+  toast.innerText = message;
+
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 50);
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+};
+
 function updateQty(index, change) {
 	let cart = getCart();
 	cart[index].qty += change;
