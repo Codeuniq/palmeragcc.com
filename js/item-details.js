@@ -138,7 +138,7 @@ function add_to_cart(el) {
 	} else {
 		cart.push(item_data);
 	}
-
+	showToast("🛒 Product added to cart", "success");
 	saveCart(cart);
 	updateCartCount();
 }
