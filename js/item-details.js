@@ -8,7 +8,7 @@ function load_item_details() {
 	console.log("Loading details for product code:", code);
 
 	$.ajax({
-		url: `${API_BASE_URL}/api/method/palmeragcc.apis.api.get_product_details?product_id=${code}`,
+		url: `${API_BASE_URL}/api/method/frappe_ecommerce.apis.api.get_product_details?product_id=${code}`,
 		type: "GET",
 		dataType: "json",
 		success: function (res) {

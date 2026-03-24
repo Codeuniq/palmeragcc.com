@@ -6,7 +6,7 @@ function load_items() {
 	// Iniatial page load
 	updateCartCount();
 	$.ajax({
-		url: `${API_BASE_URL}/api/method/palmeragcc.apis.api.get_all_products`,
+		url: `${API_BASE_URL}/api/method/frappe_ecommerce.apis.api.get_all_products`,
 		type: "GET",
 		dataType: "json",
 		success: function (res) {
