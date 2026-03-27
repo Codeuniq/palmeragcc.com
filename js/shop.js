@@ -135,22 +135,6 @@ function slidePrev(index) {
 	slider.style.transform = `translateX(-${sliderState[index] * 100}%)`;
 }
 
-function order_via_whatsapp(el) {
-	const product = el.closest(".product");
-	if (!product) return;
-
-	const item_code = product.querySelector("h2")?.innerText || "Item Code";
-	const item_name = product.querySelector("h3")?.innerText || "Item Name";
-	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
-	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
-
-	const message = encodeURIComponent(
-		`I'd like to order *${item_code}* - *${item_name}* - (${item_size}) of Qty: *${qty}*.`
-	);
-
-	el.href = `https://wa.me/971507135589?text=${message}`;
-}
-
 function getCart() {
 	return JSON.parse(localStorage.getItem("cart")) || [];
 }

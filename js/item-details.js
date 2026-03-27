@@ -5,7 +5,6 @@ let img, zoom; // Declare here, assign AFTER HTML is injected
 
 function load_item_details() {
 	updateCartCount();
-	console.log("Loading details for product code:", code);
 
 	$.ajax({
 		url: `${API_BASE_URL}/api/method/frappe_ecommerce.apis.api.get_product_details?product_id=${code}`,
@@ -82,22 +81,6 @@ function getSelectedSize() {
 	return document.getElementById('selectedSize').value;
 }
 
-function order_via_whatsapp(el) {
-	const product = el.closest(".product-info");
-	if (!product) return;
-
-	const item_code = product.querySelector("h2")?.innerText || "Item Code";
-	const item_name = product.querySelector("h3")?.innerText || "Item Name";
-	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
-	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
-
-	const message = encodeURIComponent(
-		`I'd like to order *${item_code}* - *${item_name}* - (${item_size}) of Qty: *${qty}*.`
-	);
-
-	el.href = `https://wa.me/971507135589?text=${message}`;
-}
-
 function getCart() {
 	return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -159,7 +142,6 @@ function renderCart() {
 
 	container.innerHTML = "";
 	let total = 0;
-	let whatsappText = "I'd like to place an order:%0A";
 
 	if (!cart.length) {
 		container.innerHTML = "<p style='text-align:center'>Cart is empty</p>";
@@ -170,9 +152,6 @@ function renderCart() {
 	cart.forEach((item, index) => {
 		let item_total = item.price * item.qty;
 		total += item_total;
-
-		whatsappText += `*${item.id}* - *${item.name}* ( *${item.size}* ) x ${item.qty} - ${item_total.toFixed(2)} AED %0A`;
-
 		container.innerHTML += `
 			<div class="cart-item">
 				<div class="cart-gallery">
@@ -198,64 +177,116 @@ function renderCart() {
 		`;
 	});
 
-	whatsappText += `%0ATotal: ${total.toFixed(2)} AED`;
-
 	totalEl.innerHTML = `
 		<img src="images/aed.webp" style="height:12px;margin-top:-4px;padding-right:2px;">
 		${total.toFixed(2)}
 	`;
 
-	document.getElementById("chechout").href = `https://wa.me/971507135589?text=${whatsappText}`;
+	document.getElementById("chechout").onclick = function (e) {
+		e.preventDefault();
+		openCustomerPopup();
+	};
 }
 
+function openCustomerPopup() {
+	document.getElementById("customerPopup").style.display = "flex";
 
-window.showToast = function(message, type = "success") {
+	const saved = JSON.parse(localStorage.getItem("customerDetails") || "{}");
 
-  // create style once
-  if (!document.getElementById("toast-style")) {
-    const style = document.createElement("style");
-    style.id = "toast-style";
-    style.innerHTML = `
-      .toast-msg {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        padding: 14px 20px;
-        border-radius: 12px;
-        font-size: 15px;
-        font-weight: 500;
-        color: #fff;
-        background: #333;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: 0.3s ease;
-        z-index: 999999;
-      }
+	if (saved) {
+		document.getElementById("custFirstName").value = saved.firstName || "";
+		document.getElementById("custLastName").value = saved.lastName || "";
+		document.getElementById("custMobile").value = saved.mobile || "";
+		document.getElementById("custAddress").value = saved.address || "";
+		document.getElementById("custApartment").value = saved.apartment || "";
+		document.getElementById("custCity").value = saved.city || "";
 
-      .toast-msg.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+		if (saved.emirate) {
+			document.getElementById("custEmirate").value = saved.emirate;
+		}
 
-      .toast-success { background: linear-gradient(135deg,#00c853,#64dd17); }
-      .toast-error { background: linear-gradient(135deg,#d50000,#ff5252); }
-    `;
-    document.head.appendChild(style);
-  }
+		// auto-check checkbox if data exists
+		document.getElementById("saveInfo").checked = true;
+	}
+}
 
-  const toast = document.createElement("div");
-  toast.className = `toast-msg toast-${type}`;
-  toast.innerText = message;
+function closeCustomerPopup() {
+	document.getElementById("customerPopup").style.display = "none";
+}
 
-  document.body.appendChild(toast);
+function submitCustomerDetails() {
+	const firstName = document.getElementById("custFirstName").value.trim();
+	const lastName = document.getElementById("custLastName").value.trim();
+	const mobile = document.getElementById("custMobile").value.trim();
+	const address = document.getElementById("custAddress").value.trim();
+	const apartment = document.getElementById("custApartment").value.trim();
+	const emirate = document.getElementById("custEmirate").value;
+	const city = document.getElementById("custCity").value;
 
-  setTimeout(() => toast.classList.add("show"), 50);
+	if (!firstName || !mobile || !address) {
+		showToast("Please fill required fields", "error");
+		return;
+	}
+	const saveInfo = document.getElementById("saveInfo").checked;
 
-  setTimeout(() => {
-    toast.classList.remove("show");
-    setTimeout(() => toast.remove(), 300);
-  }, 3000);
+	if (saveInfo) {
+		const customerData = {
+			firstName,
+			lastName,
+			mobile,
+			address,
+			apartment,
+			emirate,
+			city
+		};
+
+		localStorage.setItem("customerDetails", JSON.stringify(customerData));
+	} else {
+		localStorage.removeItem("customerDetails"); // optional cleanup
+	}
+
+	const fullName = `${firstName} ${lastName}`;
+
+	const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nEmirate : ${emirate}`.trim();
+
+	let cart = getCart();
+	let total = 0;
+	let whatsappText = "I'd like to place an order:\n\n*Order Summary*\n";
+
+	cart.forEach(item => {
+		let item_total = item.price * item.qty;
+		total += item_total;
+
+		whatsappText += `*${item.id}* - *${item.name}* (Size:${item.size}) x ${item.qty} - ${item_total.toFixed(2)} AED\n`;
+	});
+
+	whatsappText += `\nTotal: ${total.toFixed(2)} AED\n`;
+
+	whatsappText += `\n--------------------\n`;
+	whatsappText += `\n*Customer Information*\n\n`;
+	whatsappText += `Name: ${fullName}\n`;
+	whatsappText += `Mobile: ${mobile}\n`;
+	whatsappText += `\n*Delivery Address*\n`;
+	whatsappText += `\n${fullAddress}\n`;
+
+	const finalUrl = `https://wa.me/971507135589?text=${encodeURIComponent(whatsappText)}`;
+
+	window.location.href = finalUrl;
+}
+
+window.showToast = function (message, type = "success") {
+	const toast = document.createElement("div");
+	toast.className = `toast-msg toast-${type}`;
+	toast.innerText = message;
+
+	document.body.appendChild(toast);
+
+	setTimeout(() => toast.classList.add("show"), 50);
+
+	setTimeout(() => {
+		toast.classList.remove("show");
+		setTimeout(() => toast.remove(), 300);
+	}, 3000);
 };
 
 function updateQty(index, change) {
