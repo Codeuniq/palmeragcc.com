@@ -67,14 +67,20 @@ function changeImage(el) {
 	setZoom();
 }
 
-function selectSize(el, value, qty = 0) {
-	document.querySelectorAll('.size-circle').forEach(c => c.classList.remove('selected'));
-	el.classList.add('selected');
-	document.getElementById('selectedSize').value = value;
+/* =======================
+   SIZE SELECTION
+   ======================= */
 
-	const order_qty = parseFloat(qty);
-	const stock_badge_container = document.getElementById('stock_badge');
-	stock_badge_container.innerHTML = get_stock_badge(order_qty > 0);
+let selectedSize = "N/A";
+
+function selectSize(el, size) {
+	document.querySelectorAll(".size-circle").forEach(s => s.classList.remove("active"));
+	el.classList.add("active");
+	selectedSize = size;
+	document.getElementById("selectedSize").value = size;
+
+	// Enable the button once a size is picked
+	document.getElementById("addToCartBtn").disabled = false;
 }
 
 function getSelectedSize() {
@@ -139,6 +145,7 @@ function renderCart() {
 	const cart = getCart();
 	const container = document.querySelector(".cart-items");
 	const totalEl = document.querySelector(".cart-footer .total strong");
+	const checkoutBtn = document.getElementById("checkout");
 
 	container.innerHTML = "";
 	let total = 0;
@@ -146,13 +153,19 @@ function renderCart() {
 	if (!cart.length) {
 		container.innerHTML = "<p style='text-align:center'>Cart is empty</p>";
 		totalEl.innerHTML = "0.00";
+		checkoutBtn.style.pointerEvents = "none";  // ← disable
+		checkoutBtn.style.opacity = "0.4";          // ← dim it
 		return;
 	}
+	// Re-enable when cart has items
+	checkoutBtn.style.pointerEvents = "auto";
+	checkoutBtn.style.opacity = "1";
 
+	let html = "";
 	cart.forEach((item, index) => {
 		let item_total = item.price * item.qty;
 		total += item_total;
-		container.innerHTML += `
+		html += `
 			<div class="cart-item">
 				<div class="cart-gallery">
 					<img src="${item.image}" class="main-img">
@@ -176,13 +189,14 @@ function renderCart() {
 			</div>
 		`;
 	});
+	container.innerHTML = html;
 
 	totalEl.innerHTML = `
 		<img src="images/aed.webp" style="height:12px;margin-top:-4px;padding-right:2px;">
 		${total.toFixed(2)}
 	`;
 
-	document.getElementById("chechout").onclick = function (e) {
+	document.getElementById("checkout").onclick = function (e) {
 		e.preventDefault();
 		openCustomerPopup();
 	};
@@ -324,28 +338,20 @@ function updateCartCount() {
 	}
 }
 
-function get_stock_badge(in_stock) {
-	if (in_stock) return `<br>`;
-	return `
-		<div class="d-flex mt-2 mb-2">
-			<div class="stock-badge out-stock">
-				<span class="dot"></span>
-				Out Of Stock
-			</div>
-		</div>
-	`;
-}
-
 function productDetailsTemplate(product) {
 	const price = product.item_price || "0.00";
 	const item_code = product.name || "";
 	const item_name = product.item_name || "";
 	const description = product.item_description || "No description available.";
-	const stock_badge = get_stock_badge(1);
 
-	const sizeOptions = product.sizes?.map(size => `
-		<div class="size-circle" onclick="selectSize(this, ${size.size}, ${size.qty})">${size.size}</div>
-	`).join("") || 'No Size Available';
+	const sizeOptions = product.sizes?.length
+		? product.sizes.map(size => `
+		<div class="size-circle ${size.qty === 0 ? 'disabled' : ''}"
+			 onclick="selectSize(this, '${size.size}')">
+		  ${size.size}
+		</div>
+	  `).join("")
+		: '<span>No sizes available</span>';
 
 	const images = product.images?.length
 		? product.images
@@ -374,10 +380,6 @@ function productDetailsTemplate(product) {
 			<p class="choose">Choose Size</p>
 			<div class="sizes">${sizeOptions}</div>
 
-			<div class="stock-badge-container" id="stock_badge">
-				${stock_badge}
-			</div>
-
 			<input type="hidden" id="selectedSize" name="size" value="">
 
 			<div class="buy-row">
@@ -388,7 +390,7 @@ function productDetailsTemplate(product) {
 				</div>
 			</div>
 			<div class="buy-row">
-				<button class="buy-btn" onclick="add_to_cart(this);">Add to Cart</button>
+				<button class="buy-btn" onclick="add_to_cart(this);" id="addToCartBtn" disabled>Add to Cart</button>
 			</div>
 			<div class="price">${price} <img src="images/aed.webp" style="height:17px; margin-left:5px; padding-right:2px;"/></div>
 			<p class="tax">Taxes are included.</p>
