@@ -235,6 +235,7 @@ function submitCustomerDetails() {
 	const mobile = document.getElementById("custMobile").value.trim();
 	const address = document.getElementById("custAddress").value.trim();
 	const apartment = document.getElementById("custApartment").value.trim();
+	const post = document.getElementById("custPost").value.trim();
 	const emirate = document.getElementById("custEmirate").value;
 	const city = document.getElementById("custCity").value;
 
@@ -251,6 +252,7 @@ function submitCustomerDetails() {
 			mobile,
 			address,
 			apartment,
+			post,
 			emirate,
 			city
 		};
@@ -262,7 +264,7 @@ function submitCustomerDetails() {
 
 	const fullName = `${firstName} ${lastName}`;
 
-	const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nEmirate : ${emirate}`.trim();
+	const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nPost Code: ${post}\nEmirate : ${emirate}`.trim();
 
 	let cart = getCart();
 	let total = 0;
@@ -461,3 +463,22 @@ function productCardTemplate(product, index) {
 		</div >
 		`;
 }
+
+$(document).ready(function() {
+    $('#custCountry').select2({
+        placeholder: "Search your country",
+        allowClear: true
+    });
+});
+
+const country = document.getElementById("custCountry");
+const emirate = document.getElementById("custEmirate");
+
+country.addEventListener("change", function () {
+    if (this.value === "United Arab Emirates") {
+        emirate.style.display = "block";
+    } else {
+        emirate.disabled = true;
+        emirate.selectedIndex = 0; // reset
+    }
+});
