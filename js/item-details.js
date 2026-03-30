@@ -199,8 +199,7 @@ function renderCart() {
 
 	document.getElementById("checkout").onclick = function (e) {
 		e.preventDefault();
-		// openCustomerPopup();
-		submitCustomerDetails()
+		openCustomerPopup();
 	};
 }
 
@@ -231,39 +230,39 @@ function closeCustomerPopup() {
 }
 
 function submitCustomerDetails() {
-	// const firstName = document.getElementById("custFirstName").value.trim();
-	// const lastName = document.getElementById("custLastName").value.trim();
-	// const mobile = document.getElementById("custMobile").value.trim();
-	// const address = document.getElementById("custAddress").value.trim();
-	// const apartment = document.getElementById("custApartment").value.trim();
-	// const emirate = document.getElementById("custEmirate").value;
-	// const city = document.getElementById("custCity").value;
+	const firstName = document.getElementById("custFirstName").value.trim();
+	const lastName = document.getElementById("custLastName").value.trim();
+	const mobile = document.getElementById("custMobile").value.trim();
+	const address = document.getElementById("custAddress").value.trim();
+	const apartment = document.getElementById("custApartment").value.trim();
+	const emirate = document.getElementById("custEmirate").value;
+	const city = document.getElementById("custCity").value;
 
-	// if (!firstName || !mobile || !address) {
-	// 	showToast("Please fill required fields", "error");
-	// 	return;
-	// }
-	// const saveInfo = document.getElementById("saveInfo").checked;
+	if (!firstName || !mobile || !address) {
+		showToast("Please fill required fields", "error");
+		return;
+	}
+	const saveInfo = document.getElementById("saveInfo").checked;
 
-	// if (saveInfo) {
-	// 	const customerData = {
-	// 		firstName,
-	// 		lastName,
-	// 		mobile,
-	// 		address,
-	// 		apartment,
-	// 		emirate,
-	// 		city
-	// 	};
+	if (saveInfo) {
+		const customerData = {
+			firstName,
+			lastName,
+			mobile,
+			address,
+			apartment,
+			emirate,
+			city
+		};
 
-	// 	localStorage.setItem("customerDetails", JSON.stringify(customerData));
-	// } else {
-	// 	localStorage.removeItem("customerDetails"); // optional cleanup
-	// }
+		localStorage.setItem("customerDetails", JSON.stringify(customerData));
+	} else {
+		localStorage.removeItem("customerDetails"); // optional cleanup
+	}
 
-	// const fullName = `${firstName} ${lastName}`;
+	const fullName = `${firstName} ${lastName}`;
 
-	// const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nEmirate : ${emirate}`.trim();
+	const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nEmirate : ${emirate}`.trim();
 
 	let cart = getCart();
 	let total = 0;
@@ -278,16 +277,17 @@ function submitCustomerDetails() {
 
 	whatsappText += `\nTotal: ${total.toFixed(2)} AED\n`;
 
-	// whatsappText += `\n--------------------\n`;
-	// whatsappText += `\n*Customer Information*\n\n`;
-	// whatsappText += `Name: ${fullName}\n`;
-	// whatsappText += `Mobile: ${mobile}\n`;
-	// whatsappText += `\n*Delivery Address*\n`;
-	// whatsappText += `\n${fullAddress}\n`;
+	whatsappText += `\n--------------------\n`;
+	whatsappText += `\n*Customer Information*\n\n`;
+	whatsappText += `Name: ${fullName}\n`;
+	whatsappText += `Mobile: ${mobile}\n`;
+	whatsappText += `\n*Delivery Address*\n`;
+	whatsappText += `\n${fullAddress}\n`;
 
 	const finalUrl = `https://wa.me/971507135589?text=${encodeURIComponent(whatsappText)}`;
 
-	window.location.href = finalUrl;
+	// window.location.href = finalUrl;
+	window.open(finalUrl, '_blank');
 }
 
 window.showToast = function (message, type = "success") {
