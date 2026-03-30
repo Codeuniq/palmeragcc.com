@@ -83,7 +83,7 @@ function productCardTemplate(product, index) {
 					</p>
 				</div>
 			</div>
-			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${item_code}'" style="cursor:pointer;">
+			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${encodeURIComponent(item_code)}'" style="cursor:pointer;">
 				<h2 style="display:none;">${item_code}</h2>
 				<h3>${item_name}</h3>
 				<div class="d-flex margb">
@@ -133,22 +133,6 @@ function slidePrev(index) {
 	if (sliderState[index] < 0) sliderState[index] = total - 1;
 
 	slider.style.transform = `translateX(-${sliderState[index] * 100}%)`;
-}
-
-function order_via_whatsapp(el) {
-	const product = el.closest(".product");
-	if (!product) return;
-
-	const item_code = product.querySelector("h2")?.innerText || "Item Code";
-	const item_name = product.querySelector("h3")?.innerText || "Item Name";
-	const qty = product.querySelector(".custom-qty-num")?.innerText || "1";
-	const item_size = product.querySelector(".size-dropdown")?.value || "N/A";
-
-	const message = encodeURIComponent(
-		`I'd like to order *${item_code}* - *${item_name}* - (${item_size}) of Qty: *${qty}*.`
-	);
-
-	el.href = `https://wa.me/971507135589?text=${message}`;
 }
 
 function getCart() {
