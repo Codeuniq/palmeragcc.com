@@ -18885,7 +18885,7 @@ button:active {
 	outline: none;
 }
 
-.row {
+/* .row {
 	display: flex;
 	gap: 10px;
 }
@@ -18893,7 +18893,7 @@ button:active {
 .row input,
 .row select {
 	flex: 1;
-}
+} */
 
 .checkbox {
 	display: flex;

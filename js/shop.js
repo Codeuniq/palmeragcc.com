@@ -340,3 +340,10 @@ function submitCustomerDetails() {
 	// window.location.href = finalUrl;
 	window.open(finalUrl, '_blank');
 }
+
+$(document).ready(function() {
+    $('#custCountry').select2({
+        placeholder: "Search your country",
+        allowClear: true
+    });
+});
