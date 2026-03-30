@@ -1,5 +1,6 @@
 const API_BASE_URL = CONFIG.API_BASE_URL;
 const code = new URLSearchParams(window.location.search).get('code');
+
 let quantity = 1;
 let img, zoom; // Declare here, assign AFTER HTML is injected
 
@@ -7,7 +8,7 @@ function load_item_details() {
 	updateCartCount();
 
 	$.ajax({
-		url: `${API_BASE_URL}/api/method/frappe_ecommerce.apis.api.get_product_details?product_id=${code}`,
+		url: `${API_BASE_URL}/api/method/frappe_ecommerce.apis.api.get_product_details?product_id=${encodeURIComponent(code)}`,
 		type: "GET",
 		dataType: "json",
 		success: function (res) {
@@ -439,7 +440,7 @@ function productCardTemplate(product, index) {
 					</p>
 				</div>
 			</div>
-			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${item_code}'" style="cursor:pointer;">
+			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${encodeURIComponent(item_code)}'" style="cursor:pointer;">
 				<h2 style="display:none;">${item_code}</h2>
 				<h3>${item_name}</h3>
 				<div class="d-flex margb">

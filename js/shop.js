@@ -83,7 +83,7 @@ function productCardTemplate(product, index) {
 					</p>
 				</div>
 			</div>
-			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${item_code}'" style="cursor:pointer;">
+			<div class="text p-2 pt-0" onclick="window.location.href='item-details.html?code=${encodeURIComponent(item_code)}'" style="cursor:pointer;">
 				<h2 style="display:none;">${item_code}</h2>
 				<h3>${item_name}</h3>
 				<div class="d-flex margb">
