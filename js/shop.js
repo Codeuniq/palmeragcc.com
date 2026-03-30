@@ -156,22 +156,25 @@ function renderCart() {
 	const cart = getCart();
 	const container = document.querySelector(".cart-items");
 	const totalEl = document.querySelector(".cart-footer .total strong");
+	const checkoutBtn = document.getElementById("checkout");
 
 	container.innerHTML = "";
 	let total = 0;
-	let whatsappText = "I'd like to place an order:%0A";
 
 	if (!cart.length) {
 		container.innerHTML = "<p style='text-align:center'>Cart is empty</p>";
 		totalEl.innerHTML = "0.00";
+		checkoutBtn.style.pointerEvents = "none";  // ← disable
+		checkoutBtn.style.opacity = "0.4";          // ← dim it
 		return;
 	}
+	// Re-enable when cart has items
+	checkoutBtn.style.pointerEvents = "auto";
+	checkoutBtn.style.opacity = "1";
 
 	cart.forEach((item, index) => {
 		let item_total = item.price * item.qty;
 		total += item_total;
-
-		whatsappText += `*${item.id}* - *${item.name}* ( *${item.size}* ) x ${item.qty} - ${item_total.toFixed(2)} AED %0A`;
 
 		container.innerHTML += `
 		<div class="cart-item">
@@ -201,14 +204,15 @@ function renderCart() {
 	  `;
 	});
 
-	whatsappText += `%0ATotal: ${total.toFixed(2)} AED`;
-
 	totalEl.innerHTML = `
 	  <img src="images/aed.webp" style="height:12px;margin-top:-4px;padding-right:2px;">
 	  ${total.toFixed(2)}
 	`;
 
-	document.getElementById("chechout").href = `https://wa.me/971507135589?text=${whatsappText}`;
+	document.getElementById("checkout").onclick = function (e) {
+		e.preventDefault();
+		openCustomerPopup();
+	};
 }
 
 function updateQty(index, change) {
@@ -248,4 +252,91 @@ function updateCartCount() {
 		cartCountEl1.style.display = "none";
 		cartCountEl2.style.display = "none";
 	}
+}
+
+function openCustomerPopup() {
+	document.getElementById("customerPopup").style.display = "flex";
+
+	const saved = JSON.parse(localStorage.getItem("customerDetails") || "{}");
+
+	if (saved) {
+		document.getElementById("custFirstName").value = saved.firstName || "";
+		document.getElementById("custLastName").value = saved.lastName || "";
+		document.getElementById("custMobile").value = saved.mobile || "";
+		document.getElementById("custAddress").value = saved.address || "";
+		document.getElementById("custApartment").value = saved.apartment || "";
+		document.getElementById("custCity").value = saved.city || "";
+
+		if (saved.emirate) {
+			document.getElementById("custEmirate").value = saved.emirate;
+		}
+
+		// auto-check checkbox if data exists
+		document.getElementById("saveInfo").checked = true;
+	}
+}
+
+function closeCustomerPopup() {
+	document.getElementById("customerPopup").style.display = "none";
+}
+
+function submitCustomerDetails() {
+	const firstName = document.getElementById("custFirstName").value.trim();
+	const lastName = document.getElementById("custLastName").value.trim();
+	const mobile = document.getElementById("custMobile").value.trim();
+	const address = document.getElementById("custAddress").value.trim();
+	const apartment = document.getElementById("custApartment").value.trim();
+	const emirate = document.getElementById("custEmirate").value;
+	const city = document.getElementById("custCity").value;
+
+	if (!firstName || !mobile || !address) {
+		showToast("Please fill required fields", "error");
+		return;
+	}
+	const saveInfo = document.getElementById("saveInfo").checked;
+
+	if (saveInfo) {
+		const customerData = {
+			firstName,
+			lastName,
+			mobile,
+			address,
+			apartment,
+			emirate,
+			city
+		};
+
+		localStorage.setItem("customerDetails", JSON.stringify(customerData));
+	} else {
+		localStorage.removeItem("customerDetails"); // optional cleanup
+	}
+
+	const fullName = `${firstName} ${lastName}`;
+
+	const fullAddress = `Address: ${address}\nAppartment: ${apartment}\nCity: ${city}\nEmirate : ${emirate}`.trim();
+
+	let cart = getCart();
+	let total = 0;
+	let whatsappText = "I'd like to place an order:\n\n*Order Summary*\n";
+
+	cart.forEach(item => {
+		let item_total = item.price * item.qty;
+		total += item_total;
+
+		whatsappText += `*${item.id}* - *${item.name}* (Size:${item.size}) x ${item.qty} - ${item_total.toFixed(2)} AED\n`;
+	});
+
+	whatsappText += `\nTotal: ${total.toFixed(2)} AED\n`;
+
+	whatsappText += `\n--------------------\n`;
+	whatsappText += `\n*Customer Information*\n\n`;
+	whatsappText += `Name: ${fullName}\n`;
+	whatsappText += `Mobile: ${mobile}\n`;
+	whatsappText += `\n*Delivery Address*\n`;
+	whatsappText += `\n${fullAddress}\n`;
+
+	const finalUrl = `https://wa.me/971507135589?text=${encodeURIComponent(whatsappText)}`;
+
+	// window.location.href = finalUrl;
+	window.open(finalUrl, '_blank');
 }
