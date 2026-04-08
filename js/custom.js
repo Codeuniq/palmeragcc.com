@@ -288,4 +288,8 @@ image.forEach((elm) => {
   });
 });
 
- 
+ document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault(); // block right-click on images
+  }
+});
