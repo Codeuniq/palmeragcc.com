@@ -361,3 +361,10 @@ country.addEventListener("change", function () {
         emirate.selectedIndex = 0; // reset
     }
 });
+
+
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault(); // block right-click on images
+  }
+});
