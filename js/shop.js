@@ -51,7 +51,7 @@ function productCardTemplate(product, index) {
 		<div class="product w-100">
 			<div class="carousels" data-index="${index}">
 				<div class="carousel_slider">
-					<div class="content_inner_slider">
+					<div class="content_inner_slider" >
 						${imageSlides}
 					</div>
 					
