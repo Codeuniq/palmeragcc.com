@@ -293,3 +293,33 @@ image.forEach((elm) => {
     e.preventDefault(); // block right-click on images
   }
 });
+
+document.addEventListener('contextmenu', e => e.preventDefault()); // block right-click
+document.addEventListener('dragstart', e => e.preventDefault());   // block drag
+
+document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    
+    // Ctrl + Shift + I (Windows/Linux) or Cmd + Option + I (Mac)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + C (select element)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'c') {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + J (console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'j') {
+        e.preventDefault();
+    }
+
+    // Ctrl + U (view source)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+        e.preventDefault();
+    }
+});
