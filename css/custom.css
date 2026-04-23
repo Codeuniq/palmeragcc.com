@@ -3101,3 +3101,10 @@ div#google_translate_element div.goog-te-gadget-simple {
   top: 0;
   left: 0;
 } */
+
+/* EXTRA MOBILE FIX */
+@media (max-width: 768px) {
+  .video-section {
+    height: 100dvh;
+  }
+}
