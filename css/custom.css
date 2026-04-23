@@ -3072,3 +3072,32 @@ div#google_translate_element div.goog-te-gadget-simple {
   border: 1px solid #ffc107;
 }
 
+/* SECTION */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.video-section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* OVERLAY (OPTIONAL DARK EFFECT) */
+/* .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+} */
