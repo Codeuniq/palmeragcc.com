@@ -16475,6 +16475,47 @@ footer p a:hover {
 	border-color: transparent transparent #b62122 transparent;
 }
 
+
+.subcategory-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding:12px 0;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+}
+
+.sub-item{
+    text-decoration:none;
+    color:#444;
+    text-align:center;
+    font-size:12px;
+    transition:.3s;
+}
+
+.sub-item i{
+    display:block;
+    font-size:18px;
+    color:#0b4d46;
+    margin-bottom:6px;
+}
+
+.sub-item span{
+    display:block;
+    font-size:12px;
+    white-space:nowrap;
+}
+
+.sub-item:hover{
+    color:#0b4d46;
+    transform:translateY(-2px);
+}
+
+.sub-item:hover i{
+    color:#b8895a;
+}
+
 .project-wrap .img .price:before {
 	width: 0;
 	right: -8px;
