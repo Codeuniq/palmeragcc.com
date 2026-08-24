@@ -1,822 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6345949850114046"
-    crossorigin="anonymous">
-    </script>
-  <title>Palmera</title>
-  <meta charset="utf-8">
-  <meta name="description"
-    content="Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We specialize in high-quality shawls, shemaghs, and thobes">
-  <link href="images/favi.webp" rel="icon">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="author" content="MUHAMMED FAISAN">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/vendor.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/responsive.css">
+<title>We've Moved!</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://md-aqil.github.io/images/swiper.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#1F4D3A;
+}
+
+/* MAIN PAGE */
+.moved-page{
+    min-height:100vh;
+    width:100%;
+    background:#1F4D3A;
+    color:#f7f3e8;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+    padding:40px 20px;
+}
+
+/* COMPANY LOGO */
+.company-logo{
+    position:absolute;
+    top:30px;
+    left:40px;
+    z-index:100;
+}
+
+.company-logo img{
+    width:150px;
+    height:80px;
+
+    object-fit:contain;
+    object-position:left center;
+
+    display:block;
+}
+
+/* BACKGROUND GLOW */
+.moved-page::before{
+    content:"";
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,0.05),
+        transparent 65%
+    );
+
+    top:-300px;
+    left:-250px;
+
+    border-radius:50%;
+}
+
+.moved-page::after{
+    content:"";
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,0.04),
+        transparent 65%
+    );
+
+    bottom:-350px;
+    right:-200px;
+
+    border-radius:50%;
+}
+
+
+/* DECORATIVE LEAVES */
+.leaf{
+    position:absolute;
+    opacity:0.08;
+    pointer-events:none;
+}
+
+.leaf span{
+    position:absolute;
+
+    width:180px;
+    height:45px;
+
+    background:#d8b77a;
+
+    border-radius:100% 0 100% 0;
+
+    transform-origin:left center;
+}
+
+.leaf-top{
+    top:30px;
+    right:40px;
+
+    width:350px;
+    height:250px;
+
+    transform:rotate(15deg);
+}
+
+.leaf-top span:nth-child(1){
+    transform:rotate(10deg);
+}
+
+.leaf-top span:nth-child(2){
+    transform:rotate(35deg);
+}
+
+.leaf-top span:nth-child(3){
+    transform:rotate(60deg);
+}
+
+.leaf-top span:nth-child(4){
+    transform:rotate(85deg);
+}
+
+
+.leaf-bottom{
+    bottom:50px;
+    left:0;
+
+    width:350px;
+    height:250px;
+
+    transform:rotate(190deg);
+}
+
+.leaf-bottom span:nth-child(1){
+    transform:rotate(10deg);
+}
+
+.leaf-bottom span:nth-child(2){
+    transform:rotate(35deg);
+}
+
+.leaf-bottom span:nth-child(3){
+    transform:rotate(60deg);
+}
+
+.leaf-bottom span:nth-child(4){
+    transform:rotate(85deg);
+}
+
+
+/* CONTENT */
+.content{
+    width:100%;
+    max-width:950px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:5;
+}
+
+
+/* LOCATION ICON */
+.location-icon{
+    width:120px;
+    height:120px;
+
+    margin:0 auto 35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.pin{
+    width:58px;
+    height:78px;
+
+    border:4px solid #d8b77a;
+
+    border-radius:50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    position:relative;
+}
+
+.pin::after{
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+    height:22px;
+
+    border:4px solid #d8b77a;
+
+    border-radius:50%;
+
+    top:15px;
+    left:15px;
+}
+
+
+/* TITLE */
+h1{
+    font-family:Georgia, "Times New Roman", serif;
+
+    font-size:clamp(60px, 9vw, 110px);
+
+    font-weight:500;
+
+    letter-spacing:-3px;
+
+    color:#f5f2e8;
+
+    line-height:1;
+
+    margin-bottom:35px;
+
+    text-shadow:0 4px 20px rgba(0,0,0,0.12);
+}
+
+
+/* DIVIDER */
+.divider{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:20px;
+
+    margin:20px auto 32px;
+
+    max-width:540px;
+}
+
+.divider .line{
+    height:1px;
+    flex:1;
+
+    background:#cfae72;
+    opacity:0.8;
+}
+
+.divider .dot{
+    width:15px;
+    height:15px;
+
+    background:#d8b77a;
+
+    border-radius:50%;
+}
+
+
+/* SUBTITLE */
+.subtitle{
+    font-size:clamp(24px, 3vw, 38px);
+
+    font-weight:300;
+
+    letter-spacing:1px;
+
+    color:rgba(255,255,255,0.85);
+
+    margin-bottom:35px;
+}
+
+
+/* WEBSITE BOX */
+.website-box{
+    width:fit-content;
+    max-width:100%;
+
+    margin:0 auto 45px;
+
+    padding:25px 50px;
+
+    border:2px solid #d8b77a;
+
+    border-radius:18px;
+
+    background:rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.12),
+        inset 0 0 30px rgba(255,255,255,0.02);
+
+    transition:0.3s ease;
+}
+
+.website-box:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 45px rgba(0,0,0,0.2);
+}
+
+.website-box a{
+    font-size:clamp(38px, 6vw, 70px);
+
+    font-weight:700;
+
+    color:#d8b77a;
+
+    text-decoration:none;
+
+    letter-spacing:1px;
+
+    word-break:break-word;
+}
+
+
+/* HEART */
+.heart{
+    font-size:35px;
+    color:#d8b77a;
+    margin:10px 0 20px;
+}
+
+
+/* THANK YOU */
+.thank-you{
+    font-size:clamp(22px, 3vw, 35px);
+
+    font-weight:300;
+
+    letter-spacing:1px;
+
+    color:rgba(255,255,255,0.85);
+}
+
+
+/* MOBILE RESPONSIVE */
+@media(max-width:600px){
+
+    .moved-page{
+        padding:100px 18px 60px;
+    }
+
+    /* LOGO MOBILE */
+    .company-logo{
+        top:20px;
+        left:20px;
+    }
+
+    .company-logo img{
+        width:120px;
+        height:60px;
+    }
+
+    .location-icon{
+        transform:scale(0.8);
+        margin-bottom:15px;
+    }
+
+    h1{
+        letter-spacing:-2px;
+        margin-bottom:25px;
+    }
+
+    .subtitle{
+        line-height:1.4;
+        margin-bottom:25px;
+    }
+
+    .website-box{
+        padding:22px 15px;
+        width:100%;
+    }
+
+    .website-box a{
+        font-size:clamp(28px, 9vw, 38px);
+    }
+
+    .thank-you{
+        line-height:1.5;
+    }
+
+    .leaf-top{
+        right:-100px;
+        top:0;
+    }
+
+    .leaf-bottom{
+        left:-150px;
+        bottom:0;
+    }
+
+}
+
+</style>
 </head>
 
-<body class="homepage">
-  <!-- ? Preloader Start -->
-  <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-      <div class="preloader-inner position-relative d-flex align-items-center justify-content-center">
-        <div class="preloader-circle"></div>
-        <div class="preloader-img pere-text">
-          <img src="images/logohd.webp" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Preloader Start-->
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/logohd.webp" class="palogH" alt="" title="" style="margin-left: 21px;" />
-      </a>
-      <button class="navbar-toggler collapsible" type="button">
-        <!-- <span class="oi oi-menu"></span> Menu -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="Black" class="bi bi-list"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-        </svg>
-      </button>
 
-      <div class="collapse navbar-collapse ftco-nav content" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <!-- <li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
-				  <div class="dropdown-menu" aria-labelledby="dropdown04">
-					  <a class="dropdown-item" href="shop.html">Shop</a>
-					<a class="dropdown-item" href="product-single.html">Single Product</a>
-					<a class="dropdown-item" href="cart.html">Cart</a>
-					<a class="dropdown-item" href="checkout.html">Checkout</a>
-				  </div>
-				</li> -->
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item "><a href="shop.html" class="nav-link">Products</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a class="nav-link">
-              <div id='google_translate_element'></div>
-            </a></li>
-          <!-- <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li> -->
-        </ul>
-      </div>
+<body>
 
-      <script>
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            autoDisplay: 'true',
-            includedLanguages: 'en,ar', // <- remove this line to show all language
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-          }, 'google_translate_element');
-        }
-      </script>
-    </div>
-  </nav>
-  <!-- NAV END -->
-
-  <section class="hero-bg-section">
-
-    <!-- VIDEO -->
-    <video autoplay muted loop playsinline class="hero-bg-video">
-      <source src="images/app/palmera promo.mp4" type="video/mp4">
-    </video>
-
-    <!-- CONTENT -->
-    <div class="hero-bg-content">
-      <button class="shop-btn">
-        <a href="shop.html">Shop Now</a>
-      </button>
-    </div>
-
-  </section>
-
-  <section class="ftco-section categories overflow-hidden prt" style="background: #fff2e2;">
-    <div class="container">
-      <div class="open-up" data-aos="zoom-out">
-        <div class="row d-flex justify-content-center">
-          <div class="col-12 pb-1" style="margin-top: -35px;">
-            <h3 class="underline">Categories</h3>
-          </div>
-          <div class="col-md-4">
-            <div class="cat-item ">
-              <div class="second-card">
-                <div class="box py-3 text-center">
-                  <img src="images/main-page_41.webp" alt="" style="width:342px; height: 320px;">
-                  <button class="probut mt-3"><a href="shop.html#thobe" style="color: #003626;">See More</a></button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="cat-item ">
-              <div class="second-card">
-                <div class="box py-3 text-center">
-                  <img src="images/main-page_38.webp" alt="" style="width:342px; height: 320px;">
-                  <button class="probut mt-3"><a href="shop.html#shemagh" style="color: #003626;">See More</a></button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="cat-item ">
-              <div class="second-card text-center">
-                <div class="box py-3">
-                  <img src="images/main-page_44.webp" alt="" style="width:342px; height: 320px;">
-                  <button class="probut mt-3"><a href="shop.html#shawl" style="color: #003626;">See More</a></button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="moved-page">
 
 
-  <section class="ftco-section fact" style="border-bottom: 1px solid;">
-    <div class="container">
-      <div class="row no-gutters ftco-services">
-        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services">
-            <div class="icon d-flex justify-content-center align-items-center mb-4">
-              <span><img src="images/excellent material.webp" alt="" style="height:100px;width: auto;" /></span>
-            </div>
-            <div class="media-body">
-              <h3 class="font26 ">Excellent Material</h3>
-              <p class="font16 ">Crafted from carefully selected, high-quality materials, each Palmera piece offers
-                superior comfort,
-                durability, and a refined finish that reflects our commitment to premium quality.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services">
-            <div class="icon d-flex justify-content-center align-items-center mb-4">
-              <span><span><img src="images/quality product.webp" alt=""
-                    style="height:100px;width: auto;" /></span></span>
-            </div>
-            <div class="media-body">
-              <h3 class="font26 ">Quality Product</h3>
-              <p class="font16 ">
-                Each Palmera product is made with precision and care, delivering exceptional quality,
-                lasting durability, and timeless elegance in every detail.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services">
-            <div class="icon d-flex justify-content-center align-items-center mb-4">
-              <span><span><img src="images/trusted client.webp" alt=""
-                    style="height:100px;width: auto;" /></span></span>
-            </div>
-            <div class="media-body">
-              <h3 class="font26 ">Trusted by Clients</h3>
-              <p class="font16 ">Palmera is trusted by clients for its consistent quality, refined craftsmanship, and
-                commitment to
-                delivering premium traditional wear with confidence and reliability.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- =========================
+         COMPANY LOGO - TOP LEFT
+    ========================== -->
 
+    <div class="company-logo">
 
-  <section id="about" style="border-bottom: 1px solid;">
-    <div class="wow fadeInUp pb-5">
-      <h3 class="underline pb-4">About Us</h3>
-
-      <div class="row container-fluid">
-        <div class="col-lg-6 about-img wow zoomIn" style="animation-duration: 2s;">
-          <img src="images/main-page_93.webp" alt="" style="border-radius: 0px 50px 50px 5px;" class="aboutimage">
-        </div>
-
-        <div class=" col-lg-6  wow fadeInUpBig " style="animation-duration: 2s;">
-          <img src="images/logoab.webp" class="filter" alt=""
-            style="height:62px;width: auto;margin-left: -2px;margin-top: 42px;" />
-          <p class="textcol mt-md-5" data-aos="slide-up">
-            Palmera is a premium brand from Treasure Tower General Trading LLC, proudly based in Dubai, UAE. We
-            specialize in high-quality shawls, shemaghs, and thobes, crafted with a perfect blend of tradition, luxury,
-            and modern style.
-          </p>
-          <p class="textcol mt-md-5" data-aos="slide-up">
-            At Palmera, quality is our identity. Each product is made from carefully selected materials to ensure
-            exceptional comfort, elegance, and durability. Our designs reflect the rich Arabian heritage while embracing
-            a contemporary touch, making them ideal for those who value sophistication and authenticity.
-          </p>
-          <p class="textcol" data-aos="slide-up">
-            With a strong commitment to excellence, Treasure Tower General Trading LLC continues to bring premium
-            fashion and cultural wear to customers across the region and beyond. Palmera stands as a symbol of refined
-            taste, timeless style, and uncompromising quality.
-          </p>
-          <p class="textcol" data-aos="slide-up" style="color: #305c2c;">
-            <b><q>Palmera – Where Tradition Meets Elegance.</q></b>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container-fluid">
-      <div class="row text-center">
-        <div class=" flex-wrap justify-content-center align-items-center mt-5 mb-3">
-          <h3 class="underline">Our Products</h3>
-          <p class="pt-4" style="color:#808080	;font-size:14px;">
-            A stylish and elegant Arabic wear, designed for comfort and cultural flair, perfect for any occasion.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="carousel">
-    <!-- list item -->
-    <div class="list">
-      <div class="item">
-        <img src="images/banner-2.webp" alt="">
-        <!-- <div class="content">
-          <div class="title">Tradition That Brings Us Together</div>
-          
-          <div class="buttons">
-            <button><a href="shop.html" style="color: #F7EF8A;text-transform: none !important;">Shop Now</a></button>
-          </div>
-        </div> -->
-      </div>
-      <div class="item">
-        <img src="images/banner.webp" alt="">
-        <!-- <div class="content">
-          <div class="title">Elevate Every Moment</div>
-         
-          <div class="buttons">
-            <button><a href="shop.html" style="color: #F7EF8A;text-transform: none !important;">Shop Now</a></button>
-          </div>
-        </div> -->
-      </div>
-      <div class="item">
-        <img src="images/banner-3.webp" alt="">
-        <!-- <div class="content">
-          <div class="title">Strength. Legacy. Innovation.</div>
-          
-          <div class="buttons">
-            <button><a href="shop.html" style="color: #F7EF8A;text-transform: none !important;">Shop Now</a></button>
-          </div>
-        </div> -->
-      </div>
-      <div class="item">
-        <img src="images/banner-4.webp" alt="">
-        <!-- <div class="content">
-          <div class="title">Moments Rooted in Heritage</div>
-          
-          <div class="buttons">
-            <button><a href="shop.html" style="color: #F7EF8A;">Shop Now</a></button>
-          </div>
-        </div> -->
-      </div>
-    </div>
-    <!-- list thumnail -->
-
-    <!-- next prev -->
-
-    <div class="arrows d-none">
-      <button id="prev">
-        < </button>
-          <button id="next">></button>
-    </div>
-  </section>
-
-  <section id="ghatra" class="prod ghatra  product-carousel pt-5 pb-3 position-relative overflow-hidden">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 align-content-center bodercolor text-center">
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
-            <h5 class="text-uppercase fonticonn ">THOBE</h5>
-          </div>
-          <p class="propara">
-            A stylish and elegant Arabic wear, designed for comfort and cultural flair, perfect for any occasion.
-          </p>
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
-            <img src="images/thobe.webp" alt="" class="proimge">
-          </div>
-        </div>
-        <div class="col-9">
-          <div class="swiper product-swiper open-up" data-aos="zoom-out">
-            <div class="swiper-wrapper d-flex">
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#thobe">
-                      <img src="images/thob-1.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#thobe">
-                      <img src="images/thob-2.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#thobe">
-                      <img src="images/thob-3.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#thobe">
-                      <img src="images/thob-4.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="swiper-pagination"></div -->
-          </div>
-          <div class="icon-arrow icon-arrow-left">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-left"></use>
-            </svg>
-          </div>
-          <div class="icon-arrow icon-arrow-right">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-right"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="thobe" class="prod1 thobe product-carousel py-3 position-relative overflow-hidden">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-9">
-          <div class="swiper product-swiper open-up" data-aos="zoom-out">
-            <div class="swiper-wrapper d-flex">
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder">
-                    <a href="shop.html#shawl">
-                      <img src="images/shawl-1.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder">
-                    <a href="shop.html#shawl">
-                      <img src="images/shawl-2.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder">
-                    <a href="shop.html#shawl">
-                      <img src="images/shawl-3.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder">
-                    <a href="shop.html#shawl">
-                      <img src="images/shawl-1.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="swiper-pagination"></div> -->
-          </div>
-          <div class="icon-arrow2 icon-arrow-left">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-left"></use>
-            </svg>
-          </div>
-          <div class="icon-arrow2 icon-arrow-right">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-right"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="col-3 align-content-center bodercolor1 text-center">
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-left">
-            <h5 class="text-uppercase fonticonn">Shawls</h5>
-          </div>
-          <p class="propara">
-            A stylish and elegant Arabic wear, designed for comfort and cultural flair, perfect for any occasion.
-          </p>
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
-            <img src="images/shawls.webp" alt="" class="proimges">
-          </div>
-        </div>
-      </div>
+        <!-- CHANGE logo.png TO YOUR LOGO FILE -->
+        <img src="images/logohd.webp" alt="Company Logo">
 
     </div>
-  </section>
 
-  <section id="shawl" class="prod shawl product-carousel py-5 position-relative overflow-hidden"
-    style="border-bottom: 1px solid;">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 align-content-center bodercolor text-center">
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
-            <h5 class="text-uppercase fonticonn">SHAMAGH</h5>
-          </div>
-          <p class="propara">
-            A stylish and elegant Arabic wear, designed for comfort and cultural flair, perfect for any occasion.
-          </p>
-          <div class="product-category align-items-center text-center mb-4" data-aos="fade-right">
-            <img src="images/shemagh.webp" alt="" class="proimge">
-          </div>
-        </div>
-        <div class="col-9">
-          <div class="swiper product-swiper open-up" data-aos="zoom-out">
-            <div class="swiper-wrapper d-flex">
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#shemagh">
-                      <img src="images/shemagh-1.webp" alt="categories" class="product-image img-fluid">
-                    </a>
 
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#shemagh">
-                      <img src="images/shemagh-2.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#shemagh">
-                      <img src="images/shemagh-1-1.webp" alt="categories" class="product-image img-fluid">
-                    </a>
+    <!-- DECORATIVE LEAVES -->
 
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product-item image-zoom-effect link-effect">
-                  <div class="image-holder position-relative">
-                    <a href="shop.html#shemagh">
-                      <img src="images/shemagh-3.webp" alt="categories" class="product-image img-fluid">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="swiper-pagination"></div> -->
-          </div>
-          <div class="icon-arrow1 icon-arrow-left">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-left-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-left"></use>
-            </svg>
-          </div>
-          <div class="icon-arrow1 icon-arrow-right">
-            <span style="margin-left: 12px;margin-top: -5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-caret-right-fill"
-                viewBox="0 0 16 16">
-                <path
-                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-              </svg>
-            </span>
-            <svg width="50" height="50" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-right"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
+    <div class="leaf leaf-top">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-  </section>
 
 
-  <section class="ftco-section ftco-deal custom">
-    <div class="container">
-      <div class="row text-center">
-        <div class=" flex-wrap justify-content-center align-items-center mb-3">
-          <h3 class="underline">Palmera Custom</h3>
-          <p class="pt-4" style="color:#808080	;font-size:14px;">
-            Bring your vision tp life with our made-to-order designs, crasted to your exact specifications
+    <div class="leaf leaf-bottom">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="content">
+
+
+        <!-- LOCATION ICON -->
+
+        <div class="location-icon">
+            <div class="pin"></div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <img src="images/main-page_187.webp" class="img-fluid" alt="">
+
+
+        <!-- TITLE -->
+
+        <h1>We’ve Moved!</h1>
+
+
+        <!-- TOP DIVIDER -->
+
+        <div class="divider">
+
+            <div class="line"></div>
+
+            <div class="dot"></div>
+
+            <div class="line"></div>
+
         </div>
-        <div class="col-md-6">
-          <div class="heading-section heading-section-white ">
-            <h2 class="prodes" style="margin-top: 38px;">Make It Uniquely Yours,<br>Customize Now!</h2>
-          </div>
-          <div class="d-flex">
-            <div class="text-p text-center">Let's Talk</div>
-            <a class="cta-btn" href="https://wa.me/+971507135589" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#25D366" class="bi bi-whatsapp"
-                viewBox="0 0 16 16">
-                <path
-                  d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-              </svg>
+
+
+        <!-- WEBSITE TEXT -->
+
+        <div class="subtitle">
+            Please visit our new website:
+        </div>
+
+
+        <!-- WEBSITE LINK -->
+
+        <div class="website-box">
+
+            <a href="https://palmera.gallery" target="_blank">
+                palmera.gallery
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="ftco-section2 newsletter bg-light" style="background: url(images/instbg.webp) no-repeat;">
-    <h3 class="underline">Get In Touch</h3>
-    <div class="container text-center py-5">
-      <a class=" instabtn" href="https://www.instagram.com/palmera.gcc/">Follow us on Instagram</a>
-    </div>
-  </section>
-
-  <section class="instagram position-relative">
-
-    <div class="row g-0">
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/thob-1.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/thob-3.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/shemagh-1-1.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/thob-2.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/shemagh-2.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="" target="_blank">
-            <img src="images/thob-4.webp" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-info">
-            <a href="#intro"><img src="images/logohd.webp" alt="" title="" style="height:100px;width: auto;" /></a>
-            <p class="pt-2">With experience in garment trading for more than a decade, Palmera Garments are comfortable
-              clothing that becomes your second skin.</p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="shop.html">Products</a></li>
-              <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li> -->
-              <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact ">
-            <h4>Contact Us</h4>
-            <p><img src="images/app/address.webp" alt="" style="height: 18px;width: auto; padding-right: 5px;" />
-              Murshid Bazar, Near Gold Souq <br>Gate No.1 Opp Belhoul Masjid,<br>Deira, Dubai - UAE
-              <br>
-              <strong><img src="images/app/call.webp" alt=""
-                  style="height: 18px;width: auto; padding-right: 5px;" /></strong>+971507135589<br>
-              <strong><img src="images/app/email.webp" alt=""
-                  style="height: 18px;width: auto; padding-right: 5px;" /></strong>admin@ttgulf.ae<br>
-            </p>
-
-            <div class="social-links">
-              <!-- <a class="twitter"><i class="f fa-twitter"></i></a> -->
-              <a href=" https://www.facebook.com/palmera.gcc/" class="facebook" target="_blank"><i
-                  class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/palmera.gcc/" class="instagram" target="_blank"><i
-                  class="fa fa-instagram"></i></a>
-              <!-- <a href="" class="instagram"><i class="bi bi-instagram"></i></a> -->
-              <a href="https://www.tiktok.com/@palmera.gcc/" class="linkedin" target="_blank"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
-                </svg></a>
-            </div>
-
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Location</h4>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.877185657216!2d55.43551827525452!3d25.29201812785377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f9a8f55012b%3A0xd96ee2009a178f30!2sTreasure%20Tower%20General%20Trading!5e1!3m2!1sen!2sin!4v1765609875878!5m2!1sen!2sin"
-              style="border:0; width: 100%; height: 200px;border-radius: 30px" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
 
         </div>
-      </div>
+
+
+        <!-- BOTTOM DIVIDER -->
+
+        <div class="divider">
+
+            <div class="line"></div>
+
+            <div class="heart">♥</div>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <!-- THANK YOU -->
+
+        <div class="thank-you">
+            Thank you for your continued support.
+        </div>
+
+
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>Palmera</strong>. All Rights Reserved
-      </div>
-      <div class="credits" style="color: white;">
-        Developed by <a class="instagram" href="https://faisan333.github.io/Faisan.github.io/" target="_blank">
-          <!-- <i class="bi bi-instagram" style="width:16px;height:16px;color:#C13584;"></i> -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D4AF37" class="bi bi-code-square"
-            viewBox="0 0 16 16">
-            <path
-              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-            <path
-              d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-  <!-- #footer -->
 
+</section>
 
-  <div class="wa__btn_popup back-to-top">
-    <div class="wa__btn_popup_txt">Need help? <span><strong>Contact us!</strong></span></div>
-    <div class="wa__btn_popup_icon"></div>
-  </div>
-  <div class="wa__popup_chat_box">
-    <div class="wa__popup_heading">
-      <div class="wa__popup_title"><strong>Questions? Doubts?</strong></div>
-      <div class="wa__popup_intro">Chat with us via <strong>WhatsApp</strong>
-        <div id="\&quot;eJOY__extension_root\&quot;"></div>
-      </div>
-    </div>
-    <div class="wa__popup_content wa__popup_content_left">
-      <div class="wa__popup_notice">We will respond as soon as possible.</div>
-      <div class="wa__popup_content_list">
-        <div class="wa__popup_content_item "><a target="_blank" href="https://wa.me/+971507135589"
-            class="wa__stt wa__stt_online">
-            <div class="wa__popup_avatar">
-              <div class="wa__cs_img_wrap"
-                style="background: url(images/favi.webp) center center no-repeat; background-size: cover;"></div>
-            </div>
-            <div class="wa__popup_txt">
-              <div class="wa__member_name">Palmera</div>
-              <div class="wa__member_duty">Support Team</div>
-            </div>
-          </a></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/SmoothScroll.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="js/script.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
-  <script src="https://cdn.jsdelivr.net/gh/EasyCookies/EasyCookies@0.0.2/easyCookies.min.js"></script>
-  <script>
-    window.easyCookiesBanner = new EasyCookies.Banner({
-      scripts: {
-        gtag: 'AW-XXXXXXXXX'
-      },
-      data: {
-        title: "This website uses cookies 🍪🍪🍪",
-        text: "We use cookies to improve your experience.",
-        acceptBtnText: 'Accept cookies',
-        rejectBtnText: 'Reject'
-      },
-      styles: {
-        banner: {
-          fontFamily: "'Poppins', sans-serif",
-          color: "black",
-          maxWidth: "400px",
-          boxShadow: "rgba(144, 164, 174, 0.3) 0px 6px 12px 0px"
-        },
-        rejectBtn: {
-          display: 'block'
-        }
-      }
-    });
-    window.easyCookiesBanner.init(); 
-  </script>
 </body>
-
 </html>
